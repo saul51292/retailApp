@@ -14,6 +14,7 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
     @IBOutlet var salesView: UIView!
     var screenSize = UIScreen.mainScreen().bounds
     var tabBarBack = UIImage (named: "empty.png")
+     let data = [1,5,3,4,5,6,7,6,5,4,7,5,7,8,9,7,5,6,7,8,9,0,6,4]
     var tabBarColor = UIColor(red: (244/255.0), green: (244/255.0), blue: (244/255.0), alpha: 1.0)
 
 
@@ -69,19 +70,21 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
     
     
     func lineGraph(graph: BEMSimpleLineGraphView!, valueForPointAtIndex index: Int) -> CGFloat {
-        let data = [1.0,2.0,3.0,2.0,0.0]
-        let data2 = [2.0,0.0,2.0,3.0,5.0]
+       
         return CGFloat(data[index])
     }
     
     func numberOfPointsInLineGraph(graph: BEMSimpleLineGraphView!) -> Int {
-        return 5
+        return data.count
     }
     
     func addGraph()
     {
         
         simpleGraph.enableYAxisLabel = true
+        simpleGraph.enableReferenceXAxisLines = true
+        simpleGraph.enableReferenceYAxisLines = true
+        simpleGraph.enableBezierCurve = true
         self.view.addSubview(simpleGraph)
     }
     
