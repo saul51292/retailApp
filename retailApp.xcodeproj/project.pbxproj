@@ -24,7 +24,7 @@
 		C707CD161A6416D100548139 /* BEMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = C707CD111A6416D100548139 /* BEMCircle.m */; };
 		C707CD171A6416D100548139 /* BEMLine.m in Sources */ = {isa = PBXBuildFile; fileRef = C707CD131A6416D100548139 /* BEMLine.m */; };
 		C707CD181A6416D100548139 /* BEMSimpleLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = C707CD151A6416D100548139 /* BEMSimpleLineGraphView.m */; };
-		C736B8841A645EBE00CBC1C9 /* FXPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C736B8831A645EBE00CBC1C9 /* FXPageControl.m */; };
+		C736B88A1A64842200CBC1C9 /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C736B8891A64842200CBC1C9 /* StyleManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,8 +70,7 @@
 		C707CD131A6416D100548139 /* BEMLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMLine.m; sourceTree = "<group>"; };
 		C707CD141A6416D100548139 /* BEMSimpleLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMSimpleLineGraphView.h; sourceTree = "<group>"; };
 		C707CD151A6416D100548139 /* BEMSimpleLineGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMSimpleLineGraphView.m; sourceTree = "<group>"; };
-		C736B8821A645EBE00CBC1C9 /* FXPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXPageControl.h; sourceTree = "<group>"; };
-		C736B8831A645EBE00CBC1C9 /* FXPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXPageControl.m; sourceTree = "<group>"; };
+		C736B8891A64842200CBC1C9 /* StyleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,10 +116,10 @@
 				C706D00A1A63A08400E06116 /* FirstViewController.swift */,
 				C706D00C1A63A08400E06116 /* SecondViewController.swift */,
 				C706D00E1A63A08400E06116 /* Main.storyboard */,
+				C736B8891A64842200CBC1C9 /* StyleManager.swift */,
 				C706D0111A63A08400E06116 /* Images.xcassets */,
 				C706D02A1A63A89500E06116 /* empty.png */,
 				C706D0131A63A08400E06116 /* LaunchScreen.xib */,
-				C736B8851A645EC300CBC1C9 /* FXPageControl */,
 				C706D04B1A63CECC00E06116 /* Chameleon */,
 				C706D0361A63AFE200E06116 /* LineGraph */,
 				C706D0061A63A08400E06116 /* Supporting Files */,
@@ -185,15 +184,6 @@
 				C706D0451A63CE6900E06116 /* UIViewController+Chameleon.m */,
 			);
 			name = Chameleon;
-			sourceTree = "<group>";
-		};
-		C736B8851A645EC300CBC1C9 /* FXPageControl */ = {
-			isa = PBXGroup;
-			children = (
-				C736B8821A645EBE00CBC1C9 /* FXPageControl.h */,
-				C736B8831A645EBE00CBC1C9 /* FXPageControl.m */,
-			);
-			name = FXPageControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,7 +290,6 @@
 			files = (
 				C707CD181A6416D100548139 /* BEMSimpleLineGraphView.m in Sources */,
 				C707CD171A6416D100548139 /* BEMLine.m in Sources */,
-				C736B8841A645EBE00CBC1C9 /* FXPageControl.m in Sources */,
 				C706D0491A63CE6900E06116 /* UIColor+CIELAB.m in Sources */,
 				C706D0481A63CE6900E06116 /* UIColor+Chameleon.m in Sources */,
 				C706D0461A63CE6900E06116 /* ChameleonStatusBar.m in Sources */,
@@ -310,6 +299,7 @@
 				C706D0091A63A08400E06116 /* AppDelegate.swift in Sources */,
 				C706D00B1A63A08400E06116 /* FirstViewController.swift in Sources */,
 				C707CD161A6416D100548139 /* BEMCircle.m in Sources */,
+				C736B88A1A64842200CBC1C9 /* StyleManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
