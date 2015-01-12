@@ -18,6 +18,7 @@
 		C706D0331A63AFDC00E06116 /* BEMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = C706D02E1A63AFDC00E06116 /* BEMCircle.m */; };
 		C706D0341A63AFDC00E06116 /* BEMLine.m in Sources */ = {isa = PBXBuildFile; fileRef = C706D0301A63AFDC00E06116 /* BEMLine.m */; };
 		C706D0351A63AFDC00E06116 /* BEMSimpleLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = C706D0321A63AFDC00E06116 /* BEMSimpleLineGraphView.m */; };
+		C706D0381A63C78B00E06116 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C706D0371A63C40E00E06116 /* Montserrat-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		C706D0301A63AFDC00E06116 /* BEMLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMLine.m; sourceTree = "<group>"; };
 		C706D0311A63AFDC00E06116 /* BEMSimpleLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMSimpleLineGraphView.h; sourceTree = "<group>"; };
 		C706D0321A63AFDC00E06116 /* BEMSimpleLineGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMSimpleLineGraphView.m; sourceTree = "<group>"; };
+		C706D0371A63C40E00E06116 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		C706D0061A63A08400E06116 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C706D0371A63C40E00E06116 /* Montserrat-Regular.ttf */,
 				C706D0071A63A08400E06116 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -223,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C706D0381A63C78B00E06116 /* Montserrat-Regular.ttf in Resources */,
 				C706D0101A63A08400E06116 /* Main.storyboard in Resources */,
 				C706D0151A63A08400E06116 /* LaunchScreen.xib in Resources */,
 				C706D0121A63A08400E06116 /* Images.xcassets in Resources */,
@@ -446,6 +450,7 @@
 				C706D0261A63A08400E06116 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C706D0271A63A08400E06116 /* Build configuration list for PBXNativeTarget "retailAppTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +459,7 @@
 				C706D0291A63A08400E06116 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -42,20 +42,26 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
     
     func navBarStyling() {
         var nav = self.navigationController?.navigationBar
+        
         nav?.barTintColor = salesView.backgroundColor
         nav?.shadowImage = tabBarBack
        nav?.translucent = false
         nav?.setBackgroundImage(tabBarBack, forBarMetrics: UIBarMetrics.Default)
 
-        nav?.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        nav?.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Montserrat", size: 16)!]
         nav?.tintColor = UIColor.whiteColor()
         
         var moneyBarItem = UIBarButtonItem(title: "$123", style: UIBarButtonItemStyle.Plain, target: self, action: "buttonMethod")
         
-        navigationItem.leftBarButtonItem = moneyBarItem
+                navigationItem.leftBarButtonItem = moneyBarItem
         
         var logOutItem = UIBarButtonItem(title: "Log Out", style: UIBarButtonItemStyle.Plain, target: self, action: "buttonMethod")
         navigationItem.rightBarButtonItem = logOutItem
+
+        navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Montserrat", size: 16)!], forState: UIControlState.Normal)
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Montserrat", size: 16)!], forState: UIControlState.Normal)
+
+        
 
     }
     
