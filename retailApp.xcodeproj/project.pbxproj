@@ -15,15 +15,16 @@
 		C706D0151A63A08400E06116 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C706D0131A63A08400E06116 /* LaunchScreen.xib */; };
 		C706D0211A63A08400E06116 /* retailAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C706D0201A63A08400E06116 /* retailAppTests.swift */; };
 		C706D02B1A63A89500E06116 /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = C706D02A1A63A89500E06116 /* empty.png */; };
-		C706D0331A63AFDC00E06116 /* BEMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = C706D02E1A63AFDC00E06116 /* BEMCircle.m */; };
-		C706D0341A63AFDC00E06116 /* BEMLine.m in Sources */ = {isa = PBXBuildFile; fileRef = C706D0301A63AFDC00E06116 /* BEMLine.m */; };
-		C706D0351A63AFDC00E06116 /* BEMSimpleLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = C706D0321A63AFDC00E06116 /* BEMSimpleLineGraphView.m */; };
 		C706D0381A63C78B00E06116 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C706D0371A63C40E00E06116 /* Montserrat-Regular.ttf */; };
 		C706D0461A63CE6900E06116 /* ChameleonStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C706D03D1A63CE6900E06116 /* ChameleonStatusBar.m */; };
 		C706D0471A63CE6900E06116 /* NSArray+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = C706D03F1A63CE6900E06116 /* NSArray+Chameleon.m */; };
 		C706D0481A63CE6900E06116 /* UIColor+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = C706D0411A63CE6900E06116 /* UIColor+Chameleon.m */; };
 		C706D0491A63CE6900E06116 /* UIColor+CIELAB.m in Sources */ = {isa = PBXBuildFile; fileRef = C706D0431A63CE6900E06116 /* UIColor+CIELAB.m */; };
 		C706D04A1A63CE6900E06116 /* UIViewController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = C706D0451A63CE6900E06116 /* UIViewController+Chameleon.m */; };
+		C707CD161A6416D100548139 /* BEMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = C707CD111A6416D100548139 /* BEMCircle.m */; };
+		C707CD171A6416D100548139 /* BEMLine.m in Sources */ = {isa = PBXBuildFile; fileRef = C707CD131A6416D100548139 /* BEMLine.m */; };
+		C707CD181A6416D100548139 /* BEMSimpleLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = C707CD151A6416D100548139 /* BEMSimpleLineGraphView.m */; };
+		C736B8841A645EBE00CBC1C9 /* FXPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C736B8831A645EBE00CBC1C9 /* FXPageControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,12 +51,6 @@
 		C706D0201A63A08400E06116 /* retailAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = retailAppTests.swift; sourceTree = "<group>"; };
 		C706D02A1A63A89500E06116 /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty.png; sourceTree = "<group>"; };
 		C706D02C1A63AFDB00E06116 /* retailApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "retailApp-Bridging-Header.h"; sourceTree = "<group>"; };
-		C706D02D1A63AFDC00E06116 /* BEMCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMCircle.h; sourceTree = "<group>"; };
-		C706D02E1A63AFDC00E06116 /* BEMCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMCircle.m; sourceTree = "<group>"; };
-		C706D02F1A63AFDC00E06116 /* BEMLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMLine.h; sourceTree = "<group>"; };
-		C706D0301A63AFDC00E06116 /* BEMLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMLine.m; sourceTree = "<group>"; };
-		C706D0311A63AFDC00E06116 /* BEMSimpleLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMSimpleLineGraphView.h; sourceTree = "<group>"; };
-		C706D0321A63AFDC00E06116 /* BEMSimpleLineGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMSimpleLineGraphView.m; sourceTree = "<group>"; };
 		C706D0371A63C40E00E06116 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		C706D03A1A63CE6900E06116 /* Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chameleon.h; path = Chameleon/Chameleon.h; sourceTree = "<group>"; };
 		C706D03B1A63CE6900E06116 /* ChameleonMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChameleonMacros.h; path = Chameleon/ChameleonMacros.h; sourceTree = "<group>"; };
@@ -69,6 +64,14 @@
 		C706D0431A63CE6900E06116 /* UIColor+CIELAB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CIELAB.m"; path = "Chameleon/UIColor+CIELAB.m"; sourceTree = "<group>"; };
 		C706D0441A63CE6900E06116 /* UIViewController+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Chameleon.h"; path = "Chameleon/UIViewController+Chameleon.h"; sourceTree = "<group>"; };
 		C706D0451A63CE6900E06116 /* UIViewController+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Chameleon.m"; path = "Chameleon/UIViewController+Chameleon.m"; sourceTree = "<group>"; };
+		C707CD101A6416D100548139 /* BEMCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMCircle.h; sourceTree = "<group>"; };
+		C707CD111A6416D100548139 /* BEMCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMCircle.m; sourceTree = "<group>"; };
+		C707CD121A6416D100548139 /* BEMLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMLine.h; sourceTree = "<group>"; };
+		C707CD131A6416D100548139 /* BEMLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMLine.m; sourceTree = "<group>"; };
+		C707CD141A6416D100548139 /* BEMSimpleLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMSimpleLineGraphView.h; sourceTree = "<group>"; };
+		C707CD151A6416D100548139 /* BEMSimpleLineGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMSimpleLineGraphView.m; sourceTree = "<group>"; };
+		C736B8821A645EBE00CBC1C9 /* FXPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXPageControl.h; sourceTree = "<group>"; };
+		C736B8831A645EBE00CBC1C9 /* FXPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXPageControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,12 +116,13 @@
 				C706D0081A63A08400E06116 /* AppDelegate.swift */,
 				C706D00A1A63A08400E06116 /* FirstViewController.swift */,
 				C706D00C1A63A08400E06116 /* SecondViewController.swift */,
-				C706D04B1A63CECC00E06116 /* Chameleon */,
 				C706D00E1A63A08400E06116 /* Main.storyboard */,
-				C706D0361A63AFE200E06116 /* LineGraph */,
 				C706D0111A63A08400E06116 /* Images.xcassets */,
 				C706D02A1A63A89500E06116 /* empty.png */,
 				C706D0131A63A08400E06116 /* LaunchScreen.xib */,
+				C736B8851A645EC300CBC1C9 /* FXPageControl */,
+				C706D04B1A63CECC00E06116 /* Chameleon */,
+				C706D0361A63AFE200E06116 /* LineGraph */,
 				C706D0061A63A08400E06116 /* Supporting Files */,
 				C706D02C1A63AFDB00E06116 /* retailApp-Bridging-Header.h */,
 			);
@@ -154,12 +158,12 @@
 		C706D0361A63AFE200E06116 /* LineGraph */ = {
 			isa = PBXGroup;
 			children = (
-				C706D02D1A63AFDC00E06116 /* BEMCircle.h */,
-				C706D02E1A63AFDC00E06116 /* BEMCircle.m */,
-				C706D02F1A63AFDC00E06116 /* BEMLine.h */,
-				C706D0301A63AFDC00E06116 /* BEMLine.m */,
-				C706D0311A63AFDC00E06116 /* BEMSimpleLineGraphView.h */,
-				C706D0321A63AFDC00E06116 /* BEMSimpleLineGraphView.m */,
+				C707CD101A6416D100548139 /* BEMCircle.h */,
+				C707CD111A6416D100548139 /* BEMCircle.m */,
+				C707CD121A6416D100548139 /* BEMLine.h */,
+				C707CD131A6416D100548139 /* BEMLine.m */,
+				C707CD141A6416D100548139 /* BEMSimpleLineGraphView.h */,
+				C707CD151A6416D100548139 /* BEMSimpleLineGraphView.m */,
 			);
 			name = LineGraph;
 			sourceTree = "<group>";
@@ -181,6 +185,15 @@
 				C706D0451A63CE6900E06116 /* UIViewController+Chameleon.m */,
 			);
 			name = Chameleon;
+			sourceTree = "<group>";
+		};
+		C736B8851A645EC300CBC1C9 /* FXPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				C736B8821A645EBE00CBC1C9 /* FXPageControl.h */,
+				C736B8831A645EBE00CBC1C9 /* FXPageControl.m */,
+			);
+			name = FXPageControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,10 +298,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C706D0341A63AFDC00E06116 /* BEMLine.m in Sources */,
+				C707CD181A6416D100548139 /* BEMSimpleLineGraphView.m in Sources */,
+				C707CD171A6416D100548139 /* BEMLine.m in Sources */,
+				C736B8841A645EBE00CBC1C9 /* FXPageControl.m in Sources */,
 				C706D0491A63CE6900E06116 /* UIColor+CIELAB.m in Sources */,
-				C706D0331A63AFDC00E06116 /* BEMCircle.m in Sources */,
-				C706D0351A63AFDC00E06116 /* BEMSimpleLineGraphView.m in Sources */,
 				C706D0481A63CE6900E06116 /* UIColor+Chameleon.m in Sources */,
 				C706D0461A63CE6900E06116 /* ChameleonStatusBar.m in Sources */,
 				C706D04A1A63CE6900E06116 /* UIViewController+Chameleon.m in Sources */,
@@ -296,6 +309,7 @@
 				C706D0471A63CE6900E06116 /* NSArray+Chameleon.m in Sources */,
 				C706D0091A63A08400E06116 /* AppDelegate.swift in Sources */,
 				C706D00B1A63A08400E06116 /* FirstViewController.swift in Sources */,
+				C707CD161A6416D100548139 /* BEMCircle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
