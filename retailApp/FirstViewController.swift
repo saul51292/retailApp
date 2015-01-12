@@ -32,6 +32,8 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         super.viewWillAppear(animated)
         navBarStyling()
         tabBarStyling()
+        var timer = NSTimer.scheduledTimerWithTimeInterval(7, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+
         salesView.backgroundColor = UIColor.flatTealColorDark()
         
         
@@ -98,6 +100,10 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         simpleGraph.enableReferenceYAxisLines = true
         simpleGraph.enableBezierCurve = true
         self.view.addSubview(simpleGraph)
+    }
+    
+    func update() {
+        simpleGraph.reloadGraph()
     }
     
     func buttonMethod() {
