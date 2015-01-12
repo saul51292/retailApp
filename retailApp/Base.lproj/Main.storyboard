@@ -42,18 +42,23 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHf-T7-ODZ">
-                                        <rect key="frame" x="276" y="23" width="50" height="52"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="42"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pending" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5WL-Vn-v5d">
+                                        <rect key="frame" x="15" y="78" width="63" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="81" id="NfO-t5-Kw3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="NfO-t5-Kw3"/>
+                                            </mask>
+                                        </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sales" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCo-08-7uF">
-                                        <rect key="frame" x="266" y="74" width="68" height="27"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="68" id="ffJ-mz-ygz"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHf-T7-ODZ">
+                                        <rect key="frame" x="265" y="13" width="71" height="74"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="60"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -77,17 +82,17 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paid" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5WL-Vn-v5d">
-                                        <rect key="frame" x="29" y="78" width="34" height="19"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sales" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCo-08-7uF">
+                                        <rect key="frame" x="267" y="83" width="66" height="31"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="81" id="NfO-t5-Kw3"/>
+                                            <constraint firstAttribute="width" constant="68" id="ffJ-mz-ygz"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="NfO-t5-Kw3"/>
+                                                <exclude reference="ffJ-mz-ygz"/>
                                             </mask>
                                         </variation>
                                     </label>
@@ -95,16 +100,20 @@
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.51764705879999995" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="5WL-Vn-v5d" secondAttribute="bottom" constant="30" id="0Uk-38-VRu"/>
+                                    <constraint firstItem="CCo-08-7uF" firstAttribute="top" secondItem="EHf-T7-ODZ" secondAttribute="bottom" constant="-4" id="0a8-Pr-atT"/>
                                     <constraint firstItem="EHf-T7-ODZ" firstAttribute="leading" secondItem="CCo-08-7uF" secondAttribute="leading" constant="13" id="0jt-gx-tz1"/>
                                     <constraint firstItem="CCo-08-7uF" firstAttribute="top" secondItem="EHf-T7-ODZ" secondAttribute="bottom" constant="-3" id="1cT-rF-Ane"/>
+                                    <constraint firstItem="EHf-T7-ODZ" firstAttribute="top" secondItem="pkk-1U-oDh" secondAttribute="top" constant="8" id="22U-uW-ByX"/>
                                     <constraint firstItem="EHf-T7-ODZ" firstAttribute="top" secondItem="pkk-1U-oDh" secondAttribute="top" constant="15" id="2ns-CZ-7AY"/>
                                     <constraint firstItem="CCo-08-7uF" firstAttribute="top" secondItem="EHf-T7-ODZ" secondAttribute="bottom" constant="-1" id="56U-cC-VP4"/>
                                     <constraint firstAttribute="centerX" secondItem="EHf-T7-ODZ" secondAttribute="centerX" constant="-0.5" id="68K-OZ-rtm"/>
                                     <constraint firstItem="vIW-Kq-g7a" firstAttribute="leading" secondItem="pkk-1U-oDh" secondAttribute="leading" constant="33" id="7As-94-hiT"/>
                                     <constraint firstItem="EHf-T7-ODZ" firstAttribute="top" secondItem="pkk-1U-oDh" secondAttribute="top" constant="23" id="7VO-Mc-hHT"/>
                                     <constraint firstItem="5WL-Vn-v5d" firstAttribute="leading" secondItem="pkk-1U-oDh" secondAttribute="leading" constant="25" id="8Tc-V1-W2O"/>
+                                    <constraint firstItem="5WL-Vn-v5d" firstAttribute="leading" secondItem="pkk-1U-oDh" secondAttribute="leading" constant="15" id="8dK-Kz-JKZ"/>
                                     <constraint firstItem="5WL-Vn-v5d" firstAttribute="top" secondItem="vIW-Kq-g7a" secondAttribute="bottom" constant="-5" id="9Ye-a1-rob"/>
                                     <constraint firstItem="EHf-T7-ODZ" firstAttribute="top" secondItem="vIW-Kq-g7a" secondAttribute="top" constant="2" id="CUU-Tn-NFh"/>
+                                    <constraint firstItem="EHf-T7-ODZ" firstAttribute="top" secondItem="pkk-1U-oDh" secondAttribute="top" constant="13" id="DLW-Vb-T2Y"/>
                                     <constraint firstItem="vIW-Kq-g7a" firstAttribute="leading" secondItem="pkk-1U-oDh" secondAttribute="leading" constant="44" id="DcV-nc-Ywq"/>
                                     <constraint firstItem="5WL-Vn-v5d" firstAttribute="centerX" secondItem="vIW-Kq-g7a" secondAttribute="centerX" constant="0.5" id="Eer-cf-rYo"/>
                                     <constraint firstItem="gRP-ds-aFb" firstAttribute="centerX" secondItem="CCE-a0-egj" secondAttribute="centerX" id="I46-51-Sjh"/>
@@ -112,6 +121,7 @@
                                     <constraint firstItem="5WL-Vn-v5d" firstAttribute="top" secondItem="vIW-Kq-g7a" secondAttribute="bottom" constant="8" id="KXz-KO-9db"/>
                                     <constraint firstItem="vIW-Kq-g7a" firstAttribute="top" secondItem="pkk-1U-oDh" secondAttribute="top" constant="13" id="M2i-tH-L4N"/>
                                     <constraint firstItem="5WL-Vn-v5d" firstAttribute="leading" secondItem="pkk-1U-oDh" secondAttribute="leading" constant="58" id="Nts-5d-mTl"/>
+                                    <constraint firstItem="EHf-T7-ODZ" firstAttribute="top" secondItem="pkk-1U-oDh" secondAttribute="top" constant="3" id="Phj-VE-2Ld"/>
                                     <constraint firstItem="5WL-Vn-v5d" firstAttribute="top" secondItem="vIW-Kq-g7a" secondAttribute="bottom" constant="-13" id="PjB-WZ-i0k"/>
                                     <constraint firstItem="EHf-T7-ODZ" firstAttribute="top" secondItem="pkk-1U-oDh" secondAttribute="top" constant="23" id="S3h-Xe-Jkn"/>
                                     <constraint firstItem="vIW-Kq-g7a" firstAttribute="top" secondItem="EHf-T7-ODZ" secondAttribute="top" constant="8" id="SDM-ag-0Zs"/>
@@ -139,6 +149,7 @@
                                     <constraint firstItem="5WL-Vn-v5d" firstAttribute="top" secondItem="vIW-Kq-g7a" secondAttribute="bottom" constant="12" id="rcR-ZQ-Vlz"/>
                                     <constraint firstItem="vIW-Kq-g7a" firstAttribute="top" secondItem="pkk-1U-oDh" secondAttribute="top" constant="33" id="tmY-mr-M3H"/>
                                     <constraint firstAttribute="height" constant="128" id="uG3-aL-wKK"/>
+                                    <constraint firstItem="CCo-08-7uF" firstAttribute="top" secondItem="EHf-T7-ODZ" secondAttribute="bottom" constant="-4" id="wcQ-Uz-usl"/>
                                     <constraint firstItem="CCE-a0-egj" firstAttribute="top" secondItem="gRP-ds-aFb" secondAttribute="bottom" constant="12" id="wzR-3d-5tv"/>
                                     <constraint firstItem="5WL-Vn-v5d" firstAttribute="leading" secondItem="pkk-1U-oDh" secondAttribute="leading" constant="29" id="xzx-HJ-cGG"/>
                                 </constraints>
@@ -166,17 +177,23 @@
                                         <exclude reference="e0w-7C-edA"/>
                                         <exclude reference="gRu-6f-F15"/>
                                         <exclude reference="i57-9L-Hmy"/>
-                                        <exclude reference="1cT-rF-Ane"/>
-                                        <exclude reference="X6n-4d-09g"/>
-                                        <exclude reference="hyj-dQ-AUC"/>
+                                        <exclude reference="xzx-HJ-cGG"/>
                                         <exclude reference="0jt-gx-tz1"/>
+                                        <exclude reference="22U-uW-ByX"/>
                                         <exclude reference="2ns-CZ-7AY"/>
                                         <exclude reference="7VO-Mc-hHT"/>
                                         <exclude reference="CUU-Tn-NFh"/>
+                                        <exclude reference="Phj-VE-2Ld"/>
                                         <exclude reference="S3h-Xe-Jkn"/>
                                         <exclude reference="fDe-9C-0vE"/>
                                         <exclude reference="qK3-sr-NOF"/>
+                                        <exclude reference="rE4-Xo-uiq"/>
                                         <exclude reference="rRg-SG-k0v"/>
+                                        <exclude reference="1cT-rF-Ane"/>
+                                        <exclude reference="56U-cC-VP4"/>
+                                        <exclude reference="X6n-4d-09g"/>
+                                        <exclude reference="hyj-dQ-AUC"/>
+                                        <exclude reference="wcQ-Uz-usl"/>
                                         <exclude reference="Srv-TO-5GE"/>
                                     </mask>
                                 </variation>

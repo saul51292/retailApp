@@ -15,7 +15,6 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
     var screenSize = UIScreen.mainScreen().bounds
     var tabBarBack = UIImage (named: "empty.png")
      let data = [1,5,3,4,5,6,7,6,5,4,7,5,7,8,9,7,5,6,7,8,9,4,6,4]
-    var tabBarColor = UIColor(red: (244/255.0), green: (244/255.0), blue: (244/255.0), alpha: 1.0)
 
 
     override func viewDidLoad() {
@@ -33,7 +32,7 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         super.viewWillAppear(animated)
         navBarStyling()
         tabBarStyling()
-        
+        salesView.backgroundColor = UIColor.flatTealColorDark()
         
         
     
@@ -43,12 +42,13 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
     func navBarStyling() {
         var nav = self.navigationController?.navigationBar
         
-        nav?.barTintColor = salesView.backgroundColor
+        nav?.barTintColor = UIColor.flatTealColor()
+        
         nav?.shadowImage = tabBarBack
        nav?.translucent = false
         nav?.setBackgroundImage(tabBarBack, forBarMetrics: UIBarMetrics.Default)
 
-        nav?.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Montserrat", size: 16)!]
+        nav?.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Montserrat", size: 18)!]
         nav?.tintColor = UIColor.whiteColor()
         
         var moneyBarItem = UIBarButtonItem(title: "$123", style: UIBarButtonItemStyle.Plain, target: self, action: "buttonMethod")
@@ -70,7 +70,7 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         
         self.tabBarController?.tabBar.shadowImage = tabBarBack
         self.tabBarController?.tabBar.backgroundImage = tabBarBack
-        self.tabBarController?.tabBar.backgroundColor = tabBarColor
+        self.tabBarController?.tabBar.backgroundColor = UIColor.flatWhiteColor()
         self.tabBarController?.tabBar.tintColor = salesView.backgroundColor
     }
     
@@ -86,6 +86,12 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
     
     func addGraph()
     {
+        simpleGraph.colorTop = UIColor.flatWhiteColor()
+        simpleGraph.colorBottom = UIColor.flatWhiteColor()
+       simpleGraph.backgroundColor = UIColor.flatWhiteColor()
+        simpleGraph.colorLine = UIColor.flatTealColor()
+        simpleGraph.colorPoint = UIColor.flatTealColorDark()
+        simpleGraph.colorYaxisLabel =  UIColor.flatTealColorDark()
         simpleGraph.enablePopUpReport = true
         simpleGraph.enableYAxisLabel = true
         simpleGraph.enableReferenceXAxisLines = true
