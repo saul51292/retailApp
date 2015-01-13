@@ -44,7 +44,7 @@ class GenericTableView: UITableViewController {
         
         cell.userName.text = transportItems[indexPath.row]
         cell.timePurchase.text = time[indexPath.row]
-               
+        
         
         if(indexPath.row % 2 == 0)
         {
