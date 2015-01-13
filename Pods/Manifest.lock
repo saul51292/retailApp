@@ -1,0 +1,13 @@
+PODS:
+  - BEMSimpleLineGraph (3.2)
+  - ChameleonFramework (1.1.1)
+
+DEPENDENCIES:
+  - BEMSimpleLineGraph
+  - ChameleonFramework
+
+SPEC CHECKSUMS:
+  BEMSimpleLineGraph: 68e349eb22320d1a21a29e390d0f67772f6f6f44
+  ChameleonFramework: c60096686e3771f5d78f26cfbfd08955a8a88cbd
+
+COCOAPODS: 0.34.4
