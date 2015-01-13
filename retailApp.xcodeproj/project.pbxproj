@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C706D0091A63A08400E06116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C706D0081A63A08400E06116 /* AppDelegate.swift */; };
 		C706D00B1A63A08400E06116 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C706D00A1A63A08400E06116 /* FirstViewController.swift */; };
-		C706D00D1A63A08400E06116 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C706D00C1A63A08400E06116 /* SecondViewController.swift */; };
 		C706D0101A63A08400E06116 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C706D00E1A63A08400E06116 /* Main.storyboard */; };
 		C706D0121A63A08400E06116 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C706D0111A63A08400E06116 /* Images.xcassets */; };
 		C706D0151A63A08400E06116 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C706D0131A63A08400E06116 /* LaunchScreen.xib */; };
@@ -24,7 +23,22 @@
 		C707CD161A6416D100548139 /* BEMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = C707CD111A6416D100548139 /* BEMCircle.m */; };
 		C707CD171A6416D100548139 /* BEMLine.m in Sources */ = {isa = PBXBuildFile; fileRef = C707CD131A6416D100548139 /* BEMLine.m */; };
 		C707CD181A6416D100548139 /* BEMSimpleLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = C707CD151A6416D100548139 /* BEMSimpleLineGraphView.m */; };
+		C7118B5A1A64DEA00079F42E /* GenericTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7118B591A64DEA00079F42E /* GenericTableView.swift */; };
+		C7118B681A64E46D0079F42E /* Bus.png in Resources */ = {isa = PBXBuildFile; fileRef = C7118B5D1A64E46D0079F42E /* Bus.png */; };
+		C7118B691A64E46D0079F42E /* Helicopter.png in Resources */ = {isa = PBXBuildFile; fileRef = C7118B5E1A64E46D0079F42E /* Helicopter.png */; };
+		C7118B6A1A64E46D0079F42E /* Truck.png in Resources */ = {isa = PBXBuildFile; fileRef = C7118B5F1A64E46D0079F42E /* Truck.png */; };
+		C7118B6B1A64E46D0079F42E /* Boat.png in Resources */ = {isa = PBXBuildFile; fileRef = C7118B601A64E46D0079F42E /* Boat.png */; };
+		C7118B6C1A64E46D0079F42E /* Bicycle.png in Resources */ = {isa = PBXBuildFile; fileRef = C7118B611A64E46D0079F42E /* Bicycle.png */; };
+		C7118B6D1A64E46D0079F42E /* Motorcycle.png in Resources */ = {isa = PBXBuildFile; fileRef = C7118B621A64E46D0079F42E /* Motorcycle.png */; };
+		C7118B6E1A64E46D0079F42E /* Plane.png in Resources */ = {isa = PBXBuildFile; fileRef = C7118B631A64E46D0079F42E /* Plane.png */; };
+		C7118B6F1A64E46D0079F42E /* Train.png in Resources */ = {isa = PBXBuildFile; fileRef = C7118B641A64E46D0079F42E /* Train.png */; };
+		C7118B701A64E46D0079F42E /* Car.png in Resources */ = {isa = PBXBuildFile; fileRef = C7118B651A64E46D0079F42E /* Car.png */; };
+		C7118B711A64E46D0079F42E /* Scooter.png in Resources */ = {isa = PBXBuildFile; fileRef = C7118B661A64E46D0079F42E /* Scooter.png */; };
+		C7118B721A64E46D0079F42E /* Caravan.png in Resources */ = {isa = PBXBuildFile; fileRef = C7118B671A64E46D0079F42E /* Caravan.png */; };
 		C736B88A1A64842200CBC1C9 /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C736B8891A64842200CBC1C9 /* StyleManager.swift */; };
+		C742438B1A64FB9B00EC66F9 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742438A1A64FB9B00EC66F9 /* TableViewCell.swift */; };
+		C74243901A6519D700EC66F9 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C742438D1A6519D700EC66F9 /* MGSwipeButton.m */; };
+		C74243911A6519D700EC66F9 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C742438F1A6519D700EC66F9 /* MGSwipeTableCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +56,6 @@
 		C706D0071A63A08400E06116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C706D0081A63A08400E06116 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C706D00A1A63A08400E06116 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		C706D00C1A63A08400E06116 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		C706D00F1A63A08400E06116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C706D0111A63A08400E06116 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C706D0141A63A08400E06116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -70,7 +83,24 @@
 		C707CD131A6416D100548139 /* BEMLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMLine.m; sourceTree = "<group>"; };
 		C707CD141A6416D100548139 /* BEMSimpleLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMSimpleLineGraphView.h; sourceTree = "<group>"; };
 		C707CD151A6416D100548139 /* BEMSimpleLineGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMSimpleLineGraphView.m; sourceTree = "<group>"; };
+		C7118B591A64DEA00079F42E /* GenericTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTableView.swift; sourceTree = "<group>"; };
+		C7118B5D1A64E46D0079F42E /* Bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bus.png; sourceTree = "<group>"; };
+		C7118B5E1A64E46D0079F42E /* Helicopter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Helicopter.png; sourceTree = "<group>"; };
+		C7118B5F1A64E46D0079F42E /* Truck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Truck.png; sourceTree = "<group>"; };
+		C7118B601A64E46D0079F42E /* Boat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Boat.png; sourceTree = "<group>"; };
+		C7118B611A64E46D0079F42E /* Bicycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bicycle.png; sourceTree = "<group>"; };
+		C7118B621A64E46D0079F42E /* Motorcycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Motorcycle.png; sourceTree = "<group>"; };
+		C7118B631A64E46D0079F42E /* Plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Plane.png; sourceTree = "<group>"; };
+		C7118B641A64E46D0079F42E /* Train.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Train.png; sourceTree = "<group>"; };
+		C7118B651A64E46D0079F42E /* Car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Car.png; sourceTree = "<group>"; };
+		C7118B661A64E46D0079F42E /* Scooter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Scooter.png; sourceTree = "<group>"; };
+		C7118B671A64E46D0079F42E /* Caravan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Caravan.png; sourceTree = "<group>"; };
 		C736B8891A64842200CBC1C9 /* StyleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
+		C742438A1A64FB9B00EC66F9 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		C742438C1A6519D700EC66F9 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
+		C742438D1A6519D700EC66F9 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
+		C742438E1A6519D700EC66F9 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
+		C742438F1A6519D700EC66F9 /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,11 +144,14 @@
 			children = (
 				C706D0081A63A08400E06116 /* AppDelegate.swift */,
 				C706D00A1A63A08400E06116 /* FirstViewController.swift */,
-				C706D00C1A63A08400E06116 /* SecondViewController.swift */,
 				C706D00E1A63A08400E06116 /* Main.storyboard */,
+				C7118B591A64DEA00079F42E /* GenericTableView.swift */,
+				C742438A1A64FB9B00EC66F9 /* TableViewCell.swift */,
 				C736B8891A64842200CBC1C9 /* StyleManager.swift */,
 				C706D0111A63A08400E06116 /* Images.xcassets */,
 				C706D02A1A63A89500E06116 /* empty.png */,
+				C74243921A6519DC00EC66F9 /* MGSwipe */,
+				C7118B741A64E8120079F42E /* Images */,
 				C706D0131A63A08400E06116 /* LaunchScreen.xib */,
 				C706D04B1A63CECC00E06116 /* Chameleon */,
 				C706D0361A63AFE200E06116 /* LineGraph */,
@@ -184,6 +217,35 @@
 				C706D0451A63CE6900E06116 /* UIViewController+Chameleon.m */,
 			);
 			name = Chameleon;
+			sourceTree = "<group>";
+		};
+		C7118B741A64E8120079F42E /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C7118B5D1A64E46D0079F42E /* Bus.png */,
+				C7118B5E1A64E46D0079F42E /* Helicopter.png */,
+				C7118B5F1A64E46D0079F42E /* Truck.png */,
+				C7118B601A64E46D0079F42E /* Boat.png */,
+				C7118B611A64E46D0079F42E /* Bicycle.png */,
+				C7118B621A64E46D0079F42E /* Motorcycle.png */,
+				C7118B631A64E46D0079F42E /* Plane.png */,
+				C7118B641A64E46D0079F42E /* Train.png */,
+				C7118B651A64E46D0079F42E /* Car.png */,
+				C7118B661A64E46D0079F42E /* Scooter.png */,
+				C7118B671A64E46D0079F42E /* Caravan.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		C74243921A6519DC00EC66F9 /* MGSwipe */ = {
+			isa = PBXGroup;
+			children = (
+				C742438C1A6519D700EC66F9 /* MGSwipeButton.h */,
+				C742438D1A6519D700EC66F9 /* MGSwipeButton.m */,
+				C742438E1A6519D700EC66F9 /* MGSwipeTableCell.h */,
+				C742438F1A6519D700EC66F9 /* MGSwipeTableCell.m */,
+			);
+			name = MGSwipe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,10 +328,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7118B6E1A64E46D0079F42E /* Plane.png in Resources */,
+				C7118B6B1A64E46D0079F42E /* Boat.png in Resources */,
+				C7118B701A64E46D0079F42E /* Car.png in Resources */,
+				C7118B6C1A64E46D0079F42E /* Bicycle.png in Resources */,
+				C7118B6D1A64E46D0079F42E /* Motorcycle.png in Resources */,
+				C7118B681A64E46D0079F42E /* Bus.png in Resources */,
+				C7118B691A64E46D0079F42E /* Helicopter.png in Resources */,
+				C7118B6F1A64E46D0079F42E /* Train.png in Resources */,
 				C706D0381A63C78B00E06116 /* Montserrat-Regular.ttf in Resources */,
 				C706D0101A63A08400E06116 /* Main.storyboard in Resources */,
+				C7118B721A64E46D0079F42E /* Caravan.png in Resources */,
 				C706D0151A63A08400E06116 /* LaunchScreen.xib in Resources */,
+				C7118B6A1A64E46D0079F42E /* Truck.png in Resources */,
 				C706D0121A63A08400E06116 /* Images.xcassets in Resources */,
+				C7118B711A64E46D0079F42E /* Scooter.png in Resources */,
 				C706D02B1A63A89500E06116 /* empty.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,14 +361,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C742438B1A64FB9B00EC66F9 /* TableViewCell.swift in Sources */,
 				C707CD181A6416D100548139 /* BEMSimpleLineGraphView.m in Sources */,
 				C707CD171A6416D100548139 /* BEMLine.m in Sources */,
 				C706D0491A63CE6900E06116 /* UIColor+CIELAB.m in Sources */,
+				C74243911A6519D700EC66F9 /* MGSwipeTableCell.m in Sources */,
 				C706D0481A63CE6900E06116 /* UIColor+Chameleon.m in Sources */,
 				C706D0461A63CE6900E06116 /* ChameleonStatusBar.m in Sources */,
+				C74243901A6519D700EC66F9 /* MGSwipeButton.m in Sources */,
 				C706D04A1A63CE6900E06116 /* UIViewController+Chameleon.m in Sources */,
-				C706D00D1A63A08400E06116 /* SecondViewController.swift in Sources */,
 				C706D0471A63CE6900E06116 /* NSArray+Chameleon.m in Sources */,
+				C7118B5A1A64DEA00079F42E /* GenericTableView.swift in Sources */,
 				C706D0091A63A08400E06116 /* AppDelegate.swift in Sources */,
 				C706D00B1A63A08400E06116 /* FirstViewController.swift in Sources */,
 				C707CD161A6416D100548139 /* BEMCircle.m in Sources */,

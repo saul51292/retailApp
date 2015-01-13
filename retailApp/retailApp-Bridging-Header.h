@@ -5,3 +5,4 @@
 
 #import "BEMSimpleLineGraphView.h"
 #import "Chameleon.h"
+#import "MGSwipeButton.h"

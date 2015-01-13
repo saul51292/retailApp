@@ -13,6 +13,7 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
     @IBOutlet var simpleGraph: BEMSimpleLineGraphView!
     @IBOutlet var salesView: UIView!
     
+    @IBOutlet var containerView: UIView!
     
     @IBOutlet var bttnRight: UIButton!
     @IBOutlet var bttnMiddle: UIButton!
@@ -42,11 +43,12 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-                
-        styleManager.addGraph(simpleGraph)
+        containerView.hidden = true
         animateButtonAndLabel(bttnMiddle,label:lblMiddle,transition:kCATransitionFromBottom)
         animateButtonAndLabel(bttnRight,label:lblRight,transition:kCATransitionFromRight)
         animateButtonAndLabel(bttnLeft,label:lblLeft,transition:kCATransitionFromLeft)
+        styleManager.addGraph(simpleGraph)
+       
 
     }
 
@@ -57,7 +59,7 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+      
         styleManager.navBarStyling(self, lightColor:accentColor, emptyImage:tabBarBack!)
         styleManager.tabBarStyling(self, emptyImage:tabBarBack!,lightColor:accentColor)
         styleManager.graphStyling(simpleGraph, lightColor:accentColor, darkColor:darkAccentColor)
@@ -67,9 +69,7 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         }
  
     @IBAction func bttnLeftClicked(sender: AnyObject) {
-    
-        
-        switchLabelAndButton(lblMiddle,formerButton:bttnMiddle,newLabel:lblLeft,newButton:bttnLeft)
+             switchLabelAndButton(lblMiddle,formerButton:bttnMiddle,newLabel:lblLeft,newButton:bttnLeft)
 
         viewWillAppear(true)
     }
@@ -125,12 +125,17 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         switch labelStyling {
             
         case "Pending":
+            containerView.hidden = false
             darkAccentColor = UIColor.flatSkyBlueColorDark()
             accentColor = UIColor.flatSkyBlueColor()
         case "Fufilled":
+            containerView.hidden = false
+
             darkAccentColor = UIColor.flatWatermelonColorDark()
             accentColor = UIColor.flatWatermelonColor()
         default:
+            containerView.hidden = true
+
             darkAccentColor = UIColor.flatTealColorDark()
             accentColor = UIColor.flatTealColor()
         }
@@ -157,10 +162,5 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         return data.count
     }
     
-        
-    func buttonMethod() {
-        println("Yo")
-    }
-     
 }
 

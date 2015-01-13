@@ -53,6 +53,14 @@ class StyleManager: NSObject {
     }
     
     
+   
+    
+    func userPicStyling(image:UIImageView,lightColor:UIColor){
+        image.layer.cornerRadius = 25
+        image.layer.borderColor = lightColor.CGColor
+        image.layer.borderWidth = 2
+    }
+    
     func tabBarStyling(vc:UIViewController, emptyImage:UIImage,lightColor:UIColor)
     {
         
