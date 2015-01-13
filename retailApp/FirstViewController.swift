@@ -44,9 +44,9 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         // Do any additional setup after loading the view, typically from a nib.
                 
         styleManager.addGraph(simpleGraph)
-        animateNumber(bttnMiddle.titleLabel!, transition: kCATransitionFromBottom)
-        animateNumber(bttnRight.titleLabel!, transition: kCATransitionFromRight)
-        animateNumber(bttnLeft.titleLabel!, transition: kCATransitionFromLeft)
+        animateButtonAndLabel(bttnMiddle,label:lblMiddle,transition:kCATransitionFromBottom)
+        animateButtonAndLabel(bttnRight,label:lblRight,transition:kCATransitionFromRight)
+        animateButtonAndLabel(bttnLeft,label:lblLeft,transition:kCATransitionFromLeft)
 
     }
 
@@ -102,14 +102,19 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         newButton.setTitle(formerButton.titleLabel?.text, forState: .Normal)
         newLabel.text = oldLabel
         println(formerLabel.text)
-        animateNumber(formerButton.titleLabel!, transition: kCATransitionFromTop)
-        animateNumber(formerLabel, transition: kCATransitionFromTop)
-        animateNumber(newButton.titleLabel!, transition: kCATransitionFromBottom)
-        animateNumber(newLabel, transition: kCATransitionFromBottom)
-
+        animateButtonAndLabel(formerButton,label:formerLabel,transition:kCATransitionFromTop)
+        animateButtonAndLabel(newButton,label:newLabel,transition:kCATransitionFromBottom)
+        
         stylingColor(formerLabel.text!)
         
         
+    }
+    
+    func animateButtonAndLabel(button:UIButton,label:UILabel,transition:NSString)
+    {
+        animateNumber(button.titleLabel!, transition: transition)
+        animateNumber(label, transition: transition)
+
     }
     
     
