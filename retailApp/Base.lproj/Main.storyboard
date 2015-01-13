@@ -27,13 +27,6 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rL3-ko-NsK" customClass="BEMSimpleLineGraphView">
-                                <rect key="frame" x="0.0" y="128" width="590" height="408"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="9u9-9U-8vu"/>
-                                    <outlet property="delegate" destination="9pv-A4-QxB" id="Q5L-Iz-7Gh"/>
-                                </connections>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkk-1U-oDh">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="128"/>
                                 <subviews>
@@ -174,6 +167,13 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rL3-ko-NsK" customClass="BEMSimpleLineGraphView">
+                                <rect key="frame" x="0.0" y="128" width="590" height="388"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="9u9-9U-8vu"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="Q5L-Iz-7Gh"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -182,6 +182,7 @@
                             <constraint firstItem="rL3-ko-NsK" firstAttribute="trailing" secondItem="pkk-1U-oDh" secondAttribute="trailing" id="Uer-6I-fFw"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="pkk-1U-oDh" secondAttribute="bottom" constant="359" id="VLF-f2-JIf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rL3-ko-NsK" secondAttribute="trailing" constant="-6" id="X7a-k1-fBg"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="rL3-ko-NsK" secondAttribute="bottom" constant="20" id="agp-br-qtX"/>
                             <constraint firstAttribute="trailing" secondItem="pkk-1U-oDh" secondAttribute="trailing" id="fm0-7r-I29"/>
                             <constraint firstItem="pkk-1U-oDh" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="tVw-Y7-45V"/>
                             <constraint firstItem="rL3-ko-NsK" firstAttribute="leading" secondItem="pkk-1U-oDh" secondAttribute="leading" id="tvH-1I-9j4"/>
@@ -189,6 +190,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="DTE-7O-gkp"/>
                                 <exclude reference="Uer-6I-fFw"/>
                                 <exclude reference="VLF-f2-JIf"/>
                             </mask>
@@ -281,11 +283,13 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--First-->
+        <!--Navigation Controller-->
         <scene sceneID="9w3-MH-bMg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KA7-jj-CAw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="" image="Stats" id="acW-dT-cKf">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EAY-DZ-BfT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -300,11 +304,13 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--Second-->
+        <!--Navigation Controller-->
         <scene sceneID="s1t-Rh-DNf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aPs-jJ-HrV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="" image="order" id="cPa-gy-q4n">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5bW-2Z-t57">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -321,7 +327,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="Stats" width="25" height="29"/>
+        <image name="order" width="34" height="33"/>
     </resources>
 </document>

@@ -18,6 +18,11 @@ class StyleManager: NSObject {
         simpleGraph.colorPoint = darkColor
         simpleGraph.colorYaxisLabel = backColor
         simpleGraph.reloadGraph()
+        simpleGraph.colorXaxisLabel = darkColor
+        simpleGraph.labelFont = UIFont(name: "Montserrat", size: 13)
+        simpleGraph.colorTop = backColor
+        simpleGraph.colorBottom = backColor
+        simpleGraph.backgroundColor = backColor
         
     }
 
@@ -59,9 +64,7 @@ class StyleManager: NSObject {
 
     func addGraph(simpleGraph:BEMSimpleLineGraphView)
     {
-        simpleGraph.colorTop = backColor
-        simpleGraph.colorBottom = backColor
-        simpleGraph.backgroundColor = backColor
+        
         simpleGraph.enablePopUpReport = true
         simpleGraph.enableYAxisLabel = true
         simpleGraph.enableReferenceXAxisLines = true
