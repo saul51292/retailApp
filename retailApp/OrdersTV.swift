@@ -10,6 +10,7 @@ import UIKit
 
 class OrdersTV: GenericTableView {
 
+    var transportItems = ["Bus","Helicopter","Truck","Boat","Bicycle","Motorcycle","Plane","Train","Car","Scooter","Caravan"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,40 @@ class OrdersTV: GenericTableView {
         return transportItems.count
     }
     
-   
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier("transportCell") as TableViewCell
+        styleManager.tableViewCellStyling(cell,darkColor:darkAccentColor)
+        
+        cell.userName.text = transportItems[indexPath.row]
+        cell.timePurchase.text = time[indexPath.row]
+        
+        
+        cell.leftButtons = [MGSwipeButton(title: "test", backgroundColor: UIColor.flatWatermelonColorDark())]
+        cell.leftSwipeSettings.transition = MGSwipeTransition.TransitionDrag
+        
+        
+        var imageName = UIImage(named: transportItems[indexPath.row])
+        cell.userPic!.image = imageName
+        
+        
+        
+        
+        
+        //Testing
+        if(indexPath.row % 2 == 0)
+        {
+            cell.changeActionButton("Processing", color: UIColor.flatSkyBlueColorDark())
+        }
+            
+        else if(indexPath.row % 3 == 0)
+        {
+            cell.changeActionButton("Cancelled", color: UIColor.flatRedColorDark())
+        }
+
+        
+        return cell
+    }
     
 
     

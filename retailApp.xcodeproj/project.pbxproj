@@ -31,6 +31,8 @@
 		C7118B701A64E46D0079F42E /* Car.png in Resources */ = {isa = PBXBuildFile; fileRef = C7118B651A64E46D0079F42E /* Car.png */; };
 		C7118B711A64E46D0079F42E /* Scooter.png in Resources */ = {isa = PBXBuildFile; fileRef = C7118B661A64E46D0079F42E /* Scooter.png */; };
 		C7118B721A64E46D0079F42E /* Caravan.png in Resources */ = {isa = PBXBuildFile; fileRef = C7118B671A64E46D0079F42E /* Caravan.png */; };
+		C71DE89D1A663DB200CE2E75 /* UserOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71DE89C1A663DB200CE2E75 /* UserOverview.swift */; };
+		C71DE89F1A663DBF00CE2E75 /* UserOverview.xib in Resources */ = {isa = PBXBuildFile; fileRef = C71DE89E1A663DBF00CE2E75 /* UserOverview.xib */; };
 		C736B88A1A64842200CBC1C9 /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C736B8891A64842200CBC1C9 /* StyleManager.swift */; };
 		C742438B1A64FB9B00EC66F9 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742438A1A64FB9B00EC66F9 /* TableViewCell.swift */; };
 		E4215F28CEF7F5FA8BE81B47 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E93020476827AE31D601D13 /* libPods.a */; };
@@ -77,6 +79,8 @@
 		C7118B651A64E46D0079F42E /* Car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Car.png; sourceTree = "<group>"; };
 		C7118B661A64E46D0079F42E /* Scooter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Scooter.png; sourceTree = "<group>"; };
 		C7118B671A64E46D0079F42E /* Caravan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Caravan.png; sourceTree = "<group>"; };
+		C71DE89C1A663DB200CE2E75 /* UserOverview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserOverview.swift; sourceTree = "<group>"; };
+		C71DE89E1A663DBF00CE2E75 /* UserOverview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserOverview.xib; sourceTree = "<group>"; };
 		C736B8891A64842200CBC1C9 /* StyleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
 		C742438A1A64FB9B00EC66F9 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C74E512B65E644F3E84DE0CE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 				C706D0131A63A08400E06116 /* LaunchScreen.xib */,
 				C706D0061A63A08400E06116 /* Supporting Files */,
 				C706D02C1A63AFDB00E06116 /* retailApp-Bridging-Header.h */,
+				C71DE89C1A663DB200CE2E75 /* UserOverview.swift */,
+				C71DE89E1A663DBF00CE2E75 /* UserOverview.xib */,
 			);
 			path = retailApp;
 			sourceTree = "<group>";
@@ -300,6 +306,7 @@
 				C7118B6E1A64E46D0079F42E /* Plane.png in Resources */,
 				C7118B6B1A64E46D0079F42E /* Boat.png in Resources */,
 				C7118B701A64E46D0079F42E /* Car.png in Resources */,
+				C71DE89F1A663DBF00CE2E75 /* UserOverview.xib in Resources */,
 				C7118B6C1A64E46D0079F42E /* Bicycle.png in Resources */,
 				C7118B6D1A64E46D0079F42E /* Motorcycle.png in Resources */,
 				C7118B681A64E46D0079F42E /* Bus.png in Resources */,
@@ -395,6 +402,7 @@
 			files = (
 				C70128441A65CDD900101467 /* OrdersTV.swift in Sources */,
 				C701284B1A65DEE900101467 /* TabBarController.swift in Sources */,
+				C71DE89D1A663DB200CE2E75 /* UserOverview.swift in Sources */,
 				C742438B1A64FB9B00EC66F9 /* TableViewCell.swift in Sources */,
 				C7118B5A1A64DEA00079F42E /* GenericTableView.swift in Sources */,
 				C70128461A65CF9B00101467 /* FufilledTV.swift in Sources */,

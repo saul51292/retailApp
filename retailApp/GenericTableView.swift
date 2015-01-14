@@ -10,16 +10,17 @@ import UIKit
 
 class GenericTableView: UITableViewController {
     
-    var transportItems = ["Bus","Helicopter","Truck","Boat","Bicycle","Motorcycle","Plane","Train","Car","Scooter","Caravan"]
-    var time = ["1:00","1:15","1:30","1:45","2:00","2:15","2:30","2:45","3:00","3:15","3:15"]
+   
     let styleManager = StyleManager()
-    
     var accentColor : UIColor!
     var darkAccentColor : UIColor!
-    
-    
+    var showUser = UserOverview(frame: CGRectMake(0, 40, 256, 265))
+
+    var time = ["1:00","1:15","1:30","1:45","2:00","2:15","2:30","2:45","3:00","3:15","3:15"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.separatorColor = UIColor.clearColor()
         tableView.backgroundColor = styleManager.backColor
 
@@ -31,6 +32,31 @@ class GenericTableView: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as TableViewCell
+        cell.actionButton.backgroundColor = darkAccentColor
+        
+    }
+    
+    
+    
+    override func  tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as TableViewCell
+        
+        showUser.center = tableView.center
+       
+        showUser.frame = CGRectOffset(showUser.frame, 0, -100)
+        showUser.userPicture.image = cell.userPic.image
+        showUser.userName.text = cell.userName.text
+        self.tableView.addSubview(showUser)
+        
+        
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        cell.actionButton.backgroundColor = darkAccentColor
+    }
+
     
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,55 +67,12 @@ class GenericTableView: UITableViewController {
         
         
         var cell = tableView.dequeueReusableCellWithIdentifier("transportCell") as TableViewCell
-        cell.backgroundColor = UIColor.flatWhiteColor()
+        styleManager.tableViewCellStyling(cell,darkColor:darkAccentColor)
         
-        cell.userName.text = transportItems[indexPath.row]
-        cell.timePurchase.text = time[indexPath.row]
-        
-        
-        if(indexPath.row % 2 == 0)
-        {
-            cell.changeActionButton("Processing", color: UIColor.flatSkyBlueColorDark())
-        }
-        
-        else if(indexPath.row % 3 == 0)
-        {
-            cell.changeActionButton("Cancelled", color: UIColor.flatRedColorDark())
-        }
-        
-        cell.timePurchase.textColor = darkAccentColor
-        cell.userName.textColor = darkAccentColor
-        
-        cell.leftButtons = [MGSwipeButton(title: "test", backgroundColor: UIColor.flatWatermelonColorDark())]
-        cell.leftSwipeSettings.transition = MGSwipeTransition.TransitionDrag
-        var imageName = UIImage(named: transportItems[indexPath.row])
-        cell.userPic!.image = imageName
-        cell.userPic!.clipsToBounds = true
-        if(darkAccentColor != nil){
-        cell.userPic!.layer.borderColor = darkAccentColor!.CGColor!
-        }
         
         return cell
     }
-    
-    
-    /*
-    
-    //configure left buttons
-    cell.leftButtons = @[[MGSwipeButton buttonWithTitle:@"" icon:[UIImage imageNamed:@"check.png"] backgroundColor:[UIColor greenColor]],
-    [MGSwipeButton buttonWithTitle:@"" icon:[UIImage imageNamed:@"fav.png"] backgroundColor:[UIColor blueColor]]];
-    cell.leftSwipeSettings.transition = MGSwipeTransition3D;
-    
-    //configure right buttons
-    cell.rightButtons = @[[MGSwipeButton buttonWithTitle:@"Delete" backgroundColor:[UIColor redColor]],
-    [MGSwipeButton buttonWithTitle:@"More" backgroundColor:[UIColor lightGrayColor]]];
-    cell.rightSwipeSettings.transition = MGSwipeTransition3D;
-    return cell;
-    }
-    
-    
-    */
-    
+
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 70
         }

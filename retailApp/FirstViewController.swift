@@ -28,8 +28,8 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
     var tabBarBack = UIImage (named: "empty.png")
     let styleManager = StyleManager()
     let backColor = UIColor.flatWhiteColor()
-    var accentColor = UIColor.flatTealColor()
-    var darkAccentColor = UIColor.flatTealColorDark()
+    var accentColor = UIColor.flatMintColor()
+    var darkAccentColor = UIColor.flatMintColorDark()
     
     var buttonRightClicked = false
     var buttonLeftClicked = false
@@ -63,10 +63,10 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         super.viewWillAppear(animated)
         sendColor()
         tabBar.reloadTable()
-        styleManager.navBarStyling(self, lightColor:accentColor, emptyImage:tabBarBack!)
+        styleManager.navBarStyling(self, darkColor:darkAccentColor, emptyImage:tabBarBack!)
         styleManager.tabBarStyling(self, emptyImage:tabBarBack!,lightColor:accentColor)
         styleManager.graphStyling(simpleGraph, lightColor:accentColor, darkColor:darkAccentColor)
-        salesView.backgroundColor = darkAccentColor
+        salesView.backgroundColor = accentColor
         
         
         }
@@ -135,19 +135,23 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         case "Pending":
             containerView.hidden = false
             tabBar.selectedIndex = 1
-            darkAccentColor = UIColor.flatSkyBlueColorDark()
-            accentColor = UIColor.flatSkyBlueColor()
+            darkAccentColor = UIColor.flatMagentaColor()
+            accentColor = UIColor.flatMagentaColorDark()
+
+
         case "Fufilled":
             containerView.hidden = false
             tabBar.selectedIndex = 0
-            darkAccentColor = UIColor.flatWatermelonColorDark()
-            accentColor = UIColor.flatWatermelonColor()
-        default:
+            darkAccentColor = UIColor.flatSkyBlueColorDark()
+            accentColor = UIColor.flatSkyBlueColor()
+            
+                 default:
             containerView.hidden = true
+            
+            darkAccentColor = UIColor.flatMintColorDark()
+            accentColor = UIColor.flatMintColor()
 
-            darkAccentColor = UIColor.flatTealColorDark()
-            accentColor = UIColor.flatTealColor()
-        }
+                    }
     }
     
     func lineGraph(graph: BEMSimpleLineGraphView!, labelOnXAxisForIndex index: Int) -> String! {
