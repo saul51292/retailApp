@@ -14,26 +14,25 @@ class TableViewCell: MGSwipeTableCell {
     @IBOutlet var userName: UILabel!
     @IBOutlet var actionButton: UIButton!
     
+   
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         StyleManager().userPicStyling(userPic)
-
         actionButton.layer.cornerRadius = 4
-       
-        
     }
+    
     
     func changeActionButton(title:String,color:UIColor)
     {
         actionButton.setTitle(title, forState: .Normal)
         actionButton.titleLabel?.adjustsFontSizeToFitWidth = true
         actionButton.backgroundColor = color
-
-        
     }
     
+  
     
     
     override func setSelected(selected: Bool, animated: Bool) {

@@ -10,7 +10,7 @@ import UIKit
 
 class OrdersTV: GenericTableView {
 
-    var transportItems = ["Bus","Helicopter","Truck","Boat","Bicycle","Motorcycle","Plane","Train","Car","Scooter","Caravan"]
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +22,15 @@ class OrdersTV: GenericTableView {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+ 
+
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return transportItems.count
     }
+    
+    
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -42,11 +47,10 @@ class OrdersTV: GenericTableView {
         
         var imageName = UIImage(named: transportItems[indexPath.row])
         cell.userPic!.image = imageName
-        
-        
-        
-        
-        
+        cell.userPic!.tag = indexPath.row
+        cell.userPic!.userInteractionEnabled = true
+        cell.userPic!.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "handleTap:"))
+    
         //Testing
         if(indexPath.row % 2 == 0)
         {
@@ -62,7 +66,8 @@ class OrdersTV: GenericTableView {
         return cell
     }
     
-
+    
+  
     
     /*
     // MARK: - Navigation

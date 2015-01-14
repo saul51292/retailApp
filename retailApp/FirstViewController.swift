@@ -38,6 +38,7 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
     let data = [1,5,3,4,5,6,7,6,5,7,4,5,6,8,7,6,5]
     let data2 = ["1:00","1:15","1:30","1:45","2:00","2:15","2:30","2:45","3:00","3:15","3:30","3:45","4:00","4:15","4:30","4:45","5:00" ]
 
+
     
 
     override func viewDidLoad() {
@@ -93,14 +94,11 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
     }
     
     
-  
-    
-    
     @IBAction func bttnRightClicked(sender: AnyObject) {
         switchLabelAndButton(lblMiddle,formerButton:bttnMiddle,newLabel:lblRight,newButton:bttnRight)
-            
             viewWillAppear(true)
     }
+    
     
     
     func switchLabelAndButton(formerLabel:UILabel,formerButton:UIButton,newLabel:UILabel,newButton:UIButton){
@@ -135,8 +133,8 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         case "Pending":
             containerView.hidden = false
             tabBar.selectedIndex = 1
-            darkAccentColor = UIColor.flatMagentaColor()
-            accentColor = UIColor.flatMagentaColorDark()
+            darkAccentColor = UIColor.flatMagentaColorDark()
+            accentColor = UIColor.flatMagentaColor()
 
 
         case "Fufilled":

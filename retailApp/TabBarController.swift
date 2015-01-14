@@ -19,6 +19,7 @@ class TabBarController: UITabBarController,UITabBarDelegate {
         self.tabBar.hidden = true
     fufilledTV = self.childViewControllers[0] as FufilledTV
     ordersTV = self.childViewControllers[1] as OrdersTV
+
         // Do any additional setup after loading the view.
     }
 

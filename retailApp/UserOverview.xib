@@ -18,35 +18,16 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="256" height="265"/>
+            <rect key="frame" x="0.0" y="0.0" width="256" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pwu-3I-L40">
-                    <rect key="frame" x="68" y="21" width="120" height="120"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="150" id="6MX-Dg-c8h"/>
-                        <constraint firstAttribute="width" constant="120" id="9CO-wq-JEV"/>
-                        <constraint firstAttribute="height" constant="120" id="O4T-ao-2Wl"/>
-                        <constraint firstAttribute="width" constant="150" id="RqI-dT-uoO"/>
-                        <constraint firstAttribute="height" constant="120" id="e7k-FI-ZeI"/>
-                        <constraint firstAttribute="width" constant="120" id="oaK-zb-xiA"/>
-                    </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="6MX-Dg-c8h"/>
-                            <exclude reference="9CO-wq-JEV"/>
-                            <exclude reference="RqI-dT-uoO"/>
-                            <exclude reference="e7k-FI-ZeI"/>
-                        </mask>
-                    </variation>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mda-tT-nWk">
-                    <rect key="frame" x="8" y="161" width="240" height="33"/>
+                    <rect key="frame" x="8" y="147" width="240" height="33"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="33" id="wKp-0d-Dla"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="27"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -54,25 +35,55 @@
                         </mask>
                     </variation>
                 </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pwu-3I-L40">
+                    <rect key="frame" x="0.0" y="0.0" width="256" height="139"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="6MX-Dg-c8h"/>
+                        <constraint firstAttribute="width" constant="120" id="9CO-wq-JEV"/>
+                        <constraint firstAttribute="height" constant="120" id="O4T-ao-2Wl"/>
+                        <constraint firstAttribute="width" constant="150" id="RqI-dT-uoO"/>
+                        <constraint firstAttribute="height" constant="139" id="T4f-b9-44E"/>
+                        <constraint firstAttribute="height" constant="120" id="e7k-FI-ZeI"/>
+                        <constraint firstAttribute="width" constant="120" id="oaK-zb-xiA"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="6MX-Dg-c8h"/>
+                            <exclude reference="9CO-wq-JEV"/>
+                            <exclude reference="O4T-ao-2Wl"/>
+                            <exclude reference="RqI-dT-uoO"/>
+                            <exclude reference="e7k-FI-ZeI"/>
+                            <exclude reference="oaK-zb-xiA"/>
+                        </mask>
+                    </variation>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="pwu-3I-L40" secondAttribute="centerX" id="0ya-GX-z7y"/>
                 <constraint firstItem="mda-tT-nWk" firstAttribute="top" secondItem="pwu-3I-L40" secondAttribute="bottom" constant="8" id="2Co-Sz-z6b"/>
+                <constraint firstItem="mda-tT-nWk" firstAttribute="top" secondItem="pwu-3I-L40" secondAttribute="bottom" constant="8" symbolic="YES" id="3Bc-aF-k0n"/>
                 <constraint firstItem="mda-tT-nWk" firstAttribute="top" secondItem="pwu-3I-L40" secondAttribute="bottom" constant="24" id="71M-wk-CnT"/>
+                <constraint firstAttribute="centerY" secondItem="pwu-3I-L40" secondAttribute="centerY" constant="61.5" id="87r-UG-MKi"/>
                 <constraint firstAttribute="trailing" secondItem="mda-tT-nWk" secondAttribute="trailing" constant="10" id="8zy-st-qRf"/>
+                <constraint firstItem="mda-tT-nWk" firstAttribute="top" secondItem="pwu-3I-L40" secondAttribute="bottom" constant="40" id="9de-bA-ezC"/>
                 <constraint firstAttribute="centerX" secondItem="pwu-3I-L40" secondAttribute="centerX" id="AWp-Jw-15s"/>
                 <constraint firstAttribute="centerX" secondItem="pwu-3I-L40" secondAttribute="centerX" id="Bkv-1v-yfe"/>
                 <constraint firstAttribute="centerX" secondItem="pwu-3I-L40" secondAttribute="centerX" constant="1" id="DhQ-U9-LLI"/>
+                <constraint firstAttribute="centerX" secondItem="pwu-3I-L40" secondAttribute="centerX" id="L94-5c-ArB"/>
                 <constraint firstItem="pwu-3I-L40" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="59" id="LRH-mk-Aid"/>
                 <constraint firstItem="mda-tT-nWk" firstAttribute="top" secondItem="pwu-3I-L40" secondAttribute="bottom" constant="20" id="N9c-ip-CsY"/>
                 <constraint firstAttribute="trailing" secondItem="mda-tT-nWk" secondAttribute="trailing" constant="8" id="P9J-2U-Xs1"/>
+                <constraint firstAttribute="centerY" secondItem="pwu-3I-L40" secondAttribute="centerY" constant="26.5" id="QiI-qQ-7Eh"/>
                 <constraint firstItem="mda-tT-nWk" firstAttribute="top" secondItem="pwu-3I-L40" secondAttribute="bottom" constant="16" id="UUc-dq-pag"/>
                 <constraint firstItem="mda-tT-nWk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="VXk-aQ-BSC"/>
                 <constraint firstAttribute="centerY" secondItem="pwu-3I-L40" secondAttribute="centerY" constant="83" id="WXJ-cZ-kc2"/>
+                <constraint firstAttribute="centerY" secondItem="pwu-3I-L40" secondAttribute="centerY" constant="51.5" id="Xvd-hr-aOR"/>
                 <constraint firstItem="mda-tT-nWk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="YKm-s0-MIS"/>
+                <constraint firstAttribute="centerX" secondItem="pwu-3I-L40" secondAttribute="centerX" id="aVL-2x-xSx"/>
                 <constraint firstAttribute="centerY" secondItem="pwu-3I-L40" secondAttribute="centerY" constant="51.5" id="aXT-w1-Yll"/>
                 <constraint firstAttribute="trailing" secondItem="mda-tT-nWk" secondAttribute="trailing" constant="8" id="acC-5o-MAS"/>
+                <constraint firstItem="pwu-3I-L40" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="e9X-MX-0aF"/>
+                <constraint firstItem="pwu-3I-L40" firstAttribute="centerX" secondItem="mda-tT-nWk" secondAttribute="centerX" id="hBJ-Sk-Fni"/>
                 <constraint firstItem="mda-tT-nWk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="kvw-EZ-gKW"/>
                 <constraint firstItem="mda-tT-nWk" firstAttribute="top" secondItem="pwu-3I-L40" secondAttribute="bottom" constant="8" id="oCJ-gj-E37"/>
                 <constraint firstItem="mda-tT-nWk" firstAttribute="top" secondItem="pwu-3I-L40" secondAttribute="bottom" constant="20" id="pzf-ZY-XeH"/>
@@ -82,33 +93,47 @@
                 <constraint firstItem="pwu-3I-L40" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="wBH-0k-xb6"/>
                 <constraint firstAttribute="centerY" secondItem="pwu-3I-L40" secondAttribute="centerY" constant="54.5" id="xeV-a3-P8t"/>
                 <constraint firstItem="mda-tT-nWk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="yE9-YJ-gLd"/>
+                <constraint firstItem="mda-tT-nWk" firstAttribute="top" secondItem="pwu-3I-L40" secondAttribute="bottom" constant="13" id="yhl-uU-lBp"/>
+                <constraint firstItem="pwu-3I-L40" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zDG-sO-Cy8"/>
+                <constraint firstAttribute="centerX" secondItem="pwu-3I-L40" secondAttribute="centerX" id="zFh-ih-lOy"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="0ya-GX-z7y"/>
+                    <exclude reference="87r-UG-MKi"/>
                     <exclude reference="AWp-Jw-15s"/>
                     <exclude reference="Bkv-1v-yfe"/>
                     <exclude reference="DhQ-U9-LLI"/>
+                    <exclude reference="L94-5c-ArB"/>
                     <exclude reference="LRH-mk-Aid"/>
+                    <exclude reference="QiI-qQ-7Eh"/>
                     <exclude reference="WXJ-cZ-kc2"/>
+                    <exclude reference="Xvd-hr-aOR"/>
+                    <exclude reference="aVL-2x-xSx"/>
+                    <exclude reference="aXT-w1-Yll"/>
                     <exclude reference="qpV-a4-JJn"/>
                     <exclude reference="tYg-O6-Kei"/>
                     <exclude reference="wBH-0k-xb6"/>
                     <exclude reference="xeV-a3-P8t"/>
+                    <exclude reference="zFh-ih-lOy"/>
                     <exclude reference="2Co-Sz-z6b"/>
                     <exclude reference="71M-wk-CnT"/>
                     <exclude reference="8zy-st-qRf"/>
+                    <exclude reference="9de-bA-ezC"/>
                     <exclude reference="N9c-ip-CsY"/>
                     <exclude reference="P9J-2U-Xs1"/>
                     <exclude reference="UUc-dq-pag"/>
                     <exclude reference="VXk-aQ-BSC"/>
                     <exclude reference="kvw-EZ-gKW"/>
                     <exclude reference="oCJ-gj-E37"/>
+                    <exclude reference="pzf-ZY-XeH"/>
                     <exclude reference="rOk-3q-yUg"/>
                     <exclude reference="yE9-YJ-gLd"/>
+                    <exclude reference="yhl-uU-lBp"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="277" y="208.5"/>
+            <point key="canvasLocation" x="277" y="194"/>
         </view>
     </objects>
 </document>

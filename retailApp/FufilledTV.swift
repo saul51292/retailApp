@@ -10,8 +10,6 @@ import UIKit
 
 class FufilledTV: GenericTableView {
 
-    var transportItems = ["Bus","Helicopter","Truck","Boat","Bicycle","Motorcycle","Plane","Train","Car","Scooter","Caravan"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,10 +24,6 @@ class FufilledTV: GenericTableView {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
-    
-    
-       
-    
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -44,13 +38,18 @@ class FufilledTV: GenericTableView {
         
         var imageName = UIImage(named: transportItems[indexPath.row])
         cell.userPic!.image = imageName
-        
+        cell.userPic!.tag = indexPath.row
+        cell.userPic!.userInteractionEnabled = true
+        cell.userPic!.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "handleTap:"))
+
         cell.changeActionButton("Fufilled", color: UIColor.flatSkyBlueColor())
         
         return cell
     }
     
 
+    
+    
     /*
     // MARK: - Navigation
 
