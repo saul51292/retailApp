@@ -33,15 +33,17 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
     
     var buttonRightClicked = false
     var buttonLeftClicked = false
+    var tabBar : TabBarController!
     
-    
-     let data = [1,5,3,4,5,6,7,6,5,7,4,5,6,8,7,6,5]
+    let data = [1,5,3,4,5,6,7,6,5,7,4,5,6,8,7,6,5]
     let data2 = ["1:00","1:15","1:30","1:45","2:00","2:15","2:30","2:45","3:00","3:15","3:30","3:45","4:00","4:15","4:30","4:45","5:00" ]
 
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       tabBar = self.childViewControllers[0] as TabBarController
+        
         // Do any additional setup after loading the view, typically from a nib.
         containerView.hidden = true
         animateButtonAndLabel(bttnMiddle,label:lblMiddle,transition:kCATransitionFromBottom)
@@ -59,7 +61,8 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-      
+        sendColor()
+        tabBar.reloadTable()
         styleManager.navBarStyling(self, lightColor:accentColor, emptyImage:tabBarBack!)
         styleManager.tabBarStyling(self, emptyImage:tabBarBack!,lightColor:accentColor)
         styleManager.graphStyling(simpleGraph, lightColor:accentColor, darkColor:darkAccentColor)
@@ -74,7 +77,12 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         viewWillAppear(true)
     }
     
+    func sendColor(){
+        tabBar.accentColor = accentColor
+        tabBar.darkAccentColor = darkAccentColor
+    }
     
+      
     func animateNumber(label:UILabel, transition:NSString!){
         var animation = CATransition()
         animation.duration = 0.5
@@ -85,10 +93,10 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
     }
     
     
+  
     
     
     @IBAction func bttnRightClicked(sender: AnyObject) {
-    
         switchLabelAndButton(lblMiddle,formerButton:bttnMiddle,newLabel:lblRight,newButton:bttnRight)
             
             viewWillAppear(true)
@@ -126,11 +134,12 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
             
         case "Pending":
             containerView.hidden = false
+            tabBar.selectedIndex = 1
             darkAccentColor = UIColor.flatSkyBlueColorDark()
             accentColor = UIColor.flatSkyBlueColor()
         case "Fufilled":
             containerView.hidden = false
-
+            tabBar.selectedIndex = 0
             darkAccentColor = UIColor.flatWatermelonColorDark()
             accentColor = UIColor.flatWatermelonColor()
         default:

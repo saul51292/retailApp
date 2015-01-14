@@ -18,3 +18,9 @@
 #define COCOAPODS_VERSION_MINOR_ChameleonFramework 1
 #define COCOAPODS_VERSION_PATCH_ChameleonFramework 1
 
+// MGSwipeTableCell
+#define COCOAPODS_POD_AVAILABLE_MGSwipeTableCell
+#define COCOAPODS_VERSION_MAJOR_MGSwipeTableCell 1
+#define COCOAPODS_VERSION_MINOR_MGSwipeTableCell 3
+#define COCOAPODS_VERSION_PATCH_MGSwipeTableCell 5
+

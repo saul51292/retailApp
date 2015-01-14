@@ -34,13 +34,14 @@ class GenericTableView: UITableViewController {
     
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return transportItems.count
+        return 6
     }
     
      override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        
         var cell = tableView.dequeueReusableCellWithIdentifier("transportCell") as TableViewCell
-        cell.backgroundColor = UIColor.clearColor()
+        cell.backgroundColor = UIColor.flatWhiteColor()
         
         cell.userName.text = transportItems[indexPath.row]
         cell.timePurchase.text = time[indexPath.row]
@@ -51,22 +52,43 @@ class GenericTableView: UITableViewController {
             cell.changeActionButton("Processing", color: UIColor.flatSkyBlueColorDark())
         }
         
-        if(indexPath.row % 3 == 0)
+        else if(indexPath.row % 3 == 0)
         {
             cell.changeActionButton("Cancelled", color: UIColor.flatRedColorDark())
         }
         
+        cell.timePurchase.textColor = darkAccentColor
+        cell.userName.textColor = darkAccentColor
         
+        cell.leftButtons = [MGSwipeButton(title: "test", backgroundColor: UIColor.flatWatermelonColorDark())]
+        cell.leftSwipeSettings.transition = MGSwipeTransition.TransitionDrag
         var imageName = UIImage(named: transportItems[indexPath.row])
         cell.userPic!.image = imageName
         cell.userPic!.clipsToBounds = true
-        
+        if(darkAccentColor != nil){
+        cell.userPic!.layer.borderColor = darkAccentColor!.CGColor!
+        }
         
         return cell
     }
     
     
+    /*
     
+    //configure left buttons
+    cell.leftButtons = @[[MGSwipeButton buttonWithTitle:@"" icon:[UIImage imageNamed:@"check.png"] backgroundColor:[UIColor greenColor]],
+    [MGSwipeButton buttonWithTitle:@"" icon:[UIImage imageNamed:@"fav.png"] backgroundColor:[UIColor blueColor]]];
+    cell.leftSwipeSettings.transition = MGSwipeTransition3D;
+    
+    //configure right buttons
+    cell.rightButtons = @[[MGSwipeButton buttonWithTitle:@"Delete" backgroundColor:[UIColor redColor]],
+    [MGSwipeButton buttonWithTitle:@"More" backgroundColor:[UIColor lightGrayColor]]];
+    cell.rightSwipeSettings.transition = MGSwipeTransition3D;
+    return cell;
+    }
+    
+    
+    */
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 70

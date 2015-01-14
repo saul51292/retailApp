@@ -10,6 +10,7 @@ link_with 'retailApp', 'retailAppTests'
 def import_pods
   pod 'ChameleonFramework'
   pod 'BEMSimpleLineGraph'
+  pod 'MGSwipeTableCell'
 end
 
 import_pods

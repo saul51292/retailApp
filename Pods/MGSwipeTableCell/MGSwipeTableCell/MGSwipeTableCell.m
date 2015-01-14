@@ -701,10 +701,10 @@ static NSMutableSet * singleSwipePerTable;
     else if (self.contentView.backgroundColor && ![self.contentView.backgroundColor isEqual:[UIColor clearColor]]) {
         return self.contentView.backgroundColor;
     }
-    else if (self.backgroundColor) {
+    else if (self.backgroundColor && ![self.backgroundColor isEqual:[UIColor clearColor]]) {
         return self.backgroundColor;
     }
-    return [UIColor clearColor];
+    return [UIColor whiteColor];
 }
 
 -(UITableView *) parentTable
@@ -821,29 +821,6 @@ static NSMutableSet * singleSwipePerTable;
     }
 }
 
--(void) expandSwipe: (MGSwipeDirection) direction animated: (BOOL) animated
-{
-    CGFloat s = direction == MGSwipeDirectionLeftToRight ? 1.0 : -1.0;
-    MGSwipeExpansionSettings* expSetting = direction == MGSwipeDirectionLeftToRight ? _leftExpansion : _rightExpansion;
-    
-    // only perform animation if there's no pending expansion animation and requested direction has fillOnTrigger enabled
-    if(!_activeExpansion && expSetting.fillOnTrigger) {
-        [self createSwipeViewIfNeeded];
-        _allowSwipeLeftToRight = _leftButtons.count > 0;
-        _allowSwipeRightToLeft = _rightButtons.count > 0;
-        UIView * buttonsView = direction == MGSwipeDirectionLeftToRight ? _leftView : _rightView;
-        
-        if (buttonsView) {
-            __weak typeof(_activeExpansion) w_expantionView = direction == MGSwipeDirectionLeftToRight ? _leftView : _rightView;
-            __weak typeof(self) weakself = self;
-            [self setSwipeOffset:buttonsView.bounds.size.width * s * expSetting.threshold * 2 animated:animated completion:^{
-                [w_expantionView endExpansioAnimated:YES];
-                [weakself setSwipeOffset:0 animated:NO completion:nil];
-            }];
-        }
-    }
-}
-
 -(void) animationTick: (CADisplayLink *) timer
 {
     if (!_animationData.start) {
@@ -906,13 +883,12 @@ static NSMutableSet * singleSwipePerTable;
         [self createSwipeViewIfNeeded];
         _panStartPoint = current;
         _panStartOffset = _swipeOffset;
-        [singleSwipePerTable addObject:[NSValue valueWithNonretainedObject:[self parentTable]]];
     }
     else if (gesture.state == UIGestureRecognizerStateChanged) {
         CGFloat offset = _panStartOffset + current.x - _panStartPoint.x;
         [self updateSwipe:offset];
     }
-    else {
+    else if (gesture.state == UIGestureRecognizerStateEnded) {
         MGSwipeButtonsView * expansion = _activeExpansion;
         if (expansion) {
             UIView * expandedButton = [expansion getExpandedButton];
@@ -978,7 +954,11 @@ static NSMutableSet * singleSwipePerTable;
             return NO;
         }
         
-        return (_allowSwipeLeftToRight && translation.x > 0) || (_allowSwipeRightToLeft && translation.x < 0);
+        BOOL result =  (_allowSwipeLeftToRight && translation.x > 0) || (_allowSwipeRightToLeft && translation.x < 0);
+        if (result) {
+            [singleSwipePerTable addObject:key];
+        }
+        return result;
     }
     else if (gestureRecognizer == _tapRecognizer) {
         CGPoint point = [_tapRecognizer locationInView:_swipeView];

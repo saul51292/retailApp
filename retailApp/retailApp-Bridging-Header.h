@@ -3,6 +3,7 @@
 //
 
 
-#import "BEMSimpleLineGraphView.h"
-#import "Chameleon.h"
-#import "MGSwipeButton.h"
+#import <BEMSimpleLineGraph/BEMSimpleLineGraphView.h>
+#import <ChameleonFramework/Chameleon.h>
+#import <MGSwipeTableCell/MGSwipeButton.h>
+#import <MGSwipeTableCell/MGSwipeTableCell.h>

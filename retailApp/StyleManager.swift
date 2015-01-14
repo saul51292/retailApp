@@ -55,9 +55,8 @@ class StyleManager: NSObject {
     
    
     
-    func userPicStyling(image:UIImageView,lightColor:UIColor){
+    func userPicStyling(image:UIImageView!){
         image.layer.cornerRadius = 25
-        image.layer.borderColor = lightColor.CGColor
         image.layer.borderWidth = 2
     }
     

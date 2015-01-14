@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class TableViewCell: MGSwipeTableCell {
     @IBOutlet var userPic: UIImageView!
     @IBOutlet var timePurchase: UILabel!
     @IBOutlet var userName: UILabel!
@@ -17,9 +17,8 @@ class TableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        StyleManager().userPicStyling(userPic,lightColor:UIColor.flatSkyBlueColorDark())
-        timePurchase.textColor = UIColor.flatSkyBlueColorDark()
-        userName.textColor = UIColor.flatSkyBlueColorDark()
+        StyleManager().userPicStyling(userPic)
+
         actionButton.layer.cornerRadius = 4
        
         
