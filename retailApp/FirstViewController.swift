@@ -23,7 +23,6 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
     @IBOutlet var lblLeft: UILabel!
     @IBOutlet var lblRight: UILabel!
     
-    
     var screenSize = UIScreen.mainScreen().bounds
     var tabBarBack = UIImage (named: "empty.png")
     let styleManager = StyleManager()
@@ -35,15 +34,13 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
     var buttonLeftClicked = false
     var tabBar : TabBarController!
     
-    let data = [1,5,3,4,5,6,7,6,5,7,4,5,6,8,7,6,5]
-    let data2 = ["1:00","1:15","1:30","1:45","2:00","2:15","2:30","2:45","3:00","3:15","3:30","3:45","4:00","4:15","4:30","4:45","5:00" ]
-
-
+    let data = [1, 5, 3, 4, 5, 6, 7, 6, 5, 7, 4, 5, 6, 8, 7, 6, 5]
+    let data2 = ["1:00", "1:15", "1:30", "1:45", "2:00", "2:15", "2:30", "2:45", "3:00", "3:15", "3:30", "3:45", "4:00", "4:15", "4:30", "4:45", "5:00" ]
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       tabBar = self.childViewControllers[0] as TabBarController
+        tabBar = self.childViewControllers[0] as TabBarController
         
         // Do any additional setup after loading the view, typically from a nib.
         containerView.hidden = true
@@ -51,15 +48,13 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         animateButtonAndLabel(bttnRight,label:lblRight,transition:kCATransitionFromRight)
         animateButtonAndLabel(bttnLeft,label:lblLeft,transition:kCATransitionFromLeft)
         styleManager.addGraph(simpleGraph)
-       
-
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         sendColor()
@@ -68,13 +63,11 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         styleManager.tabBarStyling(self, emptyImage:tabBarBack!,lightColor:accentColor)
         styleManager.graphStyling(simpleGraph, lightColor:accentColor, darkColor:darkAccentColor)
         salesView.backgroundColor = accentColor
-        
-        
-        }
- 
+    }
+    
     @IBAction func bttnLeftClicked(sender: AnyObject) {
-             switchLabelAndButton(lblMiddle,formerButton:bttnMiddle,newLabel:lblLeft,newButton:bttnLeft)
-
+        switchLabelAndButton(lblMiddle,formerButton:bttnMiddle,newLabel:lblLeft,newButton:bttnLeft)
+        
         viewWillAppear(true)
     }
     
@@ -83,9 +76,9 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         tabBar.darkAccentColor = darkAccentColor
     }
     
-      
+    
     func animateNumber(label:UILabel, transition:NSString!){
-        var animation = CATransition()
+        let animation = CATransition()
         animation.duration = 0.5
         animation.type = kCATransitionMoveIn;
         animation.subtype = transition //You can change this to kCATransitionFromBottom, kCATransitionFromLeft, or kCATransitionFromRight
@@ -96,10 +89,8 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
     
     @IBAction func bttnRightClicked(sender: AnyObject) {
         switchLabelAndButton(lblMiddle,formerButton:bttnMiddle,newLabel:lblRight,newButton:bttnRight)
-            viewWillAppear(true)
+        viewWillAppear(true)
     }
-    
-    
     
     func switchLabelAndButton(formerLabel:UILabel,formerButton:UIButton,newLabel:UILabel,newButton:UIButton){
         var oldLabel = formerLabel.text
@@ -112,60 +103,48 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         animateButtonAndLabel(newButton,label:newLabel,transition:kCATransitionFromBottom)
         
         stylingColor(formerLabel.text!)
-        
-        
     }
     
-    func animateButtonAndLabel(button:UIButton,label:UILabel,transition:NSString)
-    {
+    func animateButtonAndLabel(button:UIButton,label:UILabel,transition:NSString) {
         animateNumber(button.titleLabel!, transition: transition)
         animateNumber(label, transition: transition)
-
     }
     
     
-    func stylingColor(formerLabel:String)
-    {
+    func stylingColor(formerLabel:String) {
         let labelStyling = formerLabel
         
         switch labelStyling {
-            
         case "Pending":
             containerView.hidden = false
             tabBar.selectedIndex = 1
             darkAccentColor = UIColor.flatMagentaColorDark()
             accentColor = UIColor.flatMagentaColor()
-
-
         case "Fufilled":
             containerView.hidden = false
             tabBar.selectedIndex = 0
             darkAccentColor = UIColor.flatSkyBlueColorDark()
             accentColor = UIColor.flatSkyBlueColor()
-            
-                 default:
+        default:
             containerView.hidden = true
-            
             darkAccentColor = UIColor.flatMintColorDark()
             accentColor = UIColor.flatMintColor()
-
-                    }
+        }
     }
     
     func lineGraph(graph: BEMSimpleLineGraphView!, labelOnXAxisForIndex index: Int) -> String! {
-        if ((index % 2) == 1){
+        if (index % 2) == 1 {
             return data2[index]
         }
         return ""
     }
     
-     func numberOfGapsBetweenLabelsOnLineGraph(graph: BEMSimpleLineGraphView!) -> Int {
+    func numberOfGapsBetweenLabelsOnLineGraph(graph: BEMSimpleLineGraphView!) -> Int {
         return 1
     }
     
     
     func lineGraph(graph: BEMSimpleLineGraphView!, valueForPointAtIndex index: Int) -> CGFloat {
-       
         return CGFloat(data[index])
     }
     
