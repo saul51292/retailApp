@@ -16,36 +16,27 @@ class UserOverview: UIView {
     @IBOutlet var userPicture: UIImageView!
     
     override init(frame: CGRect) {
-        // 1. setup any properties here
-
-        // 2. call super.init(frame:)
         super.init(frame: frame)
-        
-        // 3. Setup view from .xib file
         xibSetup()
     }
     
     required init(coder aDecoder: NSCoder) {
-        // 1. setup any properties here
-        
-        // 2. call super.init(coder:)
         super.init(coder: aDecoder)
-        
-        // 3. Setup view from .xib file
         xibSetup()
     }
     
     func xibSetup() {
         
         contentView = loadViewFromNib()
-        // use bounds not frame or it'll be offset
         contentView.frame = bounds
-        
-        // Make the view stretch with containing view
-        contentView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
-        
-        // Adding custom subview on top of our view (over any custom drawing > see note below)
         addSubview(contentView)
+    }
+    
+    func styleUserOverview(darkColor : UIColor){
+        userPicture.layer.cornerRadius = 60
+        userPicture.layer.borderWidth = 2
+        userPicture.layer.borderColor = darkColor.CGColor
+        userPicture.clipsToBounds = true
     }
     
     func loadViewFromNib() -> UIView {

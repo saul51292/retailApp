@@ -45,10 +45,11 @@ class GenericTableView: UITableViewController {
         var cell = tableView.cellForRowAtIndexPath(indexPath) as TableViewCell
         
         showUser.center = tableView.center
-       
         showUser.frame = CGRectOffset(showUser.frame, 0, -100)
         showUser.userPicture.image = cell.userPic.image
         showUser.userName.text = cell.userName.text
+        showUser.styleUserOverview(darkAccentColor)
+        
         self.tableView.addSubview(showUser)
         
         
