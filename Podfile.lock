@@ -13,4 +13,4 @@ SPEC CHECKSUMS:
   ChameleonFramework: c60096686e3771f5d78f26cfbfd08955a8a88cbd
   MGSwipeTableCell: fe0d8896b57db2498d81bccf18a8ff98c72539aa
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.34.4
