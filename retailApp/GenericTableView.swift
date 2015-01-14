@@ -38,6 +38,7 @@ class GenericTableView: UITableViewController {
         println(showUser.userName.text)
         showUser.center = self.view.center
         showUser.frame = CGRectOffset(showUser.frame, 0, -40)
+        // TODO: Why is this not done in UserOverView?
         showUser.styleShowUser(self.view)
     }
     

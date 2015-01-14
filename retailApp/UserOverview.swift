@@ -29,23 +29,20 @@ class UserOverview: UIView {
         println("touches began")
 
         var touch = touches.anyObject() as UITouch
-        if(!touch.view .isKindOfClass(UserOverview))
-        {
+        if !touch.view .isKindOfClass(UserOverview) {
             self.removeFromSuperview()
         }
     }
     
 
     func xibSetup() {
-        
         contentView = loadViewFromNib()
         contentView.frame = bounds
         addSubview(contentView)
     }
     
     
-    func styleShowUser(view:UIView)
-    {
+    func styleShowUser(view:UIView) {
         self.styleUserPicture()
         self.styleUserContentView()
         view.addSubview(self)
@@ -53,15 +50,13 @@ class UserOverview: UIView {
     }
     
 
-    func styleUserContentView(){
-        
+    func styleUserContentView() {
         self.backgroundColor = UIColor.flatGrayColor().colorWithAlphaComponent(0.9)
         self.layer.cornerRadius = 6
     }
     
     
     func styleUserPicture(){
-        
         userPicture.layer.cornerRadius = 6
         userPicture.bounds = contentView.bounds
         userPicture.layer.borderColor = UIColor.whiteColor().CGColor
