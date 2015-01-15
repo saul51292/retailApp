@@ -8,10 +8,11 @@
 
 import UIKit
 
-class GenericTableView: UITableViewController {
+class GenericTableView: UITableViewController,MGSwipeTableCellDelegate {
+    
     let styleManager = StyleManager()
-    let transportItems = ["Bus", "Helicopter", "Truck", "Boat", "Bicycle", "Motorcycle", "Plane", "Train", "Car", "Scooter", "Caravan"]
-    let time = ["1:00","1:15","1:30","1:45","2:00","2:15","2:30","2:45","3:00","3:15","3:15"]
+    var transportItems = ["Bus", "Helicopter", "Truck", "Boat", "Bicycle", "Motorcycle", "Plane", "Train", "Car", "Scooter", "Caravan"]
+    var time = ["1:00","1:15","1:30","1:45","2:00","2:15","2:30","2:45","3:00","3:15","3:15"]
     let showUser = UserOverview(frame: CGRectMake(0, 40, 256, 200))
     
     var accentColor : UIColor!
@@ -70,6 +71,45 @@ class GenericTableView: UITableViewController {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as TableViewCell
         cell.actionButton.backgroundColor = darkAccentColor
     }
+    
+   
+    
+    func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
+        println("Active")
+        if (direction == MGSwipeDirection.RightToLeft) {
+            //delete button
+            var indexPath = tableView.indexPathForCell(cell)
+            self.transportItems.removeAtIndex(indexPath!.row)
+            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Left)
+        }
+        
+        return true
+    }
+    
+
+    func swipeTableCell(cell: MGSwipeTableCell!, swipeButtonsForDirection direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [AnyObject]! {
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier("transportCell") as TableViewCell
+        
+        swipeSettings.transition = MGSwipeTransition.TransitionDrag
+        
+        if (direction == MGSwipeDirection.LeftToRight)
+        {
+            expansionSettings.buttonIndex = 0
+            expansionSettings.fillOnTrigger = true
+            return cell.createLeftButtons()
+        }
+            
+        else{
+            expansionSettings.buttonIndex = 0
+            expansionSettings.fillOnTrigger = true
+            return cell.createLeftButtons()
+
+        }
+    }
+
+       
+    
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as TableViewCell

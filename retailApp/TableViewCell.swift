@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewCell: MGSwipeTableCell {
+class TableViewCell: MGSwipeTableCell,MGSwipeTableCellDelegate {
     @IBOutlet var userPic: UIImageView!
     @IBOutlet var timePurchase: UILabel!
     @IBOutlet var userName: UILabel!
@@ -22,6 +22,17 @@ class TableViewCell: MGSwipeTableCell {
         actionButton.layer.cornerRadius = 4
     }
     
+    
+   
+    func createLeftButtons()->[AnyObject]
+    {
+        
+        self.leftButtons = [MGSwipeButton(title: "left", backgroundColor: UIColor.flatWatermelonColorDark()),MGSwipeButton(title: "left2", backgroundColor: UIColor.flatTealColorDark())]
+
+        return self.leftButtons
+    }
+
+     
     
     func changeActionButton(title:String,color:UIColor) {
         actionButton.setTitle(title, forState: .Normal)

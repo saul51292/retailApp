@@ -37,7 +37,6 @@ class ProgressBar: UIView {
     }
     
     func xibSetup() {
-        
         contentView = loadViewFromNib()
         contentView.frame = bounds
         addSubview(contentView)

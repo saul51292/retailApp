@@ -35,15 +35,32 @@ class OrdersTV: GenericTableView {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell = tableView.dequeueReusableCellWithIdentifier("transportCell") as TableViewCell
+   
+
         styleManager.tableViewCellStyling(cell,darkColor:darkAccentColor)
         
         cell.userName.text = transportItems[indexPath.row]
         cell.timePurchase.text = time[indexPath.row]
         
+        //MGSwipe
         
-        cell.leftButtons = [MGSwipeButton(title: "test", backgroundColor: UIColor.flatWatermelonColorDark())]
+        
+        /* NON-DELEGATE CREATION
+        
+        
+        //LeftButtons
+        cell.leftExpansion.buttonIndex = 0
+        cell.leftExpansion.fillOnTrigger = true
         cell.leftSwipeSettings.transition = MGSwipeTransition.TransitionDrag
+        cell.leftButtons = [MGSwipeButton(title: "left", backgroundColor: UIColor.flatSkyBlueColor())]
         
+        
+        //RightButtons
+        cell.rightSwipeSettings.transition = MGSwipeTransition.TransitionDrag
+        cell.rightButtons = [MGSwipeButton(title: "right", backgroundColor: UIColor.flatSkyBlueColor())]
+        cell.rightExpansion.buttonIndex = 0
+        cell.rightExpansion.fillOnTrigger = true
+        */
         
         var imageName = UIImage(named: transportItems[indexPath.row])
         cell.userPic!.image = imageName

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimpleLineGraphDelegate {
+class FirstViewController: UIViewController {
     
     @IBOutlet var salesView: UIView!
     
@@ -33,11 +33,9 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
     var buttonLeftClicked = false
     var tabBar : TabBarController!
     
-    let data = [1,5,3,4,5,6,7,6,5,7,4,5,6,8,7,6,5]
-    let data2 = ["1:00","1:15","1:30","1:45","2:00","2:15","2:30","2:45","3:00","3:15","3:30","3:45","4:00","4:15","4:30","4:45","5:00" ]
-
     @IBOutlet var progressView: ProgressBar!
 
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,11 +60,11 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         super.viewWillAppear(animated)
         
         //Progress View Setup
-        progressView.timeProgressBar(30,avgTimeToSwipe:14,progressBar:progressView.topProgressBar)
-        progressView.maleVsFemaleProgressBar(0.70,percentFemale:0.30,progressBar:progressView.middleProgressBar)
+        progressView.timeProgressBar(30,avgTimeToSwipe:27,progressBar:progressView.topProgressBar)
+        progressView.maleVsFemaleProgressBar(0.30,percentFemale:0.70,progressBar:progressView.middleProgressBar)
         progressView.seenVsPurchased(1000,numberPurchased:300,progressBar:progressView.bottomProgressBar)
         
-        //progressViewButtons
+        
         progressView.styleStatView(progressView.topLeftStat,darkColor:UIColor.flatSkyBlueColorDark(),topTitle:"4,332",bottomTitle:"Views")
         progressView.styleStatView(progressView.topRightStat,darkColor:darkAccentColor,topTitle:"125",bottomTitle:"Sales")
         progressView.styleStatView(progressView.bottomLeftStat,darkColor:UIColor.flatOrangeColorDark(),topTitle:"150",bottomTitle:"Shares")
@@ -79,11 +77,8 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         styleManager.navBarStyling(self, darkColor:darkAccentColor, emptyImage:tabBarBack!)
         styleManager.tabBarStyling(self, emptyImage:tabBarBack!,lightColor:accentColor)
         salesView.backgroundColor = accentColor
-
-        
-        
-        }
- 
+    }
+    
     @IBAction func bttnLeftClicked(sender: AnyObject) {
         switchLabelAndButton(lblMiddle,formerButton:bttnMiddle,newLabel:lblLeft,newButton:bttnLeft)
         
@@ -149,26 +144,6 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
             darkAccentColor = UIColor.flatMintColorDark()
             accentColor = UIColor.flatMintColor()
         }
-    }
-    
-    func lineGraph(graph: BEMSimpleLineGraphView!, labelOnXAxisForIndex index: Int) -> String! {
-        if (index % 2) == 1 {
-            return data2[index]
-        }
-        return ""
-    }
-    
-    func numberOfGapsBetweenLabelsOnLineGraph(graph: BEMSimpleLineGraphView!) -> Int {
-        return 1
-    }
-    
-    
-    func lineGraph(graph: BEMSimpleLineGraphView!, valueForPointAtIndex index: Int) -> CGFloat {
-        return CGFloat(data[index])
-    }
-    
-    func numberOfPointsInLineGraph(graph: BEMSimpleLineGraphView!) -> Int {
-        return data.count
     }
     
 }

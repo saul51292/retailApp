@@ -22,7 +22,7 @@ class FufilledTV: GenericTableView {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return transportItems.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -32,10 +32,7 @@ class FufilledTV: GenericTableView {
         
         cell.userName.text = transportItems[indexPath.row]
         cell.timePurchase.text = time[indexPath.row]
-        
-        cell.rightButtons = [MGSwipeButton(title: "Pending", backgroundColor: UIColor.flatMagentaColorDark())]
-        cell.rightSwipeSettings.transition = MGSwipeTransition.TransitionDrag
-        
+                
         var imageName = UIImage(named: transportItems[indexPath.row])
         cell.userPic!.image = imageName
         cell.userPic!.tag = indexPath.row

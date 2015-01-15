@@ -13,20 +13,6 @@ class StyleManager: NSObject {
     
     let backColor = UIColor.flatWhiteColor()
     
-    func graphStyling(simpleGraph:BEMSimpleLineGraphView, lightColor:UIColor, darkColor:UIColor) {
-        simpleGraph.colorLine = lightColor
-        simpleGraph.colorPoint = darkColor
-        simpleGraph.colorYaxisLabel = backColor
-        simpleGraph.reloadGraph()
-        simpleGraph.colorXaxisLabel = darkColor
-        simpleGraph.labelFont = UIFont(name: "Montserrat", size: 13)
-        simpleGraph.colorTop = backColor
-        simpleGraph.colorBottom = backColor
-        simpleGraph.backgroundColor = backColor
-        
-    }
-
-    
     func navBarStyling(vc:UIViewController, darkColor:UIColor, emptyImage:UIImage) {
         
         var nav = vc.navigationController?.navigationBar
@@ -73,17 +59,7 @@ class StyleManager: NSObject {
         vc.tabBarController?.tabBar.tintColor = lightColor
     }
 
-    func addGraph(simpleGraph:BEMSimpleLineGraphView)
-    {
-        
-        simpleGraph.enablePopUpReport = true
-        simpleGraph.enableYAxisLabel = true
-        simpleGraph.enableReferenceXAxisLines = true
-        simpleGraph.enableReferenceYAxisLines = true
-        simpleGraph.enableBezierCurve = true
-    }
-
-
+   
 
 
 }
