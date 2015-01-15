@@ -22,7 +22,6 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
     @IBOutlet var lblLeft: UILabel!
     @IBOutlet var lblRight: UILabel!
     
-    
     var screenSize = UIScreen.mainScreen().bounds
     var tabBarBack = UIImage (named: "empty.png")
     let styleManager = StyleManager()
@@ -40,7 +39,6 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
     @IBOutlet var progressView: ProgressBar!
 
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
        tabBar = self.childViewControllers[0] as TabBarController
@@ -59,7 +57,7 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -87,8 +85,8 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         }
  
     @IBAction func bttnLeftClicked(sender: AnyObject) {
-             switchLabelAndButton(lblMiddle,formerButton:bttnMiddle,newLabel:lblLeft,newButton:bttnLeft)
-
+        switchLabelAndButton(lblMiddle,formerButton:bttnMiddle,newLabel:lblLeft,newButton:bttnLeft)
+        
         viewWillAppear(true)
     }
     
@@ -97,9 +95,9 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         tabBar.darkAccentColor = darkAccentColor
     }
     
-      
+    
     func animateNumber(label:UILabel, transition:NSString!){
-        var animation = CATransition()
+        let animation = CATransition()
         animation.duration = 0.5
         animation.type = kCATransitionMoveIn;
         animation.subtype = transition //You can change this to kCATransitionFromBottom, kCATransitionFromLeft, or kCATransitionFromRight
@@ -110,10 +108,8 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
     
     @IBAction func bttnRightClicked(sender: AnyObject) {
         switchLabelAndButton(lblMiddle,formerButton:bttnMiddle,newLabel:lblRight,newButton:bttnRight)
-            viewWillAppear(true)
+        viewWillAppear(true)
     }
-    
-    
     
     func switchLabelAndButton(formerLabel:UILabel,formerButton:UIButton,newLabel:UILabel,newButton:UIButton){
         var oldLabel = formerLabel.text
@@ -126,60 +122,48 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
         animateButtonAndLabel(newButton,label:newLabel,transition:kCATransitionFromBottom)
         
         stylingColor(formerLabel.text!)
-        
-        
     }
     
-    func animateButtonAndLabel(button:UIButton,label:UILabel,transition:NSString)
-    {
+    func animateButtonAndLabel(button:UIButton,label:UILabel,transition:NSString) {
         animateNumber(button.titleLabel!, transition: transition)
         animateNumber(label, transition: transition)
-
     }
     
     
-    func stylingColor(formerLabel:String)
-    {
+    func stylingColor(formerLabel:String) {
         let labelStyling = formerLabel
         
         switch labelStyling {
-            
         case "Pending":
             containerView.hidden = false
             tabBar.selectedIndex = 1
             darkAccentColor = UIColor.flatMagentaColorDark()
             accentColor = UIColor.flatMagentaColor()
-
-
         case "Fufilled":
             containerView.hidden = false
             tabBar.selectedIndex = 0
             darkAccentColor = UIColor.flatSkyBlueColorDark()
             accentColor = UIColor.flatSkyBlueColor()
-            
-                 default:
+        default:
             containerView.hidden = true
-            
             darkAccentColor = UIColor.flatMintColorDark()
             accentColor = UIColor.flatMintColor()
-
-                    }
+        }
     }
     
     func lineGraph(graph: BEMSimpleLineGraphView!, labelOnXAxisForIndex index: Int) -> String! {
-        if ((index % 2) == 1){
+        if (index % 2) == 1 {
             return data2[index]
         }
         return ""
     }
     
-     func numberOfGapsBetweenLabelsOnLineGraph(graph: BEMSimpleLineGraphView!) -> Int {
+    func numberOfGapsBetweenLabelsOnLineGraph(graph: BEMSimpleLineGraphView!) -> Int {
         return 1
     }
     
     
     func lineGraph(graph: BEMSimpleLineGraphView!, valueForPointAtIndex index: Int) -> CGFloat {
-       
         return CGFloat(data[index])
     }
     

@@ -13,9 +13,7 @@ class TableViewCell: MGSwipeTableCell {
     @IBOutlet var timePurchase: UILabel!
     @IBOutlet var userName: UILabel!
     @IBOutlet var actionButton: UIButton!
-    
-   
-    
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,21 +23,15 @@ class TableViewCell: MGSwipeTableCell {
     }
     
     
-    func changeActionButton(title:String,color:UIColor)
-    {
+    func changeActionButton(title:String,color:UIColor) {
         actionButton.setTitle(title, forState: .Normal)
         actionButton.titleLabel?.adjustsFontSizeToFitWidth = true
         actionButton.backgroundColor = color
     }
     
   
-    
-    
     override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-        
+        super.setSelected(selected, animated: animated)      
     }
 
 }
