@@ -7,3 +7,4 @@
 #import <ChameleonFramework/Chameleon.h>
 #import <MGSwipeTableCell/MGSwipeButton.h>
 #import <MGSwipeTableCell/MGSwipeTableCell.h>
+#import <YLProgressBar/YLProgressBar.h>

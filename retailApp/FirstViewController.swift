@@ -10,7 +10,6 @@ import UIKit
 
 class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimpleLineGraphDelegate {
     
-    @IBOutlet var simpleGraph: BEMSimpleLineGraphView!
     @IBOutlet var salesView: UIView!
     
     @IBOutlet var containerView: UIView!
@@ -38,23 +37,24 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
     let data = [1,5,3,4,5,6,7,6,5,7,4,5,6,8,7,6,5]
     let data2 = ["1:00","1:15","1:30","1:45","2:00","2:15","2:30","2:45","3:00","3:15","3:30","3:45","4:00","4:15","4:30","4:45","5:00" ]
 
+    @IBOutlet var progressView: ProgressBar!
 
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
        tabBar = self.childViewControllers[0] as TabBarController
-        
         // Do any additional setup after loading the view, typically from a nib.
         containerView.hidden = true
         animateButtonAndLabel(bttnMiddle,label:lblMiddle,transition:kCATransitionFromBottom)
         animateButtonAndLabel(bttnRight,label:lblRight,transition:kCATransitionFromRight)
         animateButtonAndLabel(bttnLeft,label:lblLeft,transition:kCATransitionFromLeft)
-        styleManager.addGraph(simpleGraph)
        
 
     }
-
+    
+   
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -62,12 +62,26 @@ class FirstViewController: UIViewController,BEMSimpleLineGraphDataSource,BEMSimp
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        //Progress View Setup
+        progressView.timeProgressBar(30,avgTimeToSwipe:14,progressBar:progressView.topProgressBar)
+        progressView.maleVsFemaleProgressBar(0.70,percentFemale:0.30,progressBar:progressView.middleProgressBar)
+        progressView.seenVsPurchased(1000,numberPurchased:300,progressBar:progressView.bottomProgressBar)
+        
+        //progressViewButtons
+        progressView.styleStatView(progressView.topLeftStat,darkColor:UIColor.flatSkyBlueColorDark(),topTitle:"4,332",bottomTitle:"Views")
+        progressView.styleStatView(progressView.topRightStat,darkColor:darkAccentColor,topTitle:"125",bottomTitle:"Sales")
+        progressView.styleStatView(progressView.bottomLeftStat,darkColor:UIColor.flatOrangeColorDark(),topTitle:"150",bottomTitle:"Shares")
+        progressView.styleStatView(progressView.bottomRightStat,darkColor:UIColor.flatPurpleColor(),topTitle:"$32",bottomTitle:"Avg. Price")
+
+        
+
         sendColor()
         tabBar.reloadTable()
         styleManager.navBarStyling(self, darkColor:darkAccentColor, emptyImage:tabBarBack!)
         styleManager.tabBarStyling(self, emptyImage:tabBarBack!,lightColor:accentColor)
-        styleManager.graphStyling(simpleGraph, lightColor:accentColor, darkColor:darkAccentColor)
         salesView.backgroundColor = accentColor
+
         
         
         }

@@ -24,3 +24,9 @@
 #define COCOAPODS_VERSION_MINOR_MGSwipeTableCell 3
 #define COCOAPODS_VERSION_PATCH_MGSwipeTableCell 5
 
+// YLProgressBar
+#define COCOAPODS_POD_AVAILABLE_YLProgressBar
+#define COCOAPODS_VERSION_MAJOR_YLProgressBar 3
+#define COCOAPODS_VERSION_MINOR_YLProgressBar 5
+#define COCOAPODS_VERSION_PATCH_YLProgressBar 1
+

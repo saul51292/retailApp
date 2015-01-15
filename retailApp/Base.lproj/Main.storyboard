@@ -173,12 +173,8 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rL3-ko-NsK" customClass="BEMSimpleLineGraphView">
-                                <rect key="frame" x="0.0" y="128" width="584" height="400"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="9u9-9U-8vu"/>
-                                    <outlet property="delegate" destination="9pv-A4-QxB" id="Q5L-Iz-7Gh"/>
-                                </connections>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rL3-ko-NsK" customClass="ProgressBar" customModule="retailApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="128" width="600" height="408"/>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LoQ-KF-VU3">
                                 <rect key="frame" x="0.0" y="128" width="600" height="408"/>
@@ -193,28 +189,36 @@
                             <constraint firstItem="rL3-ko-NsK" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="6bd-km-L5D"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rL3-ko-NsK" secondAttribute="trailing" constant="-7" id="7Qy-AX-xfF"/>
                             <constraint firstItem="rL3-ko-NsK" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="DTE-7O-gkp"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="rL3-ko-NsK" secondAttribute="bottom" id="Kee-ub-c9j"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LoQ-KF-VU3" secondAttribute="trailing" constant="-16" id="MWj-hp-QKE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rL3-ko-NsK" secondAttribute="trailing" constant="-16" id="Q0H-iY-kmg"/>
                             <constraint firstItem="rL3-ko-NsK" firstAttribute="trailing" secondItem="pkk-1U-oDh" secondAttribute="trailing" id="Uer-6I-fFw"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="pkk-1U-oDh" secondAttribute="bottom" constant="359" id="VLF-f2-JIf"/>
+                            <constraint firstItem="rL3-ko-NsK" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="128" id="X1P-X2-gz4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rL3-ko-NsK" secondAttribute="trailing" constant="-6" id="X7a-k1-fBg"/>
                             <constraint firstItem="LoQ-KF-VU3" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="128" id="XBl-ap-qev"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="rL3-ko-NsK" secondAttribute="bottom" constant="8" symbolic="YES" id="agp-br-qtX"/>
                             <constraint firstAttribute="trailing" secondItem="pkk-1U-oDh" secondAttribute="trailing" id="fm0-7r-I29"/>
                             <constraint firstItem="LoQ-KF-VU3" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="hUk-zq-TcD"/>
+                            <constraint firstItem="rL3-ko-NsK" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="rJR-yy-UQJ"/>
                             <constraint firstItem="pkk-1U-oDh" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="tVw-Y7-45V"/>
                             <constraint firstItem="rL3-ko-NsK" firstAttribute="leading" secondItem="pkk-1U-oDh" secondAttribute="leading" id="tvH-1I-9j4"/>
                             <constraint firstItem="pkk-1U-oDh" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="u55-mq-akS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rL3-ko-NsK" secondAttribute="trailing" constant="-16" id="ueV-rj-ffC"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="LoQ-KF-VU3" secondAttribute="bottom" id="vIM-uT-ZRs"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="1p6-ey-8v9"/>
+                                <exclude reference="6bd-km-L5D"/>
                                 <exclude reference="7Qy-AX-xfF"/>
                                 <exclude reference="DTE-7O-gkp"/>
                                 <exclude reference="Q0H-iY-kmg"/>
                                 <exclude reference="Uer-6I-fFw"/>
                                 <exclude reference="X7a-k1-fBg"/>
+                                <exclude reference="tvH-1I-9j4"/>
                                 <exclude reference="VLF-f2-JIf"/>
+                                <exclude reference="agp-br-qtX"/>
                             </mask>
                         </variation>
                     </view>
@@ -229,8 +233,8 @@
                         <outlet property="lblLeft" destination="5WL-Vn-v5d" id="e3m-so-240"/>
                         <outlet property="lblMiddle" destination="CCo-08-7uF" id="DNy-Y6-oMP"/>
                         <outlet property="lblRight" destination="CCE-a0-egj" id="aBg-yR-mGX"/>
+                        <outlet property="progressView" destination="rL3-ko-NsK" id="UtE-Lz-y95"/>
                         <outlet property="salesView" destination="pkk-1U-oDh" id="Xgv-lH-scW"/>
-                        <outlet property="simpleGraph" destination="rL3-ko-NsK" id="wtl-kW-pe5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

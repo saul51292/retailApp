@@ -35,6 +35,8 @@
 		C71DE89F1A663DBF00CE2E75 /* UserOverview.xib in Resources */ = {isa = PBXBuildFile; fileRef = C71DE89E1A663DBF00CE2E75 /* UserOverview.xib */; };
 		C736B88A1A64842200CBC1C9 /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C736B8891A64842200CBC1C9 /* StyleManager.swift */; };
 		C742438B1A64FB9B00EC66F9 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742438A1A64FB9B00EC66F9 /* TableViewCell.swift */; };
+		C7B97D071A672427000F7BA3 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7B97D061A672427000F7BA3 /* ProgressView.xib */; };
+		C7B97D091A67253C000F7BA3 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B97D081A67253C000F7BA3 /* ProgressBar.swift */; };
 		E4215F28CEF7F5FA8BE81B47 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E93020476827AE31D601D13 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +86,8 @@
 		C736B8891A64842200CBC1C9 /* StyleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
 		C742438A1A64FB9B00EC66F9 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C74E512B65E644F3E84DE0CE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C7B97D061A672427000F7BA3 /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
+		C7B97D081A67253C000F7BA3 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,8 @@
 				C706D0131A63A08400E06116 /* LaunchScreen.xib */,
 				C706D0061A63A08400E06116 /* Supporting Files */,
 				C706D02C1A63AFDB00E06116 /* retailApp-Bridging-Header.h */,
+				C7B97D061A672427000F7BA3 /* ProgressView.xib */,
+				C7B97D081A67253C000F7BA3 /* ProgressBar.swift */,
 				C71DE89C1A663DB200CE2E75 /* UserOverview.swift */,
 				C71DE89E1A663DBF00CE2E75 /* UserOverview.xib */,
 			);
@@ -312,6 +318,7 @@
 				C7118B681A64E46D0079F42E /* Bus.png in Resources */,
 				C7118B691A64E46D0079F42E /* Helicopter.png in Resources */,
 				C7118B6F1A64E46D0079F42E /* Train.png in Resources */,
+				C7B97D071A672427000F7BA3 /* ProgressView.xib in Resources */,
 				C706D0381A63C78B00E06116 /* Montserrat-Regular.ttf in Resources */,
 				C706D0101A63A08400E06116 /* Main.storyboard in Resources */,
 				C7118B721A64E46D0079F42E /* Caravan.png in Resources */,
@@ -408,6 +415,7 @@
 				C70128461A65CF9B00101467 /* FufilledTV.swift in Sources */,
 				C706D0091A63A08400E06116 /* AppDelegate.swift in Sources */,
 				C706D00B1A63A08400E06116 /* FirstViewController.swift in Sources */,
+				C7B97D091A67253C000F7BA3 /* ProgressBar.swift in Sources */,
 				C736B88A1A64842200CBC1C9 /* StyleManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

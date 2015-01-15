@@ -11,6 +11,7 @@ def import_pods
   pod 'ChameleonFramework'
   pod 'BEMSimpleLineGraph'
   pod 'MGSwipeTableCell'
+  pod 'YLProgressBar'
 end
 
 import_pods
