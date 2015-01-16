@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabBarController: UITabBarController,UITabBarDelegate {
+class TabBarController: UITabBarController, UITabBarDelegate {
     var fufilledTV : FufilledTV!
     var ordersTV : OrdersTV!
     var darkAccentColor : UIColor!
@@ -27,26 +27,25 @@ class TabBarController: UITabBarController,UITabBarDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    // TODO: Can both tables be in superview?
     func reloadTable() {
         if ordersTV.view.superview != nil {
-            ordersTV.viewDidLoad()
-            ordersTV.tableView.reloadData()
-            ordersTV.darkAccentColor = darkAccentColor
-            ordersTV.accentColor = accentColor
+            reloadAndStyleTable(ordersTV)
             println("reloaded order")
-            
         }
         
         if fufilledTV.view.superview != nil {
-            fufilledTV.viewDidLoad()
-            fufilledTV.tableView.reloadData()
-            fufilledTV.darkAccentColor = darkAccentColor
-            fufilledTV.accentColor = accentColor
+            reloadAndStyleTable(fufilledTV)
             println("reloaded fufilled")
         }
     }
     
-    
+    private func reloadAndStyleTable(table: GenericTableView) {
+        table.viewDidLoad()
+        table.tableView.reloadData()
+        table.darkAccentColor = darkAccentColor
+        table.accentColor = accentColor
+    }
     /*
     // MARK: - Navigation
     

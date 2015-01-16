@@ -31,8 +31,6 @@ class UserOverview: UIView {
     @IBOutlet var productName: UILabel!
     @IBOutlet var variableStatus: UILabel!
 
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()
@@ -45,28 +43,19 @@ class UserOverview: UIView {
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         println("touches began")
-
-        var touch = touches.anyObject() as UITouch
+        let touch = touches.anyObject() as UITouch
         if !touch.view .isKindOfClass(UserOverview) {
             self.removeFromSuperview()
         }
     }
-    
 
     func xibSetup() {
         contentView = loadViewFromNib()
         contentView.frame = bounds
-
         addSubview(contentView)
     }
     
-    
-    
-    
-    
-    func colorUserOverview(color:UIColor)
-        
-    {
+    func colorUserOverview(color:UIColor) {
         styleUserPicture(color)
         lblFufilled.textColor = color
         lblPaidWith.textColor = color
@@ -77,11 +66,8 @@ class UserOverview: UIView {
         userName.textColor = color
         productName.textColor = color
         variableButtonView.backgroundColor = color
-        
     }
-    
-    
-    
+
     func styleUserPicture(color:UIColor){
         userPicture.layer.cornerRadius = 40
         userPicture.layer.borderColor = color.CGColor
@@ -97,7 +83,6 @@ class UserOverview: UIView {
         let view = nib.instantiateWithOwner(self, options: nil)[0] as UIView
         return view
     }
-
     
     /*
     // Only override drawRect: if you perform custom drawing.
