@@ -24,7 +24,7 @@ class GenericTableView: UITableViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        showUser.frame = self.view.frame
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
@@ -46,10 +46,10 @@ class GenericTableView: UITableViewController, UITableViewDelegate, UITableViewD
         showUser.userPicture.image = imageName
         showUser.userName.text = ordersItems[number!]
         println(showUser.userName.text)
-        showUser.center = self.view.center
-        showUser.frame = CGRectOffset(showUser.frame, 0, -40)
-        // TODO: Why is this not done in UserOverView?
-        showUser.styleShowUser(self.view)
+
+        
+        showUser.colorUserOverview(darkAccentColor)
+        self.view.addSubview(showUser)
     }
     
     func actionController(action:UIAlertAction,tableView:UITableView,indexPath:NSIndexPath) {

@@ -10,6 +10,7 @@ import UIKit
 
 class UserOverview: UIView {
 
+    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var contentView: UIView!
     @IBOutlet var variableButtonView: UIView!
     @IBOutlet var userView: UIView!
@@ -55,30 +56,36 @@ class UserOverview: UIView {
     func xibSetup() {
         contentView = loadViewFromNib()
         contentView.frame = bounds
-        self.contentView.layer.cornerRadius = 6
-        self.variableButtonView.layer.cornerRadius = 6
+
         addSubview(contentView)
     }
     
     
-    func styleShowUser(view:UIView) {
-        self.styleUserPicture()
-        self.styleUserContentView()
-        view.addSubview(self)
+    
+    
+    
+    func colorUserOverview(color:UIColor)
+        
+    {
+        styleUserPicture(color)
+        lblFufilled.textColor = color
+        lblPaidWith.textColor = color
+        variableStatus.textColor = color
+        dealPaymentForm.textColor = color
+        dealPrice.textColor = color
+        fufilledTime.textColor = color
+        userName.textColor = color
+        productName.textColor = color
+        variableButtonView.backgroundColor = color
         
     }
     
-
-    func styleUserContentView() {
-        self.backgroundColor = UIColor.flatGrayColor().colorWithAlphaComponent(0.9)
-        self.layer.cornerRadius = 6
-    }
     
     
-    func styleUserPicture(){
-        userPicture.layer.cornerRadius = 6
-        userPicture.bounds = contentView.bounds
-        userPicture.layer.borderColor = UIColor.whiteColor().CGColor
+    func styleUserPicture(color:UIColor){
+        userPicture.layer.cornerRadius = 40
+        userPicture.layer.borderColor = color.CGColor
+        userPicture.layer.borderWidth = 2
         userPicture.clipsToBounds = true
     }
 

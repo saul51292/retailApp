@@ -33,6 +33,8 @@ class FirstViewController: UIViewController {
     var buttonLeftClicked = false
     var tabBar : TabBarController!
     
+    
+    
     @IBOutlet var progressView: ProgressBar!
 
     
