@@ -15,6 +15,8 @@ class TableViewCell: MGSwipeTableCell,MGSwipeTableCellDelegate {
     @IBOutlet var actionButton: UIButton!
 
     
+    var fufilledCell:TableViewCell!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,11 +25,19 @@ class TableViewCell: MGSwipeTableCell,MGSwipeTableCellDelegate {
     }
     
     
+    func createRightButtons()->[AnyObject]
+    {
+        
+        self.rightButtons = [MGSwipeButton(title: "right", backgroundColor: UIColor.flatWatermelonColorDark()),MGSwipeButton(title: "right2", backgroundColor: UIColor.flatTealColorDark())]
+        
+        return self.rightButtons
+    }
+    
    
     func createLeftButtons()->[AnyObject]
     {
         
-        self.leftButtons = [MGSwipeButton(title: "left", backgroundColor: UIColor.flatWatermelonColorDark()),MGSwipeButton(title: "left2", backgroundColor: UIColor.flatTealColorDark())]
+        self.leftButtons = [MGSwipeButton(title: "", icon: UIImage(named: "check"), backgroundColor: UIColor.flatSkyBlueColor())]
 
         return self.leftButtons
     }

@@ -8,11 +8,15 @@
 
 import UIKit
 
-class GenericTableView: UITableViewController,MGSwipeTableCellDelegate {
+class GenericTableView: UITableViewController, UITableViewDelegate, UITableViewDataSource , MGSwipeTableCellDelegate {
     
     let styleManager = StyleManager()
-    var transportItems = ["Bus", "Helicopter", "Truck", "Boat", "Bicycle", "Motorcycle", "Plane", "Train", "Car", "Scooter", "Caravan"]
+    
+    var ordersItems = ["Bus", "Helicopter", "Truck", "Boat", "Bicycle", "Motorcycle", "Plane", "Train", "Car", "Scooter", "Caravan"]
+    var fufilledItems = ["Bus", "Helicopter", "Truck", "Boat", "Bicycle"]
+    
     var time = ["1:00","1:15","1:30","1:45","2:00","2:15","2:30","2:45","3:00","3:15","3:15"]
+    
     let showUser = UserOverview(frame: CGRectMake(0, 40, 256, 200))
     
     var accentColor : UIColor!
@@ -20,6 +24,11 @@ class GenericTableView: UITableViewController,MGSwipeTableCellDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.reloadData()
+        
         tableView.separatorColor = UIColor.clearColor()
         tableView.backgroundColor = styleManager.backColor
         // Do any additional setup after loading the view, typically from a nib.
@@ -32,10 +41,10 @@ class GenericTableView: UITableViewController,MGSwipeTableCellDelegate {
     
     func handleTap(gestureRecognizer: UITapGestureRecognizer) {
         let number = gestureRecognizer.view?.tag
-        let imageName = UIImage(named: transportItems[number!])
+        let imageName = UIImage(named: ordersItems[number!])
         
         showUser.userPicture.image = imageName
-        showUser.userName.text = transportItems[number!]
+        showUser.userName.text = ordersItems[number!]
         println(showUser.userName.text)
         showUser.center = self.view.center
         showUser.frame = CGRectOffset(showUser.frame, 0, -40)
@@ -46,12 +55,17 @@ class GenericTableView: UITableViewController,MGSwipeTableCellDelegate {
     func actionController(action:UIAlertAction,tableView:UITableView,indexPath:NSIndexPath) {
         switch action.style{
         case .Default:
+            self.ordersItems.removeAtIndex(indexPath.row)
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
+
             println("default")
             
         case .Cancel:
             println("cancel")
             
         case .Destructive:
+            self.ordersItems.removeAtIndex(indexPath.row)
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             println("destructive")
         }
         
@@ -71,25 +85,9 @@ class GenericTableView: UITableViewController,MGSwipeTableCellDelegate {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as TableViewCell
         cell.actionButton.backgroundColor = darkAccentColor
     }
-    
    
-    
-    func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
-        println("Active")
-        if (direction == MGSwipeDirection.RightToLeft) {
-            //delete button
-            var indexPath = tableView.indexPathForCell(cell)
-            self.transportItems.removeAtIndex(indexPath!.row)
-            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Left)
-        }
-        
-        return true
-    }
-    
 
-    func swipeTableCell(cell: MGSwipeTableCell!, swipeButtonsForDirection direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [AnyObject]! {
-        
-        var cell = tableView.dequeueReusableCellWithIdentifier("transportCell") as TableViewCell
+    func swipeTableCell(cell: TableViewCell!, swipeButtonsForDirection direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [AnyObject]! {
         
         swipeSettings.transition = MGSwipeTransition.TransitionDrag
         
@@ -103,23 +101,13 @@ class GenericTableView: UITableViewController,MGSwipeTableCellDelegate {
         else{
             expansionSettings.buttonIndex = 0
             expansionSettings.fillOnTrigger = true
-            return cell.createLeftButtons()
+            return cell.createRightButtons()
 
         }
     }
 
-       
     
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as TableViewCell
-        cell.actionButton.backgroundColor = darkAccentColor
-        createAlert(tableView,indexPath:indexPath)
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
-    }
+   
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("transportCell") as TableViewCell
