@@ -56,11 +56,6 @@ class UserOverview: UIView {
         userView.addGestureRecognizer(tapRec)
         
     }
-    
-    
-    
-   
-
 
     func xibSetup() {
         contentView = loadViewFromNib("UserOverview")
