@@ -11,13 +11,11 @@ import UIKit
 class GenericTableView: UITableViewController, UITableViewDelegate, UITableViewDataSource , MGSwipeTableCellDelegate {
     
     let styleManager = StyleManager()
+    let showUser = UserOverview(frame: CGRectMake(0, 40, 250, 417))
     
     var ordersItems = ["Bus", "Helicopter", "Truck", "Boat", "Bicycle", "Motorcycle", "Plane", "Train", "Car", "Scooter", "Caravan"]
     var fufilledItems = ["Bus", "Helicopter", "Truck", "Boat", "Bicycle"]
-    
     var time = ["1:00","1:15","1:30","1:45","2:00","2:15","2:30","2:45","3:00","3:15","3:15"]
-    
-    let showUser = UserOverview(frame: CGRectMake(0, 40, 250, 417))
     
     var accentColor : UIColor!
     var darkAccentColor : UIColor!
@@ -60,18 +58,14 @@ class GenericTableView: UITableViewController, UITableViewDelegate, UITableViewD
         case .Default:
             self.ordersItems.removeAtIndex(indexPath.row)
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
-
             println("default")
-            
         case .Cancel:
             println("cancel")
-            
         case .Destructive:
             self.ordersItems.removeAtIndex(indexPath.row)
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             println("destructive")
         }
-        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
@@ -88,29 +82,18 @@ class GenericTableView: UITableViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.cellForRowAtIndexPath(indexPath) as TableViewCell
         cell.actionButton.backgroundColor = darkAccentColor
     }
-   
-
+    
     func swipeTableCell(cell: TableViewCell!, swipeButtonsForDirection direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [AnyObject]! {
-        
         swipeSettings.transition = MGSwipeTransition.TransitionDrag
-        
-        if (direction == MGSwipeDirection.LeftToRight)
-        {
-            expansionSettings.buttonIndex = 0
-            expansionSettings.fillOnTrigger = true
-            return cell.createLeftButtons()
-        }
-            
-        else{
-            expansionSettings.buttonIndex = 0
-            expansionSettings.fillOnTrigger = true
-            return cell.createRightButtons()
+        expansionSettings.buttonIndex = 0
+        expansionSettings.fillOnTrigger = true
 
+        if direction == MGSwipeDirection.LeftToRight {
+            return cell.createLeftButtons()
+        } else {
+            return cell.createRightButtons()
         }
     }
-
-    
-   
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("transportCell") as TableViewCell

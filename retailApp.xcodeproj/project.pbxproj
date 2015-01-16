@@ -37,6 +37,7 @@
 		C742438B1A64FB9B00EC66F9 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742438A1A64FB9B00EC66F9 /* TableViewCell.swift */; };
 		C7B97D071A672427000F7BA3 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7B97D061A672427000F7BA3 /* ProgressView.xib */; };
 		C7B97D091A67253C000F7BA3 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B97D081A67253C000F7BA3 /* ProgressBar.swift */; };
+		CEFC72271A68F6BA0052AF06 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFC72261A68F6BA0052AF06 /* UIView+Extension.swift */; };
 		E4215F28CEF7F5FA8BE81B47 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E93020476827AE31D601D13 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		C74E512B65E644F3E84DE0CE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C7B97D061A672427000F7BA3 /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
 		C7B97D081A67253C000F7BA3 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		CEFC72261A68F6BA0052AF06 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,12 +153,10 @@
 		C706D0051A63A08400E06116 /* retailApp */ = {
 			isa = PBXGroup;
 			children = (
+				CEFC722C1A68F7DD0052AF06 /* app */,
+				CEFC722A1A68F79B0052AF06 /* UserOverview */,
+				CEFC72291A68F7790052AF06 /* ProgressView */,
 				C706D0081A63A08400E06116 /* AppDelegate.swift */,
-				C706D00A1A63A08400E06116 /* FirstViewController.swift */,
-				C706D00E1A63A08400E06116 /* Main.storyboard */,
-				C7118B591A64DEA00079F42E /* GenericTableView.swift */,
-				C742438A1A64FB9B00EC66F9 /* TableViewCell.swift */,
-				C701284A1A65DEE900101467 /* TabBarController.swift */,
 				C70128491A65DE2500101467 /* TableViews */,
 				C736B8891A64842200CBC1C9 /* StyleManager.swift */,
 				C706D0111A63A08400E06116 /* Images.xcassets */,
@@ -165,10 +165,7 @@
 				C706D0131A63A08400E06116 /* LaunchScreen.xib */,
 				C706D0061A63A08400E06116 /* Supporting Files */,
 				C706D02C1A63AFDB00E06116 /* retailApp-Bridging-Header.h */,
-				C7B97D061A672427000F7BA3 /* ProgressView.xib */,
-				C7B97D081A67253C000F7BA3 /* ProgressBar.swift */,
-				C71DE89C1A663DB200CE2E75 /* UserOverview.swift */,
-				C71DE89E1A663DBF00CE2E75 /* UserOverview.xib */,
+				CEFC72261A68F6BA0052AF06 /* UIView+Extension.swift */,
 			);
 			path = retailApp;
 			sourceTree = "<group>";
@@ -215,6 +212,36 @@
 				C7118B671A64E46D0079F42E /* Caravan.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		CEFC72291A68F7790052AF06 /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				C7B97D061A672427000F7BA3 /* ProgressView.xib */,
+				C7B97D081A67253C000F7BA3 /* ProgressBar.swift */,
+			);
+			name = ProgressView;
+			sourceTree = "<group>";
+		};
+		CEFC722A1A68F79B0052AF06 /* UserOverview */ = {
+			isa = PBXGroup;
+			children = (
+				C71DE89C1A663DB200CE2E75 /* UserOverview.swift */,
+				C71DE89E1A663DBF00CE2E75 /* UserOverview.xib */,
+			);
+			name = UserOverview;
+			sourceTree = "<group>";
+		};
+		CEFC722C1A68F7DD0052AF06 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				C706D00A1A63A08400E06116 /* FirstViewController.swift */,
+				C706D00E1A63A08400E06116 /* Main.storyboard */,
+				C7118B591A64DEA00079F42E /* GenericTableView.swift */,
+				C742438A1A64FB9B00EC66F9 /* TableViewCell.swift */,
+				C701284A1A65DEE900101467 /* TabBarController.swift */,
+			);
+			name = app;
 			sourceTree = "<group>";
 		};
 		E4A0D92E03120A846F894AEA /* Frameworks */ = {
@@ -407,6 +434,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEFC72271A68F6BA0052AF06 /* UIView+Extension.swift in Sources */,
 				C70128441A65CDD900101467 /* OrdersTV.swift in Sources */,
 				C701284B1A65DEE900101467 /* TabBarController.swift in Sources */,
 				C71DE89D1A663DB200CE2E75 /* UserOverview.swift in Sources */,

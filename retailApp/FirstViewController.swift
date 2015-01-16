@@ -9,9 +9,7 @@
 import UIKit
 
 class FirstViewController: UIViewController {
-    
     @IBOutlet var salesView: UIView!
-    
     @IBOutlet var containerView: UIView!
     
     @IBOutlet var bttnRight: UIButton!
@@ -22,22 +20,18 @@ class FirstViewController: UIViewController {
     @IBOutlet var lblLeft: UILabel!
     @IBOutlet var lblRight: UILabel!
     
-    var screenSize = UIScreen.mainScreen().bounds
-    var tabBarBack = UIImage (named: "empty.png")
+    @IBOutlet var progressView: ProgressBar!
+    
     let styleManager = StyleManager()
     let backColor = UIColor.flatWhiteColor()
+    
+    var tabBarBack = UIImage (named: "empty.png")
     var accentColor = UIColor.flatMintColor()
     var darkAccentColor = UIColor.flatMintColorDark()
     
     var buttonRightClicked = false
     var buttonLeftClicked = false
     var tabBar : TabBarController!
-    
-    
-    
-    @IBOutlet var progressView: ProgressBar!
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,12 +46,8 @@ class FirstViewController: UIViewController {
         animateButtonAndLabel(bttnMiddle,label:lblMiddle,transition:kCATransitionFromBottom)
         animateButtonAndLabel(bttnRight,label:lblRight,transition:kCATransitionFromRight)
         animateButtonAndLabel(bttnLeft,label:lblLeft,transition:kCATransitionFromLeft)
-       
-
     }
     
-   
-   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -71,14 +61,11 @@ class FirstViewController: UIViewController {
         progressView.maleVsFemaleProgressBar(0.30,percentFemale:0.70,progressBar:progressView.middleProgressBar)
         progressView.seenVsPurchased(1000,numberPurchased:300,progressBar:progressView.bottomProgressBar)
         
+        progressView.styleStatView(progressView.topLeftStat, darkColor:UIColor.flatSkyBlueColorDark(),topTitle:"4,332",bottomTitle:"Views")
+        progressView.styleStatView(progressView.topRightStat, darkColor:darkAccentColor, topTitle:"125", bottomTitle:"Sales")
+        progressView.styleStatView(progressView.bottomLeftStat, darkColor:UIColor.flatOrangeColorDark(), topTitle:"150",bottomTitle:"Shares")
+        progressView.styleStatView(progressView.bottomRightStat, darkColor:UIColor.flatPurpleColor(), topTitle:"$32",bottomTitle:"Avg. Price")
         
-        progressView.styleStatView(progressView.topLeftStat,darkColor:UIColor.flatSkyBlueColorDark(),topTitle:"4,332",bottomTitle:"Views")
-        progressView.styleStatView(progressView.topRightStat,darkColor:darkAccentColor,topTitle:"125",bottomTitle:"Sales")
-        progressView.styleStatView(progressView.bottomLeftStat,darkColor:UIColor.flatOrangeColorDark(),topTitle:"150",bottomTitle:"Shares")
-        progressView.styleStatView(progressView.bottomRightStat,darkColor:UIColor.flatPurpleColor(),topTitle:"$32",bottomTitle:"Avg. Price")
-
-        
-
         sendColor()
         tabBar.reloadTable()
         styleManager.navBarStyling(self, darkColor:darkAccentColor, emptyImage:tabBarBack!)
@@ -88,7 +75,6 @@ class FirstViewController: UIViewController {
     
     @IBAction func bttnLeftClicked(sender: AnyObject) {
         switchLabelAndButton(lblMiddle,formerButton:bttnMiddle,newLabel:lblLeft,newButton:bttnLeft)
-        
         viewWillAppear(true)
     }
     
@@ -96,7 +82,6 @@ class FirstViewController: UIViewController {
         tabBar.accentColor = accentColor
         tabBar.darkAccentColor = darkAccentColor
     }
-    
     
     func animateNumber(label:UILabel, transition:NSString!){
         let animation = CATransition()
@@ -106,7 +91,6 @@ class FirstViewController: UIViewController {
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         label.layer.addAnimation(animation, forKey: "changeTextTransition")
     }
-    
     
     @IBAction func bttnRightClicked(sender: AnyObject) {
         switchLabelAndButton(lblMiddle,formerButton:bttnMiddle,newLabel:lblRight,newButton:bttnRight)
