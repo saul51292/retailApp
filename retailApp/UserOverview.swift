@@ -11,9 +11,26 @@ import UIKit
 class UserOverview: UIView {
 
     @IBOutlet var contentView: UIView!
+    @IBOutlet var variableButtonView: UIView!
+    @IBOutlet var userView: UIView!
+    //Static
     
+    @IBOutlet var lblStatus: UILabel!
+    @IBOutlet var bottomView: UIView!
+    @IBOutlet var lblFufilled: UILabel!
+    @IBOutlet var lblPaidWith: UILabel!
+    
+    //Variable
     @IBOutlet var userName: UILabel!
     @IBOutlet var userPicture: UIImageView!
+    @IBOutlet var fufilledTime: UILabel!
+    @IBOutlet var dealPaymentForm: UILabel!
+    @IBOutlet var dealPrice: UILabel!
+    @IBOutlet var variableActionButton: UIButton!
+    @IBOutlet var productName: UILabel!
+    @IBOutlet var variableStatus: UILabel!
+
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,6 +55,8 @@ class UserOverview: UIView {
     func xibSetup() {
         contentView = loadViewFromNib()
         contentView.frame = bounds
+        self.contentView.layer.cornerRadius = 6
+        self.variableButtonView.layer.cornerRadius = 6
         addSubview(contentView)
     }
     

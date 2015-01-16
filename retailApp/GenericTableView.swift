@@ -17,7 +17,7 @@ class GenericTableView: UITableViewController, UITableViewDelegate, UITableViewD
     
     var time = ["1:00","1:15","1:30","1:45","2:00","2:15","2:30","2:45","3:00","3:15","3:15"]
     
-    let showUser = UserOverview(frame: CGRectMake(0, 40, 256, 200))
+    let showUser = UserOverview(frame: CGRectMake(0, 40, 250, 417))
     
     var accentColor : UIColor!
     var darkAccentColor : UIColor!

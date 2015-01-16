@@ -39,7 +39,8 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       tabBar = self.childViewControllers[0] as TabBarController
+
+        tabBar = self.childViewControllers[0] as TabBarController
         // Do any additional setup after loading the view, typically from a nib.
         containerView.hidden = true
         animateButtonAndLabel(bttnMiddle,label:lblMiddle,transition:kCATransitionFromBottom)
