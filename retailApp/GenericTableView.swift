@@ -25,6 +25,7 @@ class GenericTableView: UITableViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         showUser.frame = self.view.frame
+        showUser.bounds = self.view.bounds
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
@@ -34,6 +35,7 @@ class GenericTableView: UITableViewController, UITableViewDelegate, UITableViewD
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,11 +48,12 @@ class GenericTableView: UITableViewController, UITableViewDelegate, UITableViewD
         showUser.userPicture.image = imageName
         showUser.userName.text = ordersItems[number!]
         println(showUser.userName.text)
-
-        
         showUser.colorUserOverview(darkAccentColor)
         self.view.addSubview(showUser)
-    }
+        
+        }
+    
+    
     
     func actionController(action:UIAlertAction,tableView:UITableView,indexPath:NSIndexPath) {
         switch action.style{

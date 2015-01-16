@@ -16,10 +16,12 @@ class TabBarController: UITabBarController,UITabBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+
         self.tabBar.hidden = true
         fufilledTV = self.childViewControllers[0] as FufilledTV
         ordersTV = self.childViewControllers[1] as OrdersTV
-        // Do any additional setup after loading the view.
+                // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {

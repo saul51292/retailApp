@@ -39,11 +39,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="420"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4GS-PJ-SZu">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="420"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="541"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddC-Wy-ROS">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="546"/>
@@ -126,13 +126,13 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="l6n-uF-Khg"/>
-                                            <exclude reference="ycD-4d-a3y"/>
                                             <exclude reference="Kob-nn-lIQ"/>
-                                            <exclude reference="o24-im-I0i"/>
                                             <exclude reference="SEv-2c-0Ms"/>
                                             <exclude reference="TtI-Rb-3T7"/>
+                                            <exclude reference="l6n-uF-Khg"/>
+                                            <exclude reference="o24-im-I0i"/>
                                             <exclude reference="sKc-9j-M1f"/>
+                                            <exclude reference="ycD-4d-a3y"/>
                                         </mask>
                                     </variation>
                                 </imageView>
@@ -270,13 +270,13 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="ddC-Wy-ROS" secondAttribute="trailing" id="YIo-Yl-vO9"/>
                         <constraint firstItem="ddC-Wy-ROS" firstAttribute="top" secondItem="4GS-PJ-SZu" secondAttribute="top" id="ZYH-Is-yxf"/>
+                        <constraint firstAttribute="bottom" secondItem="ddC-Wy-ROS" secondAttribute="bottom" constant="-196" id="c6w-kh-ZDy"/>
                         <constraint firstItem="ddC-Wy-ROS" firstAttribute="centerX" secondItem="4GS-PJ-SZu" secondAttribute="centerX" id="gnT-Dq-MXu"/>
                         <constraint firstItem="ddC-Wy-ROS" firstAttribute="leading" secondItem="4GS-PJ-SZu" secondAttribute="leading" id="xEO-h9-LoW"/>
-                        <constraint firstAttribute="bottom" secondItem="ddC-Wy-ROS" secondAttribute="bottom" constant="1" id="xx9-5v-qBk"/>
                     </constraints>
                 </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xV8-ha-xZr">
-                    <rect key="frame" x="0.0" y="360" width="600" height="60"/>
+                    <rect key="frame" x="0.0" y="540" width="600" height="60"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72q-cr-zkE">
                             <rect key="frame" x="8" y="15" width="584" height="29"/>
@@ -301,15 +301,18 @@
                 <constraint firstItem="4GS-PJ-SZu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5cH-Eq-TOr"/>
                 <constraint firstAttribute="trailing" secondItem="xV8-ha-xZr" secondAttribute="trailing" id="7pQ-qz-1E8"/>
                 <constraint firstItem="xV8-ha-xZr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="360" id="Ibp-cK-eNJ"/>
+                <constraint firstAttribute="bottom" secondItem="4GS-PJ-SZu" secondAttribute="bottom" constant="250" id="KAR-uU-Kyr"/>
                 <constraint firstAttribute="trailing" secondItem="4GS-PJ-SZu" secondAttribute="trailing" id="LXv-HH-jv3"/>
+                <constraint firstAttribute="bottom" secondItem="4GS-PJ-SZu" secondAttribute="bottom" constant="59" id="WM9-JB-NxY"/>
                 <constraint firstAttribute="bottom" secondItem="4GS-PJ-SZu" secondAttribute="bottom" id="eIt-Qv-vCo"/>
                 <constraint firstAttribute="bottom" secondItem="xV8-ha-xZr" secondAttribute="bottom" id="h04-F7-OaF"/>
                 <constraint firstItem="xV8-ha-xZr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="j1L-ll-4BV"/>
                 <constraint firstItem="4GS-PJ-SZu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pKZ-Sh-t5t"/>
             </constraints>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="KAR-uU-Kyr"/>
+                    <exclude reference="eIt-Qv-vCo"/>
                     <exclude reference="Ibp-cK-eNJ"/>
                 </mask>
             </variation>

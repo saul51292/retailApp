@@ -31,7 +31,7 @@ class UserOverview: UIView {
     @IBOutlet var productName: UILabel!
     @IBOutlet var variableStatus: UILabel!
 
-    
+    let tapRec = UITapGestureRecognizer()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,25 +43,42 @@ class UserOverview: UIView {
         xibSetup()
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        println("touches began")
+    
+    func tappedView(){
+        self.removeFromSuperview()
 
-        var touch = touches.anyObject() as UITouch
-        if !touch.view .isKindOfClass(UserOverview) {
-            self.removeFromSuperview()
-        }
     }
     
+    
+    func removeshowUser()
+    {
+       tapRec.addTarget(self, action: "tappedView")
+        userView.addGestureRecognizer(tapRec)
+        
+    }
+    
+    
+    
+   
+
 
     func xibSetup() {
         contentView = loadViewFromNib()
         contentView.frame = bounds
+    setScrollContentSize()
+        removeshowUser()
 
         addSubview(contentView)
+
     }
     
     
-    
+    func setScrollContentSize()
+    {
+        var userSize = CGSize(width: userView.frame.width, height: userView.frame.height)
+        scrollView.contentSize = userSize
+        
+    }
     
     
     func colorUserOverview(color:UIColor)

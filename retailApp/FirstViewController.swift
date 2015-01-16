@@ -42,8 +42,12 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
         tabBar = self.childViewControllers[0] as TabBarController
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
         containerView.hidden = true
         animateButtonAndLabel(bttnMiddle,label:lblMiddle,transition:kCATransitionFromBottom)
         animateButtonAndLabel(bttnRight,label:lblRight,transition:kCATransitionFromRight)
@@ -135,6 +139,7 @@ class FirstViewController: UIViewController {
         case "Pending":
             containerView.hidden = false
             tabBar.selectedIndex = 1
+            
             darkAccentColor = UIColor.flatMagentaColorDark()
             accentColor = UIColor.flatMagentaColor()
         case "Fufilled":
