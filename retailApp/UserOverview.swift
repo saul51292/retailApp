@@ -50,7 +50,7 @@ class UserOverview: UIView {
     }
 
     func xibSetup() {
-        contentView = loadViewFromNib()
+        contentView = loadViewFromNib("UserOverview")
         contentView.frame = bounds
         addSubview(contentView)
     }
@@ -75,14 +75,6 @@ class UserOverview: UIView {
         userPicture.clipsToBounds = true
     }
 
-    func loadViewFromNib() -> UIView {
-        let bundle = NSBundle(forClass: self.dynamicType)
-        let nib = UINib(nibName: "UserOverview", bundle: bundle)
-        
-        // Assumes UIView is top level and only object in CustomView.xib file
-        let view = nib.instantiateWithOwner(self, options: nil)[0] as UIView
-        return view
-    }
     
     /*
     // Only override drawRect: if you perform custom drawing.

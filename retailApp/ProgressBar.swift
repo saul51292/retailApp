@@ -37,18 +37,9 @@ class ProgressBar: UIView {
     }
     
     func xibSetup() {
-        contentView = loadViewFromNib()
+        contentView = loadViewFromNib("ProgressView")
         contentView.frame = bounds
         addSubview(contentView)
-    }
-    
-    func loadViewFromNib() -> UIView {
-        let bundle = NSBundle(forClass: self.dynamicType)
-        let nib = UINib(nibName: "ProgressView", bundle: bundle)
-        
-        // Assumes UIView is top level and only object in CustomView.xib file
-        let view = nib.instantiateWithOwner(self, options: nil)[0] as UIView
-        return view
     }
     
     //MARK: Layout Subviews
@@ -107,10 +98,10 @@ class ProgressBar: UIView {
     
     //MARK: Seen v Purchase
     func seenVsPurchased(numberSeen:CGFloat, numberPurchased:CGFloat, progressBar:YLProgressBar) {
-        var percentPurchased = (numberPurchased/numberSeen) * 100
+        let percentPurchased = (numberPurchased/numberSeen) * 100
         progressBar.indicatorTextLabel.textColor = UIColor.whiteColor()
         
-        switch percentPurchased{
+        switch percentPurchased {
         case 0...20:
             progressBar.progressTintColors = [UIColor.flatRedColor()]
         case 20...30:
