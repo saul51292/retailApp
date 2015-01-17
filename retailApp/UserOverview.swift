@@ -9,7 +9,7 @@
 import UIKit
 
 class UserOverview: UIView {
-
+    
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var contentView: UIView!
     @IBOutlet var variableButtonView: UIView!
@@ -30,7 +30,7 @@ class UserOverview: UIView {
     @IBOutlet var variableActionButton: UIButton!
     @IBOutlet var productName: UILabel!
     @IBOutlet var variableStatus: UILabel!
-
+    
     let tapRec = UITapGestureRecognizer()
     
     override init(frame: CGRect) {
@@ -43,42 +43,31 @@ class UserOverview: UIView {
         xibSetup()
     }
     
-    
-    func tappedView(){
+    func tappedView() {
         self.removeFromSuperview()
-
     }
     
-    
-    func removeshowUser()
-    {
-       tapRec.addTarget(self, action: "tappedView")
+    func removeshowUser() {
+        tapRec.addTarget(self, action: "tappedView")
         userView.addGestureRecognizer(tapRec)
-        
     }
 
     func xibSetup() {
         contentView = loadViewFromNib("UserOverview")
         contentView.frame = bounds
-    setScrollContentSize()
+        setScrollContentSize()
         removeshowUser()
-
+        
         addSubview(contentView)
-
     }
     
-    
-    func setScrollContentSize()
-    {
-        var userSize = CGSize(width: userView.frame.width, height: userView.frame.height)
+    func setScrollContentSize() {
+        let userSize = CGSize(width: userView.frame.width, height: userView.frame.height)
         scrollView.contentSize = userSize
-        
     }
     
     
-    func colorUserOverview(color:UIColor)
-        
-    {
+    func colorUserOverview(color:UIColor) {
         styleUserPicture(color)
         lblFufilled.textColor = color
         lblPaidWith.textColor = color
@@ -90,21 +79,21 @@ class UserOverview: UIView {
         productName.textColor = color
         variableButtonView.backgroundColor = color
     }
-
-    func styleUserPicture(color:UIColor){
+    
+    func styleUserPicture(color:UIColor) {
         userPicture.layer.cornerRadius = 40
         userPicture.layer.borderColor = color.CGColor
         userPicture.layer.borderWidth = 2
         userPicture.clipsToBounds = true
     }
-
+    
     
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
-        // Drawing code
+    // Drawing code
     }
     */
-
+    
 }
