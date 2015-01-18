@@ -24,6 +24,7 @@ class TabBarController: UITabBarController, UITabBarDelegate {
         progressVC = self.childViewControllers[0] as ProgressVC
         ordersTV = self.childViewControllers[1] as OrdersTV
         fufilledTV = self.childViewControllers[2] as FufilledTV
+        text = "\(ordersTV.ordersItems.count + fufilledTV.fufilledItems.count) Sales"
         ordersTV.addBadge()
 
         // Do any additional setup after loading the view.
@@ -58,20 +59,20 @@ class TabBarController: UITabBarController, UITabBarDelegate {
 
         case 0:
             println("0")
-            text = "Sales"
+            text = "\(ordersTV.ordersItems.count + fufilledTV.fufilledItems.count) Sales"
             darkAccentColor = UIColor.flatMintColorDark()
             accentColor = UIColor.flatMintColor()
 
         case 1:
             println("1")
-            text = "Pending"
+            text = "\(ordersTV.ordersItems.count) Orders"
             darkAccentColor = UIColor.flatMagentaColorDark()
             accentColor = UIColor.flatMagentaColor()
             reloadAndStyleTable(ordersTV)
 
         case 2:
             println("2")
-            text = "Fufilled"
+            text = "\(fufilledTV.fufilledItems.count) Fufilled"
             darkAccentColor = UIColor.flatSkyBlueColorDark()
             accentColor = UIColor.flatSkyBlueColor()
             reloadAndStyleTable(fufilledTV)

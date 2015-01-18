@@ -28,15 +28,16 @@ class GenericTableView: UITableViewController, UITableViewDelegate, UITableViewD
         searchBar.frame = CGRectMake(0,0,tableView.frame.width,50)
         searchBar.barStyle = .BlackTranslucent
         self.searchBar.delegate = self
-        showUser.frame = self.view.frame
-        showUser.bounds = self.view.bounds
-        tableView.delegate = self
+                tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
         
         searchView.addSubview(searchBar)
         self.tableView.tableHeaderView = searchView
         tableView.setContentOffset(CGPointMake(0, 50), animated: false)
+        showUser.frame = self.view.frame
+        showUser.bounds = self.view.bounds
+
         tableView.separatorColor = UIColor.clearColor()
         tableView.backgroundColor = styleManager.backColor
         // Do any additional setup after loading the view, typically from a nib.
