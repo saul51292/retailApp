@@ -37,6 +37,7 @@
 		C742438B1A64FB9B00EC66F9 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C742438A1A64FB9B00EC66F9 /* TableViewCell.swift */; };
 		C7B97D071A672427000F7BA3 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7B97D061A672427000F7BA3 /* ProgressView.xib */; };
 		C7B97D091A67253C000F7BA3 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B97D081A67253C000F7BA3 /* ProgressBar.swift */; };
+		C7D9F95C1A6B206D00DD8EAF /* ProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D9F95B1A6B206D00DD8EAF /* ProgressVC.swift */; };
 		CEFC72271A68F6BA0052AF06 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFC72261A68F6BA0052AF06 /* UIView+Extension.swift */; };
 		E4215F28CEF7F5FA8BE81B47 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E93020476827AE31D601D13 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -89,6 +90,7 @@
 		C74E512B65E644F3E84DE0CE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C7B97D061A672427000F7BA3 /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
 		C7B97D081A67253C000F7BA3 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		C7D9F95B1A6B206D00DD8EAF /* ProgressVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressVC.swift; sourceTree = "<group>"; };
 		CEFC72261A68F6BA0052AF06 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 				C706D0061A63A08400E06116 /* Supporting Files */,
 				C706D02C1A63AFDB00E06116 /* retailApp-Bridging-Header.h */,
 				CEFC72261A68F6BA0052AF06 /* UIView+Extension.swift */,
+				C7D9F95B1A6B206D00DD8EAF /* ProgressVC.swift */,
 			);
 			path = retailApp;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEFC72271A68F6BA0052AF06 /* UIView+Extension.swift in Sources */,
+				C7D9F95C1A6B206D00DD8EAF /* ProgressVC.swift in Sources */,
 				C70128441A65CDD900101467 /* OrdersTV.swift in Sources */,
 				C701284B1A65DEE900101467 /* TabBarController.swift in Sources */,
 				C71DE89D1A663DB200CE2E75 /* UserOverview.swift in Sources */,

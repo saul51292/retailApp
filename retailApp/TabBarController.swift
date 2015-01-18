@@ -11,17 +11,21 @@ import UIKit
 class TabBarController: UITabBarController, UITabBarDelegate {
     var fufilledTV : FufilledTV!
     var ordersTV : OrdersTV!
-    var darkAccentColor : UIColor!
-    var accentColor : UIColor!
+    var darkAccentColor = UIColor.flatMintColorDark()
+    var accentColor = UIColor.flatMintColor()
+    var progressVC : ProgressVC!
+    
+    
+    
+    var text = "Sales"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
-        self.tabBar.hidden = true
-        fufilledTV = self.childViewControllers[0] as FufilledTV
+        progressVC = self.childViewControllers[0] as ProgressVC
         ordersTV = self.childViewControllers[1] as OrdersTV
-                // Do any additional setup after loading the view.
+        fufilledTV = self.childViewControllers[2] as FufilledTV
+        
+        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,8 +44,41 @@ class TabBarController: UITabBarController, UITabBarDelegate {
             reloadAndStyleTable(fufilledTV)
             println("reloaded fufilled")
         }
+        
     }
     
+    override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
+
+        switch (item.tag)
+        {
+
+        case 0:
+            println("0")
+            text = "Sales"
+            darkAccentColor = UIColor.flatMintColorDark()
+            accentColor = UIColor.flatMintColor()
+
+        case 1:
+            println("1")
+            text = "Pending"
+            darkAccentColor = UIColor.flatMagentaColorDark()
+            accentColor = UIColor.flatMagentaColor()
+            reloadAndStyleTable(ordersTV)
+
+        case 2:
+            println("2")
+            text = "Fufilled"
+            darkAccentColor = UIColor.flatSkyBlueColorDark()
+            accentColor = UIColor.flatSkyBlueColor()
+            reloadAndStyleTable(fufilledTV)
+
+        default:
+            println("error")
+        }
+        self.parentViewController?.viewWillAppear(true)
+
+    }
+
     private func reloadAndStyleTable(table: GenericTableView) {
         table.viewDidLoad()
         table.tableView.reloadData()
