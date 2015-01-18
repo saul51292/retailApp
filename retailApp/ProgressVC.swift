@@ -16,14 +16,7 @@ class ProgressVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //Progress View Setup
-        progressView.timeProgressBar(30,avgTimeToSwipe:27,progressBar:progressView.topProgressBar)
-        progressView.maleVsFemaleProgressBar(0.30,percentFemale:0.70,progressBar:progressView.middleProgressBar)
-        progressView.seenVsPurchased(1000,numberPurchased:300,progressBar:progressView.bottomProgressBar)
-        
-        progressView.styleStatView(progressView.topLeftStat, darkColor:UIColor.flatSkyBlueColorDark(),topTitle:"4,332",bottomTitle:"Views")
-        progressView.styleStatView(progressView.topRightStat, darkColor:darkAccentColor, topTitle:"125", bottomTitle:"Sales")
-        progressView.styleStatView(progressView.bottomLeftStat, darkColor:UIColor.flatOrangeColorDark(), topTitle:"150",bottomTitle:"Shares")
-        progressView.styleStatView(progressView.bottomRightStat, darkColor:UIColor.flatPurpleColor(), topTitle:"$32",bottomTitle:"Avg. Price")
+       
         // Do any additional setup after loading the view.
     }
 
@@ -32,6 +25,17 @@ class ProgressVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    override func viewDidAppear(animated: Bool) {
+        progressView.timeProgressBar(30,avgTimeToSwipe:27,progressBar:progressView.topProgressBar)
+        progressView.maleVsFemaleProgressBar(0.30,percentFemale:0.70,progressBar:progressView.middleProgressBar)
+        progressView.seenVsPurchased(1000,numberPurchased:300,progressBar:progressView.bottomProgressBar)
+        
+        progressView.styleStatView(progressView.topLeftStat, darkColor:UIColor.flatSkyBlueColorDark(),topTitle:"4,332",bottomTitle:"Views")
+        progressView.styleStatView(progressView.topRightStat, darkColor:darkAccentColor, topTitle:"125", bottomTitle:"Sales")
+        progressView.styleStatView(progressView.bottomLeftStat, darkColor:UIColor.flatOrangeColorDark(), topTitle:"150",bottomTitle:"Shares")
+        progressView.styleStatView(progressView.bottomRightStat, darkColor:UIColor.flatPurpleColor(), topTitle:"$32",bottomTitle:"Avg. Price")
+    }
 
     /*
     // MARK: - Navigation

@@ -24,7 +24,8 @@ class TabBarController: UITabBarController, UITabBarDelegate {
         progressVC = self.childViewControllers[0] as ProgressVC
         ordersTV = self.childViewControllers[1] as OrdersTV
         fufilledTV = self.childViewControllers[2] as FufilledTV
-        
+        ordersTV.addBadge()
+
         // Do any additional setup after loading the view.
     }
     
@@ -37,6 +38,7 @@ class TabBarController: UITabBarController, UITabBarDelegate {
     func reloadTable() {
         if ordersTV.view.superview != nil {
             reloadAndStyleTable(ordersTV)
+            ordersTV.addBadge()
             println("reloaded order")
         }
         
@@ -46,6 +48,8 @@ class TabBarController: UITabBarController, UITabBarDelegate {
         }
                
     }
+    
+    
     
     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
 

@@ -9,10 +9,9 @@
 import UIKit
 
 class FirstViewController: UIViewController,UITabBarControllerDelegate {
-    @IBOutlet var salesView: UIView!
+   
     @IBOutlet var containerView: UIView!
     
-    @IBOutlet var bttnMiddle: UIButton!
    
     let styleManager = StyleManager()
     let backColor = UIColor.flatWhiteColor()
@@ -29,6 +28,7 @@ class FirstViewController: UIViewController,UITabBarControllerDelegate {
         super.viewDidLoad()
         
         tabBar = self.childViewControllers[0] as TabBarController
+       
 
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -40,13 +40,12 @@ class FirstViewController: UIViewController,UITabBarControllerDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        bttnMiddle.setTitle(tabBar.text, forState: .Normal)
-
+        navigationController?.navigationBar.topItem?.title = tabBar.text
+       //navigationBar.topItem.title = "some title"
         darkAccentColor = tabBar.darkAccentColor
         accentColor = tabBar.accentColor
         styleManager.navBarStyling(self, darkColor:darkAccentColor, emptyImage:tabBarBack!)
         styleManager.tabBarStyling(tabBar, emptyImage:tabBarBack!,lightColor:accentColor)
-        salesView.backgroundColor = accentColor
 
     }
     

@@ -12,6 +12,7 @@ class OrdersTV: GenericTableView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addBadge()
         // Do any additional setup after loading the view.
     }
 
@@ -27,7 +28,6 @@ class OrdersTV: GenericTableView {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as TableViewCell
         cell.actionButton.backgroundColor = darkAccentColor
-        createAlert(tableView,indexPath:indexPath)
     }
     
     func swipeTableCell(cell: TableViewCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
@@ -37,10 +37,20 @@ class OrdersTV: GenericTableView {
             var indexPath = tableView.indexPathForCell(cell)
             self.ordersItems.removeAtIndex(indexPath!.row)
             self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Right)
+            addBadge()
         }
         
         return true
     }
+    
+    
+    func addBadge()
+    {
+        var tabArray = tabBarController?.tabBar.items as NSArray!
+        var tabItem = tabArray.objectAtIndex(1) as UITabBarItem
+        tabItem.badgeValue = String(self.ordersItems.count)
+    }
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("transportCell") as TableViewCell
