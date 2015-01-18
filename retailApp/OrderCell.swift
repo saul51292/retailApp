@@ -9,6 +9,10 @@
 import UIKit
 
 class OrderCell: UITableViewCell {
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var purchaseTimer: UILabel!
+    
     var order: Order!
     override func awakeFromNib() {
         super.awakeFromNib()
