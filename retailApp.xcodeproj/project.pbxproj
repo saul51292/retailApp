@@ -38,6 +38,10 @@
 		C7B97D071A672427000F7BA3 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7B97D061A672427000F7BA3 /* ProgressView.xib */; };
 		C7B97D091A67253C000F7BA3 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B97D081A67253C000F7BA3 /* ProgressBar.swift */; };
 		C7D9F95C1A6B206D00DD8EAF /* ProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D9F95B1A6B206D00DD8EAF /* ProgressVC.swift */; };
+		CECD37BA1A6C401600895E32 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD37B91A6C401600895E32 /* Order.swift */; };
+		CECD37BD1A6C466400895E32 /* ExampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD37BC1A6C466400895E32 /* ExampleData.swift */; };
+		CECD37C01A6C4C3100895E32 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD37BE1A6C4C3100895E32 /* OrderCell.swift */; };
+		CECD37C11A6C4C3100895E32 /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECD37BF1A6C4C3100895E32 /* OrderCell.xib */; };
 		CEFC72271A68F6BA0052AF06 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFC72261A68F6BA0052AF06 /* UIView+Extension.swift */; };
 		E4215F28CEF7F5FA8BE81B47 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E93020476827AE31D601D13 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -91,6 +95,10 @@
 		C7B97D061A672427000F7BA3 /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
 		C7B97D081A67253C000F7BA3 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		C7D9F95B1A6B206D00DD8EAF /* ProgressVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressVC.swift; sourceTree = "<group>"; };
+		CECD37B91A6C401600895E32 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		CECD37BC1A6C466400895E32 /* ExampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleData.swift; sourceTree = "<group>"; };
+		CECD37BE1A6C4C3100895E32 /* OrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		CECD37BF1A6C4C3100895E32 /* OrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderCell.xib; sourceTree = "<group>"; };
 		CEFC72261A68F6BA0052AF06 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,6 +163,7 @@
 		C706D0051A63A08400E06116 /* retailApp */ = {
 			isa = PBXGroup;
 			children = (
+				CECD37BB1A6C448E00895E32 /* Orders */,
 				CEFC722C1A68F7DD0052AF06 /* app */,
 				CEFC722A1A68F79B0052AF06 /* UserOverview */,
 				CEFC72291A68F7790052AF06 /* ProgressView */,
@@ -217,6 +226,15 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		CECD37BB1A6C448E00895E32 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				CECD37B91A6C401600895E32 /* Order.swift */,
+				CECD37BC1A6C466400895E32 /* ExampleData.swift */,
+			);
+			name = Orders;
+			sourceTree = "<group>";
+		};
 		CEFC72291A68F7790052AF06 /* ProgressView */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +261,8 @@
 				C7118B591A64DEA00079F42E /* GenericTableView.swift */,
 				C742438A1A64FB9B00EC66F9 /* TableViewCell.swift */,
 				C701284A1A65DEE900101467 /* TabBarController.swift */,
+				CECD37BE1A6C4C3100895E32 /* OrderCell.swift */,
+				CECD37BF1A6C4C3100895E32 /* OrderCell.xib */,
 			);
 			name = app;
 			sourceTree = "<group>";
@@ -352,6 +372,7 @@
 				C706D0381A63C78B00E06116 /* Montserrat-Regular.ttf in Resources */,
 				C706D0101A63A08400E06116 /* Main.storyboard in Resources */,
 				C7118B721A64E46D0079F42E /* Caravan.png in Resources */,
+				CECD37C11A6C4C3100895E32 /* OrderCell.xib in Resources */,
 				C706D0151A63A08400E06116 /* LaunchScreen.xib in Resources */,
 				C7118B6A1A64E46D0079F42E /* Truck.png in Resources */,
 				C706D0121A63A08400E06116 /* Images.xcassets in Resources */,
@@ -437,16 +458,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CECD37BD1A6C466400895E32 /* ExampleData.swift in Sources */,
 				CEFC72271A68F6BA0052AF06 /* UIView+Extension.swift in Sources */,
 				C7D9F95C1A6B206D00DD8EAF /* ProgressVC.swift in Sources */,
 				C70128441A65CDD900101467 /* OrdersTV.swift in Sources */,
 				C701284B1A65DEE900101467 /* TabBarController.swift in Sources */,
 				C71DE89D1A663DB200CE2E75 /* UserOverview.swift in Sources */,
 				C742438B1A64FB9B00EC66F9 /* TableViewCell.swift in Sources */,
+				CECD37C01A6C4C3100895E32 /* OrderCell.swift in Sources */,
 				C7118B5A1A64DEA00079F42E /* GenericTableView.swift in Sources */,
 				C70128461A65CF9B00101467 /* FufilledTV.swift in Sources */,
 				C706D0091A63A08400E06116 /* AppDelegate.swift in Sources */,
 				C706D00B1A63A08400E06116 /* FirstViewController.swift in Sources */,
+				CECD37BA1A6C401600895E32 /* Order.swift in Sources */,
 				C7B97D091A67253C000F7BA3 /* ProgressBar.swift in Sources */,
 				C736B88A1A64842200CBC1C9 /* StyleManager.swift in Sources */,
 			);

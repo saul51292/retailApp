@@ -13,8 +13,7 @@ class TabBarController: UITabBarController, UITabBarDelegate {
     var ordersTV : OrdersTV!
     var darkAccentColor = UIColor.flatMintColorDark()
     var accentColor = UIColor.flatMintColor()
-    var progressVC : ProgressVC!
-    
+    var progressVC : ProgressVC!    
     
     
     var text = "Sales"
