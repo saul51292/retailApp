@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrderCell: UITableViewCell {
+class OrderCell: MGSwipeTableCell, MGSwipeTableCellDelegate {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var purchaseTimer: UILabel!
@@ -24,5 +24,5 @@ class OrderCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }
+
