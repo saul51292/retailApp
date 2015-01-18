@@ -12,7 +12,6 @@ class GenericTableView: UITableViewController, UITableViewDelegate, UITableViewD
     
     let styleManager = StyleManager()
     let showUser = UserOverview(frame: CGRectMake(0, 40, 250, 417))
-    
     var ordersItems = ["Bus", "Helicopter", "Truck", "Boat", "Bicycle", "Motorcycle", "Plane", "Train", "Car", "Scooter", "Caravan"]
     var fufilledItems = ["Bus", "Helicopter", "Truck", "Boat", "Bicycle"]
     var time = ["1:00","1:15","1:30","1:45","2:00","2:15","2:30","2:45","3:00","3:15","3:15"]
@@ -22,6 +21,9 @@ class GenericTableView: UITableViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.automaticallyAdjustsScrollViewInsets = true
+        
         showUser.frame = self.view.frame
         showUser.bounds = self.view.bounds
         tableView.delegate = self
@@ -33,7 +35,6 @@ class GenericTableView: UITableViewController, UITableViewDelegate, UITableViewD
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

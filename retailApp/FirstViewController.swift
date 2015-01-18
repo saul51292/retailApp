@@ -31,7 +31,6 @@ class FirstViewController: UIViewController,UITabBarControllerDelegate {
         tabBar = self.childViewControllers[0] as TabBarController
 
         // Do any additional setup after loading the view, typically from a nib.
-        //animateButtonAndLabel(bttnMiddle,transition:kCATransitionFromBottom)
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,7 +45,7 @@ class FirstViewController: UIViewController,UITabBarControllerDelegate {
         darkAccentColor = tabBar.darkAccentColor
         accentColor = tabBar.accentColor
         styleManager.navBarStyling(self, darkColor:darkAccentColor, emptyImage:tabBarBack!)
-        styleManager.tabBarStyling(self, emptyImage:tabBarBack!,lightColor:accentColor)
+        styleManager.tabBarStyling(tabBar, emptyImage:tabBarBack!,lightColor:accentColor)
         salesView.backgroundColor = accentColor
 
     }
@@ -59,16 +58,5 @@ class FirstViewController: UIViewController,UITabBarControllerDelegate {
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         label.layer.addAnimation(animation, forKey: "changeTextTransition")
     }
-    
-//    func switchLabelAndButton(formerButton:UIButton,newButton:UIButton,tabBarIndex:Int){
-//        //stylingColor(tabBarIndex,formerButton:formerButton,newButton:newButton)
-//        animateButtonAndLabel(formerButton,transition:kCATransitionFromTop)
-//        animateButtonAndLabel(newButton,transition:kCATransitionFromBottom)
-//        }
-//    
-//
-//    func animateButtonAndLabel(button:UIButton,transition:NSString) {
-//        animateNumber(button.titleLabel!, transition: transition)
-//    }
 }
 

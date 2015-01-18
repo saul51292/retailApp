@@ -44,11 +44,11 @@ class StyleManager: NSObject {
         image.layer.borderWidth = 2
     }
     
-    func tabBarStyling(vc:UIViewController, emptyImage:UIImage,lightColor:UIColor) {
-        vc.tabBarController?.tabBar.shadowImage = emptyImage
-        vc.tabBarController?.tabBar.backgroundImage = emptyImage
-        vc.tabBarController?.tabBar.backgroundColor = backColor
-        vc.tabBarController?.tabBar.tintColor = lightColor
+    func tabBarStyling(tabBar:TabBarController, emptyImage:UIImage,lightColor:UIColor) {
+        tabBar.tabBar.shadowImage = emptyImage
+        tabBar.tabBar.backgroundImage = emptyImage
+        tabBar.tabBar.backgroundColor = UIColor.flatBlackColor()
+        tabBar.tabBar.tintColor = lightColor
     }
 
 }

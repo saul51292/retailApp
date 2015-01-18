@@ -45,9 +45,11 @@ class UserOverview: UIView {
     
     func tappedView() {
         self.removeFromSuperview()
+        
     }
     
-    func removeshowUser() {
+    
+    func addTapRecognizer() {
         tapRec.addTarget(self, action: "tappedView")
         userView.addGestureRecognizer(tapRec)
     }
@@ -56,7 +58,7 @@ class UserOverview: UIView {
         contentView = loadViewFromNib("UserOverview")
         contentView.frame = bounds
         setScrollContentSize()
-        removeshowUser()
+        addTapRecognizer()
         
         addSubview(contentView)
     }

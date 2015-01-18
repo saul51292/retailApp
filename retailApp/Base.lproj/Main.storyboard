@@ -106,12 +106,12 @@
             </objects>
             <point key="canvasLocation" x="960" y="-262"/>
         </scene>
-        <!--Item-->
+        <!--FufilledTV-->
         <scene sceneID="JNo-1z-TG4">
             <objects>
                 <tableViewController id="FVB-bI-ydm" customClass="FufilledTV" customModule="retailApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="E3G-cZ-BIV">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="478"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="429"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
@@ -217,13 +217,16 @@
                             <outlet property="delegate" destination="FVB-bI-ydm" id="aXT-eU-YC5"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" tag="2" title="Item" id="n30-2k-VAM"/>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="" image="check" id="n30-2k-VAM">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cpj-WI-FWU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2560" y="-550"/>
         </scene>
-        <!--Item-->
+        <!--ProgressVC-->
         <scene sceneID="VPR-lf-Tek">
             <objects>
                 <viewController id="VwG-KG-6qY" customClass="ProgressVC" customModule="retailApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -246,7 +249,9 @@
                             <constraint firstItem="i7r-gJ-oJN" firstAttribute="leading" secondItem="SUe-kM-apK" secondAttribute="leadingMargin" constant="-16" id="fu4-RS-ff0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Sw8-OD-2RJ"/>
+                    <tabBarItem key="tabBarItem" title="" image="Stats" id="Sw8-OD-2RJ">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="progressView" destination="i7r-gJ-oJN" id="5Ti-Nb-Wpw"/>
                     </connections>
@@ -255,12 +260,12 @@
             </objects>
             <point key="canvasLocation" x="1902" y="364"/>
         </scene>
-        <!--item2-->
+        <!--OrdersTV-->
         <scene sceneID="xdJ-zA-LO4">
             <objects>
                 <tableViewController id="AaB-NK-110" customClass="OrdersTV" customModule="retailApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="HWB-3c-1SR">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="478"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="429"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
@@ -366,7 +371,10 @@
                             <outlet property="delegate" destination="AaB-NK-110" id="4AG-PY-V2b"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" tag="1" title="item2" id="Vqx-r2-ZJ5"/>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="" image="order" id="Vqx-r2-ZJ5">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jgM-NC-R52" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -415,6 +423,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Stats" width="25" height="29"/>
+        <image name="Stats" width="20" height="24"/>
+        <image name="check" width="22" height="22"/>
+        <image name="order" width="24" height="24"/>
     </resources>
 </document>
