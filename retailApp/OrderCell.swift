@@ -57,6 +57,16 @@ class OrderCell: MGSwipeTableCell, MGSwipeTableCellDelegate {
         println("Do something")
     }
     
+    func createRightButtons()->[AnyObject] {
+        self.rightButtons = [MGSwipeButton(title: "right", backgroundColor: UIColor.flatWatermelonColorDark()),MGSwipeButton(title: "right2", backgroundColor: UIColor.flatTealColorDark())]
+        return self.rightButtons
+    }
+    
+    func createLeftButtons()->[AnyObject] {
+        self.leftButtons = [MGSwipeButton(title: "", icon: UIImage(named: "check"), backgroundColor: UIColor.flatSkyBlueColor())]
+        return self.leftButtons
+    }
+    
     // Probably should move this to a seperate button class
     private func changeStatusButton(title:String,color:UIColor) {
         statusBttn.setTitle(title, forState: .Normal)

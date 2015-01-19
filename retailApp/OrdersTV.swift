@@ -15,8 +15,8 @@ class OrdersTV: GenericTableView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var nib = UINib(nibName: "OrderCell", bundle: nil)
-        tableView.registerNib(nib, forCellReuseIdentifier: "OrderCell")
+        var nib = UINib(nibName: OrderCellIdentifier, bundle: nil)
+        tableView.registerNib(nib, forCellReuseIdentifier: OrderCellIdentifier)
         addBadge()
         // Do any additional setup after loading the view.
     }
@@ -36,13 +36,13 @@ class OrdersTV: GenericTableView {
     }
     
     
-    func swipeTableCell(cell: TableViewCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
+    func swipeTableCell(cell: OrderCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
         println("Active")
         if direction == MGSwipeDirection.LeftToRight && index == 0 {
             //delete button
-            var indexPath = tableView.indexPathForCell(cell)
+            let indexPath = tableView.indexPathForCell(cell)
             self.ordersItems.removeAtIndex(indexPath!.row)
-            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Right)
+//            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Right)
             addBadge()
         }
         
@@ -57,13 +57,8 @@ class OrdersTV: GenericTableView {
         navigationController?.navigationBar.topItem?.title = "\(tabItem.badgeValue!) Orders"
     }
     
-    override func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as OrderCell
-        cell.statusBttn.backgroundColor = darkAccentColor
-    }
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("OrderCell") as OrderCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(OrderCellIdentifier) as OrderCell
         cell.delegate = self
         cell.setOrder(exData[indexPath.row])
         cell.setCellColorTheme(darkAccentColor)

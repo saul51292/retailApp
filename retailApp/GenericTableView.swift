@@ -10,6 +10,7 @@ import UIKit
 
 class GenericTableView: UITableViewController, MGSwipeTableCellDelegate, UISearchBarDelegate {
     
+    let OrderCellIdentifier = "OrderCell"
     let styleManager = StyleManager()
     let showUser = UserOverview(frame: CGRectMake(0, 40, 250, 417))
     var ordersItems = ["Bus", "Helicopter", "Truck", "Boat", "Bicycle", "Motorcycle", "Plane", "Train", "Car", "Scooter", "Caravan"]
@@ -53,6 +54,7 @@ class GenericTableView: UITableViewController, MGSwipeTableCellDelegate, UISearc
         searchBar.resignFirstResponder()
     }
     
+    // TODO: clean this up
     func handleTap(gestureRecognizer: UITapGestureRecognizer) {
         let number = gestureRecognizer.view?.tag
         let imageName = UIImage(named: ordersItems[number!])
@@ -66,11 +68,11 @@ class GenericTableView: UITableViewController, MGSwipeTableCellDelegate, UISearc
     }
     
     override func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as TableViewCell
-        cell.actionButton.backgroundColor = darkAccentColor
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as OrderCell
+        cell.statusBttn.backgroundColor = darkAccentColor
     }
     
-    func swipeTableCell(cell: TableViewCell!, swipeButtonsForDirection direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [AnyObject]! {
+    func swipeTableCell(cell: OrderCell!, swipeButtonsForDirection direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [AnyObject]! {
         swipeSettings.transition = MGSwipeTransition.TransitionDrag
         expansionSettings.buttonIndex = 0
         expansionSettings.fillOnTrigger = true
@@ -83,8 +85,7 @@ class GenericTableView: UITableViewController, MGSwipeTableCellDelegate, UISearc
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("OrderCell") as TableViewCell
-        styleManager.tableViewCellStyling(cell,darkColor:darkAccentColor)
+        let cell = tableView.dequeueReusableCellWithIdentifier(OrderCellIdentifier) as OrderCell
         return cell
     }
     

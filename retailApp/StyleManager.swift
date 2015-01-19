@@ -29,22 +29,7 @@ class StyleManager: NSObject {
         vc.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Montserrat", size: 16)!], forState: UIControlState.Normal)
         vc.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Montserrat", size: 16)!], forState: UIControlState.Normal)
     }
-    
-    // TODO: This has too much information of what TableViewCell has -> Put this back in cell
-    func tableViewCellStyling(cell:TableViewCell,darkColor:UIColor!) {
-        cell.backgroundColor = UIColor.flatWhiteColor()
-        cell.timePurchase.textColor = darkColor
-        cell.userName.textColor = darkColor
-        cell.userPic!.clipsToBounds = true
-        if darkColor != nil {
-            cell.userPic!.layer.borderColor = darkColor!.CGColor!
-        }
-    }
 
-    func userPicStyling(image:UIImageView!){
-        image.layer.cornerRadius = 25
-        image.layer.borderWidth = 2
-    }
     
     func tabBarStyling(tabBar:TabBarController, emptyImage:UIImage,lightColor:UIColor) {
         tabBar.tabBar.shadowImage = emptyImage

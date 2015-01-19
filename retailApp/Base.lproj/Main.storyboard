@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C99d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KA7-jj-CAw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KA7-jj-CAw">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="Montserrat-Regular.ttf">
-            <string>Montserrat-Regular</string>
-            <string>Montserrat-Regular</string>
-            <string>Montserrat-Regular</string>
-        </mutableArray>
-    </customFonts>
     <scenes>
         <!--Settings-->
         <scene sceneID="VKq-IH-FIB">
@@ -59,101 +52,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="transportCell" rowHeight="75" id="VER-y4-KbT" customClass="TableViewCell" customModule="retailApp" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="transportCell" rowHeight="75" id="VER-y4-KbT" userLabel="OrderCell" customClass="OrderCell" customModule="retailApp" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VER-y4-KbT" id="5bv-gS-tvA">
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9iL-Dj-6Lw">
-                                            <rect key="frame" x="20" y="12" width="50" height="50"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="F83-T3-eek"/>
-                                                <constraint firstAttribute="height" constant="50" id="xHa-df-BuO"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoq-LH-nUQ">
-                                            <rect key="frame" x="84" y="8" width="191" height="33"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="191" id="wcj-w9-9pn"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
-                                            <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKb-Bk-Sfz">
-                                            <rect key="frame" x="84" y="38" width="36" height="25"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="182" id="wju-c4-dVK"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
-                                            <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="wju-c4-dVK"/>
-                                                </mask>
-                                            </variation>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vyk-uC-8sd">
-                                            <rect key="frame" x="527" y="22" width="46" height="31"/>
-                                            <color key="backgroundColor" red="0.19115509089999999" green="0.63786703349999996" blue="0.26147949700000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="XmB-PZ-qfq"/>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="f9O-uf-1t4"/>
-                                                <constraint firstAttribute="width" constant="46" id="ilE-8s-vad"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="Paid">
-                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="f9O-uf-1t4"/>
-                                                    <exclude reference="ilE-8s-vad"/>
-                                                </mask>
-                                            </variation>
-                                        </button>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="PKb-Bk-Sfz" firstAttribute="top" secondItem="hoq-LH-nUQ" secondAttribute="bottom" constant="-10" id="2en-H5-ZMf"/>
-                                        <constraint firstItem="9iL-Dj-6Lw" firstAttribute="leading" secondItem="5bv-gS-tvA" secondAttribute="leadingMargin" constant="12" id="89o-Vi-R42"/>
-                                        <constraint firstItem="hoq-LH-nUQ" firstAttribute="leading" secondItem="9iL-Dj-6Lw" secondAttribute="trailing" constant="16" id="9ro-FB-QGh"/>
-                                        <constraint firstItem="PKb-Bk-Sfz" firstAttribute="top" secondItem="hoq-LH-nUQ" secondAttribute="bottom" constant="-3" id="Avj-7P-ZBh"/>
-                                        <constraint firstItem="PKb-Bk-Sfz" firstAttribute="top" secondItem="hoq-LH-nUQ" secondAttribute="bottom" constant="-8" id="DEB-rE-RIk"/>
-                                        <constraint firstItem="PKb-Bk-Sfz" firstAttribute="top" secondItem="5bv-gS-tvA" secondAttribute="topMargin" constant="30" id="I4L-Tv-pyY"/>
-                                        <constraint firstItem="hoq-LH-nUQ" firstAttribute="top" secondItem="5bv-gS-tvA" secondAttribute="topMargin" id="JHR-XU-rER"/>
-                                        <constraint firstItem="PKb-Bk-Sfz" firstAttribute="leading" secondItem="hoq-LH-nUQ" secondAttribute="leading" id="Nhb-ei-xk0"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Vyk-uC-8sd" secondAttribute="trailing" constant="19" id="Or3-66-RPG"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="PKb-Bk-Sfz" secondAttribute="bottom" constant="3" id="Rrk-Vf-bfQ"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="PKb-Bk-Sfz" secondAttribute="bottom" constant="8" id="Sgq-4Y-e4a"/>
-                                        <constraint firstItem="hoq-LH-nUQ" firstAttribute="top" secondItem="9iL-Dj-6Lw" secondAttribute="top" constant="-4" id="Tba-Fb-kWo"/>
-                                        <constraint firstItem="PKb-Bk-Sfz" firstAttribute="top" secondItem="5bv-gS-tvA" secondAttribute="topMargin" constant="25" id="aOf-5K-RSJ"/>
-                                        <constraint firstItem="hoq-LH-nUQ" firstAttribute="top" secondItem="5bv-gS-tvA" secondAttribute="topMargin" constant="1" id="fvL-uP-jzi"/>
-                                        <constraint firstItem="Vyk-uC-8sd" firstAttribute="top" secondItem="5bv-gS-tvA" secondAttribute="topMargin" constant="14" id="hps-yY-G1r"/>
-                                        <constraint firstItem="hoq-LH-nUQ" firstAttribute="leading" secondItem="9iL-Dj-6Lw" secondAttribute="trailing" constant="14" id="uOc-3z-8ki"/>
-                                        <constraint firstItem="9iL-Dj-6Lw" firstAttribute="top" secondItem="5bv-gS-tvA" secondAttribute="topMargin" constant="4" id="wt5-M6-HXQ"/>
-                                    </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="9ro-FB-QGh"/>
-                                            <exclude reference="JHR-XU-rER"/>
-                                            <exclude reference="fvL-uP-jzi"/>
-                                            <exclude reference="2en-H5-ZMf"/>
-                                            <exclude reference="DEB-rE-RIk"/>
-                                            <exclude reference="Sgq-4Y-e4a"/>
-                                            <exclude reference="aOf-5K-RSJ"/>
-                                        </mask>
-                                    </variation>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="actionButton" destination="Vyk-uC-8sd" id="0Ew-i3-8vM"/>
-                                    <outlet property="timePurchase" destination="PKb-Bk-Sfz" id="ISh-vT-HVZ"/>
-                                    <outlet property="userName" destination="hoq-LH-nUQ" id="Q81-s1-NmF"/>
-                                    <outlet property="userPic" destination="9iL-Dj-6Lw" id="QzU-hY-ITv"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -237,7 +140,6 @@
         <!--Navigation Controller-->
         <scene sceneID="9w3-MH-bMg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eKC-Hf-LAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KA7-jj-CAw" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Stats" id="acW-dT-cKf">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
@@ -252,6 +154,7 @@
                         <segue destination="Wdg-Kq-CUc" kind="relationship" relationship="rootViewController" id="cUv-Xf-dy1"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eKC-Hf-LAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="548" y="-426"/>
         </scene>

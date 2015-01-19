@@ -9,11 +9,14 @@
 import UIKit
 
 class FufilledTV: GenericTableView {
+    let exData = dataArr.filter() { (order) in
+        order.orderStatus == OrderStatus.Fufilled
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println(fufilledItems)
-        tableView.reloadData()
+        var nib = UINib(nibName: OrderCellIdentifier, bundle: nil)
+        tableView.registerNib(nib, forCellReuseIdentifier: OrderCellIdentifier)
         // Do any additional setup after loading the view.
     }
     
@@ -28,27 +31,20 @@ class FufilledTV: GenericTableView {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fufilledItems.count
+        return exData.count
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as TableViewCell
-        cell.actionButton.backgroundColor = darkAccentColor
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as OrderCell
+        cell.statusBttn.backgroundColor = darkAccentColor
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("transportCell", forIndexPath: indexPath) as TableViewCell
-        let imageName = UIImage(named: fufilledItems[indexPath.row])
+        let cell = tableView.dequeueReusableCellWithIdentifier(OrderCellIdentifier, forIndexPath: indexPath) as OrderCell
+
         cell.delegate = self
-        styleManager.tableViewCellStyling(cell,darkColor:darkAccentColor)
-        
-        cell.userName.text = fufilledItems[indexPath.row]
-        cell.timePurchase.text = time[indexPath.row]
-        cell.userPic!.image = imageName
-        cell.userPic!.tag = indexPath.row
-        cell.changeActionButton("Fufilled", color: UIColor.flatSkyBlueColor())
-        //        cell.userPic!.userInteractionEnabled = true
-        //        cell.userPic!.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "handleTap:"))
+        cell.setOrder(exData[indexPath.row])
+        cell.setCellColorTheme(darkAccentColor)
         
         return cell
     }
