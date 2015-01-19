@@ -11,19 +11,23 @@ import UIKit
 class TabBarController: UITabBarController, UITabBarDelegate {
     var fufilledTV : FufilledTV!
     var ordersTV : OrdersTV!
-    var darkAccentColor = UIColor.flatMintColorDark()
-    var accentColor = UIColor.flatMintColor()
+    var darkAccentColor = UIColor.flatMagentaColorDark()
+    var accentColor = UIColor.flatMagentaColor()
     var progressVC : ProgressVC!    
-    
-    
-    var text = "Sales"
+    let styleManager = StyleManager()
+    var tabBarBack = UIImage (named: "empty.png")
+
+    var text = "Orders"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        progressVC = self.childViewControllers[0] as ProgressVC
-        ordersTV = self.childViewControllers[1] as OrdersTV
-        fufilledTV = self.childViewControllers[2] as FufilledTV
-        text = "\(ordersTV.ordersItems.count + fufilledTV.fufilledItems.count) Sales"
+        ordersTV = self.childViewControllers[0] as OrdersTV
+        fufilledTV = self.childViewControllers[1] as FufilledTV
+        progressVC = self.childViewControllers[3] as ProgressVC
+        
+        text = "\(ordersTV.ordersItems.count) Orders"
+        navigationController?.navigationBar.topItem?.title = self.text
+        reloadAndStyleTable(ordersTV)
         ordersTV.addBadge()
 
         // Do any additional setup after loading the view.
@@ -32,6 +36,14 @@ class TabBarController: UITabBarController, UITabBarDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.topItem?.title = text
+        styleManager.navBarStyling(self, darkColor:darkAccentColor, emptyImage:tabBarBack!)
+        styleManager.tabBarStyling(self, emptyImage:tabBarBack!,lightColor:accentColor)
     }
     
     // TODO: Can both tables be in superview?
@@ -55,31 +67,40 @@ class TabBarController: UITabBarController, UITabBarDelegate {
 
         switch (item.tag)
         {
-
+            
         case 0:
             println("0")
-            text = "\(ordersTV.ordersItems.count + fufilledTV.fufilledItems.count) Sales"
-            darkAccentColor = UIColor.flatMintColorDark()
-            accentColor = UIColor.flatMintColor()
-
-        case 1:
-            println("1")
             text = "\(ordersTV.ordersItems.count) Orders"
             darkAccentColor = UIColor.flatMagentaColorDark()
             accentColor = UIColor.flatMagentaColor()
             reloadAndStyleTable(ordersTV)
 
-        case 2:
-            println("2")
+        case 1:
+            println("1")
             text = "\(fufilledTV.fufilledItems.count) Fufilled"
             darkAccentColor = UIColor.flatSkyBlueColorDark()
             accentColor = UIColor.flatSkyBlueColor()
             reloadAndStyleTable(fufilledTV)
+            
+        case 2:
+            println("2")
+            println("Camera")
+            
+        case 3:
+            println("3")
+            text = "\(ordersTV.ordersItems.count + fufilledTV.fufilledItems.count) Sales"
+            darkAccentColor = UIColor.flatMintColorDark()
+            accentColor = UIColor.flatMintColor()
+        
+        case 4:
+            println("4")
+            println("Settings")
+          
 
         default:
             println("error")
         }
-        self.parentViewController?.viewWillAppear(true)
+        self.viewWillAppear(true)
 
     }
 

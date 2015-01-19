@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KA7-jj-CAw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C99d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KA7-jj-CAw">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -12,60 +12,50 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--The Bruffin Shop-->
-        <scene sceneID="hNz-n2-bh7">
+        <!--Settings-->
+        <scene sceneID="VKq-IH-FIB">
             <objects>
-                <viewController title="The Bruffin Shop" id="9pv-A4-QxB" customClass="FirstViewController" customModule="retailApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xG3-oJ-7AG" customClass="SettingsVC" customModule="retailApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
-                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                        <viewControllerLayoutGuide type="top" id="0kG-Xh-CzK"/>
+                        <viewControllerLayoutGuide type="bottom" id="cGq-Lq-yM9"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                    <view key="view" contentMode="scaleToFill" id="Qbq-GA-So2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LoQ-KF-VU3">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
-                                <connections>
-                                    <segue destination="Wdg-Kq-CUc" kind="embed" identifier="tableSegue" id="1cU-Q5-sJh"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="LoQ-KF-VU3" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="8mD-ar-z0a"/>
-                            <constraint firstItem="LoQ-KF-VU3" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="71" id="DYL-92-afw"/>
-                            <constraint firstItem="LoQ-KF-VU3" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="58" id="Hhi-Te-3yk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="LoQ-KF-VU3" secondAttribute="trailing" constant="-16" id="MWj-hp-QKE"/>
-                            <constraint firstItem="LoQ-KF-VU3" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="128" id="XBl-ap-qev"/>
-                            <constraint firstItem="LoQ-KF-VU3" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="hUk-zq-TcD"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="LoQ-KF-VU3" secondAttribute="bottom" id="vIM-uT-ZRs"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="DYL-92-afw"/>
-                                <exclude reference="Hhi-Te-3yk"/>
-                                <exclude reference="XBl-ap-qev"/>
-                            </mask>
-                        </variation>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="The Bruffin Shop" id="iwt-o1-h5u"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="containerView" destination="LoQ-KF-VU3" id="cAl-yA-GAf"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" tag="4" title="Settings" image="second" id="wTh-Ck-w1V"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yaz-I1-M2W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="960" y="-262"/>
+            <point key="canvasLocation" x="2725" y="385"/>
+        </scene>
+        <!--Camera-->
+        <scene sceneID="iYK-BX-w5W">
+            <objects>
+                <viewController id="SLj-6Z-YEa" customClass="CameraVC" customModule="retailApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="siS-uA-1Rs"/>
+                        <viewControllerLayoutGuide type="bottom" id="CqU-7m-N6l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lh1-Dc-1GZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="2" title="Camera" image="first" id="2Kb-42-O6u"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HmR-SC-8E3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1408" y="385"/>
         </scene>
         <!--FufilledTV-->
         <scene sceneID="JNo-1z-TG4">
             <objects>
                 <tableViewController id="FVB-bI-ydm" customClass="FufilledTV" customModule="retailApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="E3G-cZ-BIV">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
@@ -172,13 +162,13 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <tabBarItem key="tabBarItem" tag="2" title="" image="check" id="n30-2k-VAM">
+                    <tabBarItem key="tabBarItem" tag="1" title="" image="check" id="n30-2k-VAM">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cpj-WI-FWU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2560" y="-550"/>
+            <point key="canvasLocation" x="747" y="385"/>
         </scene>
         <!--ProgressVC-->
         <scene sceneID="VPR-lf-Tek">
@@ -189,10 +179,10 @@
                         <viewControllerLayoutGuide type="bottom" id="DIF-we-e1x"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SUe-kM-apK">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i7r-gJ-oJN" customClass="ProgressBar" customModule="retailApp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i7r-gJ-oJN" customClass="ProgressBar" customModule="retailApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                             </view>
                         </subviews>
@@ -203,7 +193,7 @@
                             <constraint firstItem="i7r-gJ-oJN" firstAttribute="leading" secondItem="SUe-kM-apK" secondAttribute="leadingMargin" constant="-16" id="fu4-RS-ff0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Stats" id="Sw8-OD-2RJ">
+                    <tabBarItem key="tabBarItem" tag="3" title="" image="Stats" id="Sw8-OD-2RJ">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <connections>
@@ -212,14 +202,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nIy-s9-Y0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902" y="364"/>
+            <point key="canvasLocation" x="2064" y="385"/>
         </scene>
         <!--OrdersTV-->
         <scene sceneID="xdJ-zA-LO4">
             <objects>
                 <tableViewController id="AaB-NK-110" customClass="OrdersTV" customModule="retailApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="HWB-3c-1SR">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
@@ -236,17 +226,18 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <tabBarItem key="tabBarItem" tag="1" title="" image="order" id="Vqx-r2-ZJ5">
+                    <tabBarItem key="tabBarItem" title="" image="order" id="Vqx-r2-ZJ5">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jgM-NC-R52" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2560" y="16"/>
+            <point key="canvasLocation" x="101" y="385"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9w3-MH-bMg">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eKC-Hf-LAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KA7-jj-CAw" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Stats" id="acW-dT-cKf">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
@@ -258,37 +249,41 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="fHW-S9-1k8"/>
+                        <segue destination="Wdg-Kq-CUc" kind="relationship" relationship="rootViewController" id="cUv-Xf-dy1"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eKC-Hf-LAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="266" y="-314"/>
+            <point key="canvasLocation" x="548" y="-426"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="N9z-02-ID5">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Wdg-Kq-CUc" customClass="TabBarController" customModule="retailApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="TgI-We-8vP"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="ff5-1S-iyp">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="VwG-KG-6qY" kind="relationship" relationship="viewControllers" id="9Au-40-QfQ"/>
                         <segue destination="AaB-NK-110" kind="relationship" relationship="viewControllers" id="KV2-en-mdO"/>
                         <segue destination="FVB-bI-ydm" kind="relationship" relationship="viewControllers" id="zRS-Fp-CUn"/>
+                        <segue destination="SLj-6Z-YEa" kind="relationship" relationship="viewControllers" id="SiK-bN-J9Q"/>
+                        <segue destination="VwG-KG-6qY" kind="relationship" relationship="viewControllers" id="9Au-40-QfQ"/>
+                        <segue destination="xG3-oJ-7AG" kind="relationship" relationship="viewControllers" id="6q4-hl-94v"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rnx-1U-TaP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1783" y="-430"/>
+            <point key="canvasLocation" x="1408" y="-426"/>
         </scene>
     </scenes>
     <resources>
         <image name="Stats" width="20" height="24"/>
         <image name="check" width="22" height="22"/>
+        <image name="first" width="30" height="30"/>
         <image name="order" width="24" height="24"/>
+        <image name="second" width="30" height="30"/>
     </resources>
 </document>

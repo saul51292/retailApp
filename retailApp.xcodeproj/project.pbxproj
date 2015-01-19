@@ -12,7 +12,6 @@
 		C70128461A65CF9B00101467 /* FufilledTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70128451A65CF9B00101467 /* FufilledTV.swift */; };
 		C701284B1A65DEE900101467 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701284A1A65DEE900101467 /* TabBarController.swift */; };
 		C706D0091A63A08400E06116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C706D0081A63A08400E06116 /* AppDelegate.swift */; };
-		C706D00B1A63A08400E06116 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C706D00A1A63A08400E06116 /* FirstViewController.swift */; };
 		C706D0101A63A08400E06116 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C706D00E1A63A08400E06116 /* Main.storyboard */; };
 		C706D0121A63A08400E06116 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C706D0111A63A08400E06116 /* Images.xcassets */; };
 		C706D0151A63A08400E06116 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C706D0131A63A08400E06116 /* LaunchScreen.xib */; };
@@ -38,6 +37,8 @@
 		C7B97D071A672427000F7BA3 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7B97D061A672427000F7BA3 /* ProgressView.xib */; };
 		C7B97D091A67253C000F7BA3 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B97D081A67253C000F7BA3 /* ProgressBar.swift */; };
 		C7D9F95C1A6B206D00DD8EAF /* ProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D9F95B1A6B206D00DD8EAF /* ProgressVC.swift */; };
+		C7E431FA1A6DB2AB00B97945 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E431F91A6DB2AB00B97945 /* CameraVC.swift */; };
+		C7E431FC1A6DB2BA00B97945 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E431FB1A6DB2BA00B97945 /* SettingsVC.swift */; };
 		CE56EADA1A6CB3C00098B1F5 /* StatusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56EAD91A6CB3C00098B1F5 /* StatusButton.swift */; };
 		CECD37BA1A6C401600895E32 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD37B91A6C401600895E32 /* Order.swift */; };
 		CECD37BD1A6C466400895E32 /* ExampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD37BC1A6C466400895E32 /* ExampleData.swift */; };
@@ -66,7 +67,6 @@
 		C706D0031A63A08400E06116 /* retailApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = retailApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C706D0071A63A08400E06116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C706D0081A63A08400E06116 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C706D00A1A63A08400E06116 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		C706D00F1A63A08400E06116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C706D0111A63A08400E06116 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C706D0141A63A08400E06116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -96,6 +96,8 @@
 		C7B97D061A672427000F7BA3 /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
 		C7B97D081A67253C000F7BA3 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		C7D9F95B1A6B206D00DD8EAF /* ProgressVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressVC.swift; sourceTree = "<group>"; };
+		C7E431F91A6DB2AB00B97945 /* CameraVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
+		C7E431FB1A6DB2BA00B97945 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		CE56EAD91A6CB3C00098B1F5 /* StatusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusButton.swift; sourceTree = "<group>"; };
 		CECD37B91A6C401600895E32 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		CECD37BC1A6C466400895E32 /* ExampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleData.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				CEFC722A1A68F79B0052AF06 /* UserOverview */,
 				CEFC72291A68F7790052AF06 /* ProgressView */,
 				C706D0081A63A08400E06116 /* AppDelegate.swift */,
+				C7E431FD1A6DB2C000B97945 /* TabBarVC */,
 				C70128491A65DE2500101467 /* TableViews */,
 				C736B8891A64842200CBC1C9 /* StyleManager.swift */,
 				C706D0111A63A08400E06116 /* Images.xcassets */,
@@ -179,7 +182,6 @@
 				C706D0061A63A08400E06116 /* Supporting Files */,
 				C706D02C1A63AFDB00E06116 /* retailApp-Bridging-Header.h */,
 				CEFC72261A68F6BA0052AF06 /* UIView+Extension.swift */,
-				C7D9F95B1A6B206D00DD8EAF /* ProgressVC.swift */,
 			);
 			path = retailApp;
 			sourceTree = "<group>";
@@ -228,6 +230,16 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		C7E431FD1A6DB2C000B97945 /* TabBarVC */ = {
+			isa = PBXGroup;
+			children = (
+				C7D9F95B1A6B206D00DD8EAF /* ProgressVC.swift */,
+				C7E431F91A6DB2AB00B97945 /* CameraVC.swift */,
+				C7E431FB1A6DB2BA00B97945 /* SettingsVC.swift */,
+			);
+			name = TabBarVC;
+			sourceTree = "<group>";
+		};
 		CECD37BB1A6C448E00895E32 /* Orders */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,7 +270,6 @@
 		CEFC722C1A68F7DD0052AF06 /* app */ = {
 			isa = PBXGroup;
 			children = (
-				C706D00A1A63A08400E06116 /* FirstViewController.swift */,
 				C706D00E1A63A08400E06116 /* Main.storyboard */,
 				C7118B591A64DEA00079F42E /* GenericTableView.swift */,
 				C742438A1A64FB9B00EC66F9 /* TableViewCell.swift */,
@@ -461,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7E431FC1A6DB2BA00B97945 /* SettingsVC.swift in Sources */,
 				CECD37BD1A6C466400895E32 /* ExampleData.swift in Sources */,
 				CEFC72271A68F6BA0052AF06 /* UIView+Extension.swift in Sources */,
 				C7D9F95C1A6B206D00DD8EAF /* ProgressVC.swift in Sources */,
@@ -472,7 +484,7 @@
 				C7118B5A1A64DEA00079F42E /* GenericTableView.swift in Sources */,
 				C70128461A65CF9B00101467 /* FufilledTV.swift in Sources */,
 				C706D0091A63A08400E06116 /* AppDelegate.swift in Sources */,
-				C706D00B1A63A08400E06116 /* FirstViewController.swift in Sources */,
+				C7E431FA1A6DB2AB00B97945 /* CameraVC.swift in Sources */,
 				CECD37BA1A6C401600895E32 /* Order.swift in Sources */,
 				CE56EADA1A6CB3C00098B1F5 /* StatusButton.swift in Sources */,
 				C7B97D091A67253C000F7BA3 /* ProgressBar.swift in Sources */,
