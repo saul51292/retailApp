@@ -52,7 +52,7 @@ class OrdersTV: GenericTableView {
     
     func addBadge() {
         var tabArray = tabBarController?.tabBar.items as NSArray!
-        var tabItem = tabArray.objectAtIndex(1) as UITabBarItem
+        var tabItem = tabArray.objectAtIndex(0) as UITabBarItem
         tabItem.badgeValue = String(self.ordersItems.count)
         navigationController?.navigationBar.topItem?.title = "\(tabItem.badgeValue!) Orders"
     }
