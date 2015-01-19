@@ -14,7 +14,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="OrderCell" customModule="retailApp" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderCell" id="KGk-i7-Jjw" customClass="OrderCell" customModule="retailApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -22,12 +22,37 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TDC-YB-CMD">
-                        <rect key="frame" x="13" y="13" width="50" height="50"/>
+                        <rect key="frame" x="22" y="13" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="dB0-pi-b6d"/>
                             <constraint firstAttribute="width" constant="50" id="mHR-Uj-AVg"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxd-iQ-qvW">
+                        <rect key="frame" x="252" y="22" width="46" height="31"/>
+                        <color key="backgroundColor" red="0.19115509089999999" green="0.63786703349999996" blue="0.26147949700000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="5YG-Sf-IS4"/>
+                            <constraint firstAttribute="width" constant="46" id="DLb-qd-PBb"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="LUg-0q-jkw"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" title="Paid">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="DLb-qd-PBb"/>
+                                <exclude reference="LUg-0q-jkw"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <action selector="tappedStatusBttn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="MF2-j6-gx3"/>
+                        </connections>
+                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxm-Dw-0Fu">
                         <rect key="frame" x="80" y="8" width="191" height="33"/>
                         <constraints>
@@ -52,44 +77,23 @@
                             </mask>
                         </variation>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxd-iQ-qvW">
-                        <rect key="frame" x="266" y="22" width="46" height="31"/>
-                        <color key="backgroundColor" red="0.19115509089999999" green="0.63786703349999996" blue="0.26147949700000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="5YG-Sf-IS4"/>
-                            <constraint firstAttribute="width" constant="46" id="DLb-qd-PBb"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="LUg-0q-jkw"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        <state key="normal" title="Paid">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="DLb-qd-PBb"/>
-                                <exclude reference="LUg-0q-jkw"/>
-                            </mask>
-                        </variation>
-                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="TDC-YB-CMD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="86C-r7-WLH"/>
+                    <constraint firstItem="TDC-YB-CMD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="86C-r7-WLH"/>
                     <constraint firstItem="TDC-YB-CMD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="Mnq-pH-OJV"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Bxm-Dw-0Fu" secondAttribute="bottom" constant="26" id="OUN-tO-lXY"/>
                     <constraint firstItem="Kfc-ZL-IqK" firstAttribute="leading" secondItem="Bxm-Dw-0Fu" secondAttribute="leading" id="QKa-6l-f3b"/>
                     <constraint firstItem="Bxm-Dw-0Fu" firstAttribute="top" secondItem="TDC-YB-CMD" secondAttribute="top" constant="-5" id="UWb-6m-Lkw"/>
                     <constraint firstItem="Kfc-ZL-IqK" firstAttribute="bottom" secondItem="TDC-YB-CMD" secondAttribute="bottom" constant="-1" id="dLE-j6-z9X"/>
-                    <constraint firstItem="wxd-iQ-qvW" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="ifA-ld-HQ4"/>
-                    <constraint firstItem="Bxm-Dw-0Fu" firstAttribute="leading" secondItem="TDC-YB-CMD" secondAttribute="trailing" constant="17" id="jhT-cn-GmK"/>
+                    <constraint firstItem="wxd-iQ-qvW" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="-14" id="ifA-ld-HQ4"/>
+                    <constraint firstItem="Bxm-Dw-0Fu" firstAttribute="leading" secondItem="TDC-YB-CMD" secondAttribute="trailing" constant="8" id="jhT-cn-GmK"/>
                     <constraint firstItem="wxd-iQ-qvW" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="osn-2S-ONh"/>
                     <constraint firstItem="Kfc-ZL-IqK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="29" id="oxX-S5-vVD"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="purchaseTimer" destination="Kfc-ZL-IqK" id="YUj-dl-N2b"/>
+                <outlet property="purchaseTime" destination="Kfc-ZL-IqK" id="0Bi-DF-VKE"/>
+                <outlet property="statusBttn" destination="wxd-iQ-qvW" id="lgp-M3-xPg"/>
                 <outlet property="userImage" destination="TDC-YB-CMD" id="VGd-U1-eAh"/>
                 <outlet property="userName" destination="Bxm-Dw-0Fu" id="egd-zk-FvK"/>
             </connections>

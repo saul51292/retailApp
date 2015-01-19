@@ -12,6 +12,7 @@ import UIKit
 class StyleManager: NSObject {
     
     let backColor = UIColor.flatWhiteColor()
+    let darkAccentColor = UIColor.flatMintColorDark()
     
     func navBarStyling(vc:UIViewController, darkColor:UIColor, emptyImage:UIImage) {
         var nav = vc.navigationController?.navigationBar
@@ -29,6 +30,7 @@ class StyleManager: NSObject {
         vc.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Montserrat", size: 16)!], forState: UIControlState.Normal)
     }
     
+    // TODO: This has too much information of what TableViewCell has -> Put this back in cell
     func tableViewCellStyling(cell:TableViewCell,darkColor:UIColor!) {
         cell.backgroundColor = UIColor.flatWhiteColor()
         cell.timePurchase.textColor = darkColor

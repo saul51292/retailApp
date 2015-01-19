@@ -8,37 +8,21 @@
 
 import UIKit
 
+enum OrderStatus {
+    case Cancelled
+    case Processing
+    case Fufilled
+}
+
 struct Order {
-    let item: String
-//    var orderImage: String
-    let orderState: OrderState
+    
+    let name: String
+    let orderStatus: OrderStatus
     let time: String
     
-    init(item: String, orderState: OrderState, time: String) {
-        self.item = item
-        self.orderState = orderState
+    init(name: String, orderStatus: OrderStatus, time: String) {
+        self.name = name
+        self.orderStatus = orderStatus
         self.time = time
-    }
-}
-
-protocol OrderState {
-    func getName() -> String
-}
-
-struct ProcessingState: OrderState {
-    func getName() -> String {
-        return "Processing"
-    }
-}
-
-struct CancelledState: OrderState {
-    func getName() -> String {
-        return "Cancelled"
-    }
-}
-
-struct FufilledState: OrderState {
-    func getName() -> String {
-        return "Fufilled"
     }
 }

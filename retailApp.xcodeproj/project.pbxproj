@@ -38,6 +38,7 @@
 		C7B97D071A672427000F7BA3 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7B97D061A672427000F7BA3 /* ProgressView.xib */; };
 		C7B97D091A67253C000F7BA3 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B97D081A67253C000F7BA3 /* ProgressBar.swift */; };
 		C7D9F95C1A6B206D00DD8EAF /* ProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D9F95B1A6B206D00DD8EAF /* ProgressVC.swift */; };
+		CE56EADA1A6CB3C00098B1F5 /* StatusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56EAD91A6CB3C00098B1F5 /* StatusButton.swift */; };
 		CECD37BA1A6C401600895E32 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD37B91A6C401600895E32 /* Order.swift */; };
 		CECD37BD1A6C466400895E32 /* ExampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD37BC1A6C466400895E32 /* ExampleData.swift */; };
 		CECD37C01A6C4C3100895E32 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD37BE1A6C4C3100895E32 /* OrderCell.swift */; };
@@ -95,6 +96,7 @@
 		C7B97D061A672427000F7BA3 /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
 		C7B97D081A67253C000F7BA3 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		C7D9F95B1A6B206D00DD8EAF /* ProgressVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressVC.swift; sourceTree = "<group>"; };
+		CE56EAD91A6CB3C00098B1F5 /* StatusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusButton.swift; sourceTree = "<group>"; };
 		CECD37B91A6C401600895E32 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		CECD37BC1A6C466400895E32 /* ExampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleData.swift; sourceTree = "<group>"; };
 		CECD37BE1A6C4C3100895E32 /* OrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				C701284A1A65DEE900101467 /* TabBarController.swift */,
 				CECD37BE1A6C4C3100895E32 /* OrderCell.swift */,
 				CECD37BF1A6C4C3100895E32 /* OrderCell.xib */,
+				CE56EAD91A6CB3C00098B1F5 /* StatusButton.swift */,
 			);
 			name = app;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				C706D0091A63A08400E06116 /* AppDelegate.swift in Sources */,
 				C706D00B1A63A08400E06116 /* FirstViewController.swift in Sources */,
 				CECD37BA1A6C401600895E32 /* Order.swift in Sources */,
+				CE56EADA1A6CB3C00098B1F5 /* StatusButton.swift in Sources */,
 				C7B97D091A67253C000F7BA3 /* ProgressBar.swift in Sources */,
 				C736B88A1A64842200CBC1C9 /* StyleManager.swift in Sources */,
 			);

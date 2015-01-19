@@ -34,21 +34,21 @@ private let t10 = "3:15"
 private let t11 = "3:30"
 
 
-private let d1 = Order(item: bus, orderState: ProcessingState(), time: t1)
-private let d2 = Order(item: helicopter, orderState: CancelledState(), time: t2)
-private let d3 = Order(item: truck, orderState: ProcessingState(), time: t3)
-private let d4 = Order(item: boat, orderState: CancelledState(), time: t4)
-private let d5 = Order(item: bicycle, orderState: ProcessingState(), time: t5)
-private let d6 = Order(item: motorcycle, orderState: ProcessingState(), time: t6)
-private let d7 = Order(item: plane, orderState: CancelledState(), time: t7)
-private let d8 = Order(item: train, orderState: ProcessingState(), time: t8)
-private let d9 = Order(item: car, orderState: CancelledState(), time: t9)
-private let d10 = Order(item: bus, orderState: FufilledState(), time: t1)
-private let d11 = Order(item: helicopter, orderState: FufilledState(), time: t2)
-private let d12 = Order(item: truck, orderState: FufilledState(), time: t3)
-private let d13 = Order(item: boat, orderState: FufilledState(), time: t4)
-private let d14 = Order(item: bicycle, orderState: FufilledState(), time: t5)
-private let d15 = Order(item: motorcycle, orderState: FufilledState(), time: t6)
+private let d1 = Order(name: bus, orderStatus: OrderStatus.Processing, time: t1)
+private let d2 = Order(name: helicopter, orderStatus: OrderStatus.Cancelled, time: t2)
+private let d3 = Order(name: truck, orderStatus: OrderStatus.Processing, time: t3)
+private let d4 = Order(name: boat, orderStatus: OrderStatus.Cancelled, time: t4)
+private let d5 = Order(name: bicycle, orderStatus: OrderStatus.Processing, time: t5)
+private let d6 = Order(name: motorcycle, orderStatus: OrderStatus.Cancelled, time: t6)
+private let d7 = Order(name: plane, orderStatus: OrderStatus.Processing, time: t7)
+private let d8 = Order(name: train, orderStatus: OrderStatus.Cancelled, time: t8)
+private let d9 = Order(name: car, orderStatus: OrderStatus.Processing, time: t9)
+private let d10 = Order(name: bus, orderStatus: OrderStatus.Fufilled, time: t1)
+private let d11 = Order(name: helicopter, orderStatus: OrderStatus.Fufilled, time: t2)
+private let d12 = Order(name: truck, orderStatus: OrderStatus.Fufilled, time: t3)
+private let d13 = Order(name: boat, orderStatus: OrderStatus.Fufilled, time: t4)
+private let d14 = Order(name: bicycle, orderStatus: OrderStatus.Fufilled, time: t5)
+private let d15 = Order(name: motorcycle, orderStatus: OrderStatus.Fufilled, time: t6)
 
-let dataArr = [d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15]
+let dataArr: Array<Order> = [d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15]
 
