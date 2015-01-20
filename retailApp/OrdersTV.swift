@@ -9,7 +9,7 @@
 import UIKit
 
 class OrdersTV: GenericTableView {
-    let exData = dataArr.filter() { (order) in
+    var exData = dataArr.filter() { (order) in
         order.orderStatus != OrderStatus.Fufilled
     }
     
@@ -17,6 +17,7 @@ class OrdersTV: GenericTableView {
         super.viewDidLoad()
         var nib = UINib(nibName: OrderCellIdentifier, bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: OrderCellIdentifier)
+        updateDataSource()
         // Do any additional setup after loading the view.
     }
     
@@ -34,14 +35,23 @@ class OrdersTV: GenericTableView {
         cell.statusBttn.backgroundColor = darkAccentColor
     }
     
+    private func updateDataSource() {
+        exData = dataArr.filter() { (order) in
+            order.orderStatus != OrderStatus.Fufilled
+        }
+    }
     
+    // FIXME: There are too many steps here to move a cell
     func swipeTableCell(cell: OrderCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
         println("Active")
         if direction == MGSwipeDirection.LeftToRight && index == 0 {
             //delete button
             let indexPath = tableView.indexPathForCell(cell)
             self.ordersItems.removeAtIndex(indexPath!.row)
+            cell.completeOrder()
 //            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Right)
+            updateDataSource()
+            tableView.reloadData()
         }
         
         return true

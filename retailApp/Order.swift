@@ -14,15 +14,19 @@ enum OrderStatus {
     case Fufilled
 }
 
-struct Order {
+class Order {
     
     let name: String
-    let orderStatus: OrderStatus
+    var orderStatus: OrderStatus
     let time: String
     
     init(name: String, orderStatus: OrderStatus, time: String) {
         self.name = name
         self.orderStatus = orderStatus
         self.time = time
+    }
+    
+    func completeOrder() {
+        orderStatus = OrderStatus.Fufilled
     }
 }

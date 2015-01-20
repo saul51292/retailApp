@@ -51,6 +51,10 @@ class OrderCell: MGSwipeTableCell, MGSwipeTableCellDelegate {
         changeStatusButtonForOrderStatus()
     }
     
+    func completeOrder() {
+        order.completeOrder()
+    }
+    
     // TODO:
     @IBAction func tappedStatusBttn(sender: UIButton) {
         println("Stats button tapped")

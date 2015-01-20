@@ -144,6 +144,9 @@
 		C70128491A65DE2500101467 /* TableViews */ = {
 			isa = PBXGroup;
 			children = (
+				CECD37BE1A6C4C3100895E32 /* OrderCell.swift */,
+				CECD37BF1A6C4C3100895E32 /* OrderCell.xib */,
+				C7118B591A64DEA00079F42E /* GenericTableView.swift */,
 				C70128431A65CDD900101467 /* OrdersTV.swift */,
 				C70128451A65CF9B00101467 /* FufilledTV.swift */,
 			);
@@ -180,7 +183,6 @@
 				CEFC72291A68F7790052AF06 /* ProgressView */,
 				C706D0081A63A08400E06116 /* AppDelegate.swift */,
 				C7E431FD1A6DB2C000B97945 /* TabBarVC */,
-				C70128491A65DE2500101467 /* TableViews */,
 				C736B8891A64842200CBC1C9 /* StyleManager.swift */,
 				C706D0111A63A08400E06116 /* Images.xcassets */,
 				C706D02A1A63A89500E06116 /* empty.png */,
@@ -288,11 +290,9 @@
 		CEFC722C1A68F7DD0052AF06 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				C70128491A65DE2500101467 /* TableViews */,
 				C706D00E1A63A08400E06116 /* Main.storyboard */,
-				C7118B591A64DEA00079F42E /* GenericTableView.swift */,
 				C701284A1A65DEE900101467 /* TabBarController.swift */,
-				CECD37BE1A6C4C3100895E32 /* OrderCell.swift */,
-				CECD37BF1A6C4C3100895E32 /* OrderCell.xib */,
 				CE56EAD91A6CB3C00098B1F5 /* StatusButton.swift */,
 			);
 			name = app;

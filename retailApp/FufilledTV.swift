@@ -9,7 +9,7 @@
 import UIKit
 
 class FufilledTV: GenericTableView {
-    let exData = dataArr.filter() { (order) in
+    var exData = dataArr.filter() { (order) in
         order.orderStatus == OrderStatus.Fufilled
     }
     
@@ -17,12 +17,8 @@ class FufilledTV: GenericTableView {
         super.viewDidLoad()
         var nib = UINib(nibName: OrderCellIdentifier, bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: OrderCellIdentifier)
+        updateDataSource()
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        tableView.reloadData()
-        println(fufilledItems)
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,6 +43,12 @@ class FufilledTV: GenericTableView {
         cell.setCellColorTheme(darkAccentColor)
         
         return cell
+    }
+    
+    private func updateDataSource() {
+        exData = dataArr.filter() { (order) in
+            order.orderStatus == OrderStatus.Fufilled
+        }
     }
     
     /*
