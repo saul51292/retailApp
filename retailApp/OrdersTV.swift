@@ -13,10 +13,17 @@ class OrdersTV: GenericTableView {
         order.orderStatus != OrderStatus.Fufilled
     }
     
+    var filteredData = dataArr
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         var nib = UINib(nibName: OrderCellIdentifier, bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: OrderCellIdentifier)
+        self.searchDisplayController?.searchResultsTableView.separatorColor = UIColor.clearColor()
+        self.searchDisplayController?.searchResultsTableView.backgroundColor = UIColor.flatWhiteColor()
+
+        
         updateDataSource()
         // Do any additional setup after loading the view.
     }
@@ -27,7 +34,11 @@ class OrdersTV: GenericTableView {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return exData.count
+        if tableView == self.searchDisplayController?.searchResultsTableView {
+            return filteredData.count
+        } else {
+            return exData.count
+        }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -41,6 +52,26 @@ class OrdersTV: GenericTableView {
         }
     }
     
+    func filterContentForSearchText(searchText: String) {
+        self.filteredData = self.exData.filter({( order : Order) -> Bool in
+            var categoryMatch = (order.orderStatus != OrderStatus.Fufilled)
+            var stringMatch = order.name.rangeOfString(searchText)
+            return categoryMatch && (stringMatch != nil)
+        })
+    }
+    
+    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
+        self.filterContentForSearchText(searchString)
+        return true
+    }
+    
+    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
+        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
+        return true
+    }
+    
+
+    
     // FIXME: There are too many steps here to move a cell
     func swipeTableCell(cell: OrderCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
         println("Active")
@@ -49,7 +80,6 @@ class OrdersTV: GenericTableView {
             let indexPath = tableView.indexPathForCell(cell)
             self.ordersItems.removeAtIndex(indexPath!.row)
             cell.completeOrder()
-//            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Right)
             updateDataSource()
             tableView.reloadData()
         }
@@ -69,10 +99,23 @@ class OrdersTV: GenericTableView {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(OrderCellIdentifier) as OrderCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier(OrderCellIdentifier) as OrderCell
         cell.delegate = self
-        cell.setOrder(exData[indexPath.row])
         cell.setCellColorTheme(darkAccentColor)
+        
+        // Check to see whether the normal table or search results table is being displayed and set the Candy object from the appropriate array
+       
+        var order : Order
+        // Check to see whether the normal table or search results table is being displayed and set the Candy object from the appropriate array
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            order = filteredData[indexPath.row]
+        } else {
+            order = exData[indexPath.row]
+        }
+        
+        cell.setOrder(order)
+        
+
         
         
         return cell

@@ -8,33 +8,23 @@
 
 import UIKit
 
-class GenericTableView: UITableViewController, MGSwipeTableCellDelegate, UISearchBarDelegate {
+class GenericTableView: UITableViewController, MGSwipeTableCellDelegate, UISearchBarDelegate,UISearchDisplayDelegate {
     
     let OrderCellIdentifier = "OrderCell"
     let styleManager = StyleManager()
     var ordersItems = ["Bus", "Helicopter", "Truck", "Boat", "Bicycle", "Motorcycle", "Plane", "Train", "Car", "Scooter", "Caravan"]
     var fufilledItems = ["Bus", "Helicopter", "Truck", "Boat", "Bicycle"]
     var time = ["1:00","1:15","1:30","1:45","2:00","2:15","2:30","2:45","3:00","3:15","3:15"]
-    var searchBar = UISearchBar()
-    var searchView = UIView()
+   
     var accentColor : UIColor!
     var darkAccentColor : UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.automaticallyAdjustsScrollViewInsets = true
-        searchView.frame = CGRectMake(0,0,tableView.frame.width,50)
-        searchBar.frame = CGRectMake(0,0,tableView.frame.width,50)
-        searchBar.barStyle = .BlackTranslucent
-        self.searchBar.delegate = self
+
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
-        
-        searchView.addSubview(searchBar)
-        self.tableView.tableHeaderView = searchView
-        tableView.setContentOffset(CGPointMake(0, 50), animated: false)
         
         tableView.separatorColor = UIColor.clearColor()
         tableView.backgroundColor = styleManager.backColor
@@ -57,6 +47,12 @@ class GenericTableView: UITableViewController, MGSwipeTableCellDelegate, UISearc
         
         
     }
+    
+    
+    
+    
+    
+    
     
     override func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as OrderCell

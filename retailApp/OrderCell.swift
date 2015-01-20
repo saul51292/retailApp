@@ -23,6 +23,8 @@ class OrderCell: MGSwipeTableCell, MGSwipeTableCellDelegate {
         super.awakeFromNib()
         let tapGesture = UITapGestureRecognizer(target: self, action: "tappedCell")
         self.addGestureRecognizer(tapGesture)
+        
+        
         styleCell()
         // Initialization code
     }

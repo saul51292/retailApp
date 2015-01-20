@@ -119,6 +119,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" placeholder="Search" id="9cg-Wr-uca">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="AaB-NK-110" id="7X6-0g-e8N"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderCell" rowHeight="75" id="5Q1-zD-OD9" customClass="OrderCell" customModule="retailApp" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -136,10 +144,22 @@
                     <tabBarItem key="tabBarItem" title="" image="order" id="Vqx-r2-ZJ5">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="Mdj-Xx-Y6q" id="ESa-G6-qOM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jgM-NC-R52" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Mdj-Xx-Y6q">
+                    <connections>
+                        <outlet property="delegate" destination="AaB-NK-110" id="Qat-ff-fJB"/>
+                        <outlet property="searchBar" destination="9cg-Wr-uca" id="jc7-OX-fU2"/>
+                        <outlet property="searchContentsController" destination="AaB-NK-110" id="YaB-jM-GZx"/>
+                        <outlet property="searchResultsDataSource" destination="AaB-NK-110" id="nGr-p5-hpz"/>
+                        <outlet property="searchResultsDelegate" destination="AaB-NK-110" id="UrJ-ew-rtT"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="101" y="385"/>
+            <point key="canvasLocation" x="-94" y="385"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9w3-MH-bMg">
