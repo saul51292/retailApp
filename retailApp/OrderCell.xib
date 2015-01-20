@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C99d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -22,11 +22,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TDC-YB-CMD">
-                        <rect key="frame" x="22" y="13" width="50" height="50"/>
+                        <rect key="frame" x="14" y="11" width="50" height="50"/>
                         <constraints>
+                            <constraint firstAttribute="height" constant="50" id="33m-Be-hDV"/>
+                            <constraint firstAttribute="width" constant="50" id="Krt-BZ-Mi3"/>
                             <constraint firstAttribute="height" constant="50" id="dB0-pi-b6d"/>
                             <constraint firstAttribute="width" constant="50" id="mHR-Uj-AVg"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dB0-pi-b6d"/>
+                                <exclude reference="mHR-Uj-AVg"/>
+                            </mask>
+                        </variation>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxd-iQ-qvW">
                         <rect key="frame" x="252" y="22" width="46" height="31"/>
@@ -53,7 +61,7 @@
                             <action selector="tappedStatusBttn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="MF2-j6-gx3"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxm-Dw-0Fu">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxm-Dw-0Fu">
                         <rect key="frame" x="80" y="8" width="191" height="33"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="191" id="4MR-tA-m4x"/>
@@ -62,7 +70,7 @@
                         <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kfc-ZL-IqK">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kfc-ZL-IqK">
                         <rect key="frame" x="80" y="37" width="36" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="36" id="1wr-A0-th3"/>
@@ -79,17 +87,35 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="TDC-YB-CMD" secondAttribute="bottom" constant="5" id="0Kb-Fa-or9"/>
                     <constraint firstItem="TDC-YB-CMD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="86C-r7-WLH"/>
+                    <constraint firstItem="TDC-YB-CMD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="4" id="Ft1-x7-vUs"/>
                     <constraint firstItem="TDC-YB-CMD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="Mnq-pH-OJV"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Bxm-Dw-0Fu" secondAttribute="bottom" constant="26" id="OUN-tO-lXY"/>
+                    <constraint firstItem="TDC-YB-CMD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="Ola-4i-Bzk"/>
                     <constraint firstItem="Kfc-ZL-IqK" firstAttribute="leading" secondItem="Bxm-Dw-0Fu" secondAttribute="leading" id="QKa-6l-f3b"/>
                     <constraint firstItem="Bxm-Dw-0Fu" firstAttribute="top" secondItem="TDC-YB-CMD" secondAttribute="top" constant="-5" id="UWb-6m-Lkw"/>
+                    <constraint firstItem="Bxm-Dw-0Fu" firstAttribute="leading" secondItem="TDC-YB-CMD" secondAttribute="trailing" constant="18" id="aX5-Wh-heP"/>
                     <constraint firstItem="Kfc-ZL-IqK" firstAttribute="bottom" secondItem="TDC-YB-CMD" secondAttribute="bottom" constant="-1" id="dLE-j6-z9X"/>
+                    <constraint firstItem="Kfc-ZL-IqK" firstAttribute="leading" secondItem="TDC-YB-CMD" secondAttribute="trailing" constant="16" id="hoc-Th-BZN"/>
                     <constraint firstItem="wxd-iQ-qvW" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="-14" id="ifA-ld-HQ4"/>
                     <constraint firstItem="Bxm-Dw-0Fu" firstAttribute="leading" secondItem="TDC-YB-CMD" secondAttribute="trailing" constant="8" id="jhT-cn-GmK"/>
                     <constraint firstItem="wxd-iQ-qvW" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="osn-2S-ONh"/>
                     <constraint firstItem="Kfc-ZL-IqK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="29" id="oxX-S5-vVD"/>
+                    <constraint firstItem="TDC-YB-CMD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="6" id="tq0-Bz-Fkr"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="0Kb-Fa-or9"/>
+                        <exclude reference="86C-r7-WLH"/>
+                        <exclude reference="Ft1-x7-vUs"/>
+                        <exclude reference="Mnq-pH-OJV"/>
+                        <exclude reference="UWb-6m-Lkw"/>
+                        <exclude reference="aX5-Wh-heP"/>
+                        <exclude reference="jhT-cn-GmK"/>
+                        <exclude reference="dLE-j6-z9X"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="purchaseTime" destination="Kfc-ZL-IqK" id="0Bi-DF-VKE"/>

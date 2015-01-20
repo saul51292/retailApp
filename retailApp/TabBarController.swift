@@ -16,7 +16,7 @@ class TabBarController: UITabBarController, UITabBarDelegate {
     var progressVC : ProgressVC!    
     let styleManager = StyleManager()
     var tabBarBack = UIImage (named: "empty.png")
-    var dealViewInfo = DealViewInfo(frame:(CGRectMake(0,  UIScreen.mainScreen().bounds.height - 150,  UIScreen.mainScreen().bounds.width, 100)))
+    var dealViewInfo = DealViewInfo(frame:(CGRectMake(0,  UIScreen.mainScreen().bounds.height - 200,  UIScreen.mainScreen().bounds.width, 150)))
     var captureButton = UIButton(frame:(CGRectMake (0,UIScreen.mainScreen().bounds.height - 50,UIScreen.mainScreen().bounds.width,50)))
 
     var timerView  = TimerView(frame: CGRectMake(UIScreen.mainScreen().bounds.width - 70, 30, 50, 50))
@@ -33,7 +33,6 @@ class TabBarController: UITabBarController, UITabBarDelegate {
         text = "\(ordersTV.ordersItems.count) Orders"
         navigationController?.navigationBar.topItem?.title = self.text
         reloadAndStyleTable(ordersTV)
-        ordersTV.addBadge()
 
         // Do any additional setup after loading the view.
     }
@@ -56,7 +55,6 @@ class TabBarController: UITabBarController, UITabBarDelegate {
     func reloadTable() {
         if ordersTV.view.superview != nil {
             reloadAndStyleTable(ordersTV)
-            ordersTV.addBadge()
             println("reloaded order")
         }
         

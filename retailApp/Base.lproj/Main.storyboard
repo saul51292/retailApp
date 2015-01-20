@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Settings-->
+        <!--SettingsVC-->
         <scene sceneID="VKq-IH-FIB">
             <objects>
                 <viewController id="xG3-oJ-7AG" customClass="SettingsVC" customModule="retailApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,13 +18,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="4" title="Settings" image="second" id="wTh-Ck-w1V"/>
+                    <tabBarItem key="tabBarItem" tag="4" title="" image="settings" id="wTh-Ck-w1V">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaz-I1-M2W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2725" y="385"/>
         </scene>
-        <!--Camera-->
+        <!--CameraVC-->
         <scene sceneID="iYK-BX-w5W">
             <objects>
                 <viewController id="SLj-6Z-YEa" customClass="CameraVC" customModule="retailApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,7 +39,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="Camera" image="first" id="2Kb-42-O6u"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="" image="camera" id="2Kb-42-O6u">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HmR-SC-8E3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -184,9 +188,9 @@
     </scenes>
     <resources>
         <image name="Stats" width="20" height="24"/>
+        <image name="camera" width="27" height="22"/>
         <image name="check" width="22" height="22"/>
-        <image name="first" width="30" height="30"/>
         <image name="order" width="24" height="24"/>
-        <image name="second" width="30" height="30"/>
+        <image name="settings" width="24" height="24"/>
     </resources>
 </document>

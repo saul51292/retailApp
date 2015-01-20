@@ -17,7 +17,6 @@ class OrdersTV: GenericTableView {
         super.viewDidLoad()
         var nib = UINib(nibName: OrderCellIdentifier, bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: OrderCellIdentifier)
-        addBadge()
         // Do any additional setup after loading the view.
     }
     
@@ -43,12 +42,13 @@ class OrdersTV: GenericTableView {
             let indexPath = tableView.indexPathForCell(cell)
             self.ordersItems.removeAtIndex(indexPath!.row)
 //            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Right)
-            addBadge()
         }
         
         return true
     }
     
+    
+    //TODO: Add more subtle badge icon
     
     func addBadge() {
         var tabArray = tabBarController?.tabBar.items as NSArray!
@@ -56,6 +56,7 @@ class OrdersTV: GenericTableView {
         tabItem.badgeValue = String(self.ordersItems.count)
         navigationController?.navigationBar.topItem?.title = "\(tabItem.badgeValue!) Orders"
     }
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(OrderCellIdentifier) as OrderCell
