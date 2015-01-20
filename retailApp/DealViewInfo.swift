@@ -8,14 +8,15 @@
 
 import UIKit
 
-class DealViewInfo: UIView {
+class DealViewInfo: UIView,UITextFieldDelegate {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var lblCompanyName: UILabel!
-    @IBOutlet weak var lblDealName: UILabel!
-    @IBOutlet weak var lblPrice: UILabel!
+    @IBOutlet var priceField: UITextField!
     
     @IBOutlet var priceView: UIView!
+    
+    @IBOutlet var dealField: UITextField!
     // Responsible for anarchiving the view (nib file) -> associate this class with the nib
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -27,11 +28,29 @@ class DealViewInfo: UIView {
         xibSetup()
     }
     
+    func textFieldDidBeginEditing(textField: UITextField!) {    //delegate method
+        priceField.attributedPlaceholder =  NSAttributedString(string:"", attributes:nil)
+        priceField.font = UIFont(name: "Montserrat", size: 30.0)
+        priceField.text = "$".stringByAppendingString(priceField.text)
 
+
+    }
+    
+    func setUpPlaceholder(textField:UITextField,size:CGFloat,string:String,color:UIColor)
+    {
+        let attriString = NSAttributedString(string:string, attributes:
+            [NSForegroundColorAttributeName: color,
+                NSFontAttributeName: UIFont(name: "Montserrat", size: size)!])
+        
+        textField.attributedPlaceholder = attriString
+    }
     
     private func xibSetup() {
         contentView = loadViewFromNib("DealViewInfo")
         contentView.frame = bounds
+        setUpPlaceholder(priceField,size:15,string:"Set Price",color:UIColor.lightGrayColor())
+        setUpPlaceholder(dealField,size:23,string:"Enter Deal Name",color:UIColor.darkGrayColor())
+        priceField.delegate = self
         addSubview(contentView)
     }
 

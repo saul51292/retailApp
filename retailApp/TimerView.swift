@@ -12,7 +12,9 @@ class TimerView: UIView {
     
     @IBOutlet var contentView: UIView!
     @IBOutlet var lblTime: UILabel!
+    let tapRec = UITapGestureRecognizer()
     
+    var count = 30
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
        xibSetup()
@@ -26,9 +28,22 @@ class TimerView: UIView {
     
     func xibSetup() {
         contentView = loadViewFromNib("TimerView")
+        lblTime.text = String(count)
+        tapRec.addTarget(self, action: "tappedView")
+        contentView.addGestureRecognizer(tapRec)
+
         addSubview(contentView)
     }
 
+    
+    func tappedView(){
+        count += 15
+        lblTime.text = String(count)
+        if(count > 60){
+            count = 30
+            lblTime.text = String(count)
+        }
+    }
     
     override func layoutSubviews() {
         lblTime.layer.masksToBounds = true

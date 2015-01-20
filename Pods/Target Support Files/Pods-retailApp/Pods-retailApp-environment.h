@@ -18,6 +18,13 @@
 #define COCOAPODS_VERSION_MINOR_ChameleonFramework 1
 #define COCOAPODS_VERSION_PATCH_ChameleonFramework 1
 
+// IQKeyboardManager
+#define COCOAPODS_POD_AVAILABLE_IQKeyboardManager
+// This library does not follow semantic-versioning,
+// so we were not able to define version macros.
+// Please contact the author.
+// Version: 3.2.1.0.
+
 // MGSwipeTableCell
 #define COCOAPODS_POD_AVAILABLE_MGSwipeTableCell
 #define COCOAPODS_VERSION_MAJOR_MGSwipeTableCell 1

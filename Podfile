@@ -12,6 +12,8 @@ def import_pods
   pod 'BEMSimpleLineGraph'
   pod 'MGSwipeTableCell'
   pod 'YLProgressBar'
+  pod 'IQKeyboardManager'
+
 end
 
 import_pods

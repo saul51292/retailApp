@@ -110,11 +110,8 @@ class TabBarController: UITabBarController, UITabBarDelegate {
     }
 
     func createCameraUI() {
-        dealViewInfo.lblCompanyName.text = "Test Company"
-        dealViewInfo.lblDealName.text = "Test Deal"
-        dealViewInfo.lblPrice.text = "$23"
+        dealViewInfo.lblCompanyName.text = "The Bruffin Shop"
         self.view.addSubview(dealViewInfo)
-        timerView.lblTime.text = "30"
         self.view.addSubview(timerView)
         captureButtonCreation()
       

@@ -1,6 +1,6 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/BEMSimpleLineGraph" "${PODS_ROOT}/Headers/Public/ChameleonFramework" "${PODS_ROOT}/Headers/Public/MGSwipeTableCell" "${PODS_ROOT}/Headers/Public/YLProgressBar"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/BEMSimpleLineGraph" -isystem "${PODS_ROOT}/Headers/Public/ChameleonFramework" -isystem "${PODS_ROOT}/Headers/Public/MGSwipeTableCell" -isystem "${PODS_ROOT}/Headers/Public/YLProgressBar"
-OTHER_LDFLAGS = -ObjC -l"Pods-retailApp-BEMSimpleLineGraph" -l"Pods-retailApp-ChameleonFramework" -l"Pods-retailApp-MGSwipeTableCell" -l"Pods-retailApp-YLProgressBar" -framework "CoreGraphics" -framework "QuartzCore"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/BEMSimpleLineGraph" "${PODS_ROOT}/Headers/Public/ChameleonFramework" "${PODS_ROOT}/Headers/Public/IQKeyboardManager" "${PODS_ROOT}/Headers/Public/MGSwipeTableCell" "${PODS_ROOT}/Headers/Public/YLProgressBar"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/BEMSimpleLineGraph" -isystem "${PODS_ROOT}/Headers/Public/ChameleonFramework" -isystem "${PODS_ROOT}/Headers/Public/IQKeyboardManager" -isystem "${PODS_ROOT}/Headers/Public/MGSwipeTableCell" -isystem "${PODS_ROOT}/Headers/Public/YLProgressBar"
+OTHER_LDFLAGS = -ObjC -l"Pods-retailApp-BEMSimpleLineGraph" -l"Pods-retailApp-ChameleonFramework" -l"Pods-retailApp-IQKeyboardManager" -l"Pods-retailApp-MGSwipeTableCell" -l"Pods-retailApp-YLProgressBar" -framework "CoreGraphics" -framework "QuartzCore"
 OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
 PODS_ROOT = ${SRCROOT}/Pods

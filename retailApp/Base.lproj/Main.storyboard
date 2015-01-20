@@ -159,7 +159,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-94" y="385"/>
+            <point key="canvasLocation" x="74" y="385"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9w3-MH-bMg">
@@ -180,7 +180,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKC-Hf-LAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="548" y="-426"/>
+            <point key="canvasLocation" x="500" y="-414"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="N9z-02-ID5">
@@ -203,7 +203,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rnx-1U-TaP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1408" y="-426"/>
+            <point key="canvasLocation" x="1392" y="-414"/>
         </scene>
     </scenes>
     <resources>
