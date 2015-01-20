@@ -55,7 +55,7 @@ class OrdersTV: GenericTableView {
     func filterContentForSearchText(searchText: String) {
         self.filteredData = self.exData.filter({( order : Order) -> Bool in
             var categoryMatch = (order.orderStatus != OrderStatus.Fufilled)
-            var stringMatch = order.name.rangeOfString(searchText)
+            var stringMatch = order.name.rangeOfString(searchText,options:.CaseInsensitiveSearch)
             return categoryMatch && (stringMatch != nil)
         })
     }
