@@ -13,7 +13,6 @@
 		C701284B1A65DEE900101467 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701284A1A65DEE900101467 /* TabBarController.swift */; };
 		C706D0091A63A08400E06116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C706D0081A63A08400E06116 /* AppDelegate.swift */; };
 		C706D0101A63A08400E06116 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C706D00E1A63A08400E06116 /* Main.storyboard */; };
-		C706D0121A63A08400E06116 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C706D0111A63A08400E06116 /* Images.xcassets */; };
 		C706D0151A63A08400E06116 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C706D0131A63A08400E06116 /* LaunchScreen.xib */; };
 		C706D0211A63A08400E06116 /* retailAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C706D0201A63A08400E06116 /* retailAppTests.swift */; };
 		C706D02B1A63A89500E06116 /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = C706D02A1A63A89500E06116 /* empty.png */; };
@@ -33,6 +32,7 @@
 		C71DE89D1A663DB200CE2E75 /* UserOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71DE89C1A663DB200CE2E75 /* UserOverview.swift */; };
 		C71DE89F1A663DBF00CE2E75 /* UserOverview.xib in Resources */ = {isa = PBXBuildFile; fileRef = C71DE89E1A663DBF00CE2E75 /* UserOverview.xib */; };
 		C736B88A1A64842200CBC1C9 /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C736B8891A64842200CBC1C9 /* StyleManager.swift */; };
+		C761D9961A6F1F0A00696653 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C761D9951A6F1F0A00696653 /* Images.xcassets */; };
 		C7B97D071A672427000F7BA3 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7B97D061A672427000F7BA3 /* ProgressView.xib */; };
 		C7B97D091A67253C000F7BA3 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B97D081A67253C000F7BA3 /* ProgressBar.swift */; };
 		C7D9F95C1A6B206D00DD8EAF /* ProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D9F95B1A6B206D00DD8EAF /* ProgressVC.swift */; };
@@ -71,7 +71,6 @@
 		C706D0071A63A08400E06116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C706D0081A63A08400E06116 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C706D00F1A63A08400E06116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C706D0111A63A08400E06116 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C706D0141A63A08400E06116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C706D01A1A63A08400E06116 /* retailAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = retailAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C706D01F1A63A08400E06116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,6 +94,7 @@
 		C71DE89E1A663DBF00CE2E75 /* UserOverview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserOverview.xib; sourceTree = "<group>"; };
 		C736B8891A64842200CBC1C9 /* StyleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
 		C74E512B65E644F3E84DE0CE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C761D9951A6F1F0A00696653 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C7B97D061A672427000F7BA3 /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
 		C7B97D081A67253C000F7BA3 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		C7D9F95B1A6B206D00DD8EAF /* ProgressVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressVC.swift; sourceTree = "<group>"; };
@@ -184,7 +184,7 @@
 				C706D0081A63A08400E06116 /* AppDelegate.swift */,
 				C7E431FD1A6DB2C000B97945 /* TabBarVC */,
 				C736B8891A64842200CBC1C9 /* StyleManager.swift */,
-				C706D0111A63A08400E06116 /* Images.xcassets */,
+				C761D9951A6F1F0A00696653 /* Images.xcassets */,
 				C706D02A1A63A89500E06116 /* empty.png */,
 				C7118B741A64E8120079F42E /* Images */,
 				C706D0131A63A08400E06116 /* LaunchScreen.xib */,
@@ -392,6 +392,7 @@
 			files = (
 				C7118B6E1A64E46D0079F42E /* Plane.png in Resources */,
 				C7E432051A6DC83500B97945 /* TimerView.xib in Resources */,
+				C761D9961A6F1F0A00696653 /* Images.xcassets in Resources */,
 				C7118B6B1A64E46D0079F42E /* Boat.png in Resources */,
 				C7E432011A6DC51A00B97945 /* DealViewInfo.xib in Resources */,
 				C7118B701A64E46D0079F42E /* Car.png in Resources */,
@@ -408,7 +409,6 @@
 				CECD37C11A6C4C3100895E32 /* OrderCell.xib in Resources */,
 				C706D0151A63A08400E06116 /* LaunchScreen.xib in Resources */,
 				C7118B6A1A64E46D0079F42E /* Truck.png in Resources */,
-				C706D0121A63A08400E06116 /* Images.xcassets in Resources */,
 				C7118B711A64E46D0079F42E /* Scooter.png in Resources */,
 				C706D02B1A63A89500E06116 /* empty.png in Resources */,
 			);

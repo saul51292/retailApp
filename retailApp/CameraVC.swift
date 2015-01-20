@@ -8,17 +8,28 @@
 
 import UIKit
 import AVFoundation
+import MobileCoreServices
 
 class CameraVC: UIViewController {
     
     let captureSession = AVCaptureSession()
     var previewLayer : AVCaptureVideoPreviewLayer?
+    let stillImageOutput:AVCaptureStillImageOutput?
+    var imageData: NSData!
+    var dealViewInfo = DealViewInfo(frame:(CGRectMake(0,  UIScreen.mainScreen().bounds.height - 200,  UIScreen.mainScreen().bounds.width, 150)))
+    var timerView  = TimerView(frame: CGRectMake(UIScreen.mainScreen().bounds.width - 70, 30, 50, 50))
+    var screenSize =  UIScreen.mainScreen().bounds
+    var captureButton = UIButton(frame:(CGRectMake (0,UIScreen.mainScreen().bounds.height - 50,UIScreen.mainScreen().bounds.width,50)))
+
+
+
     
     // If we find a device we'll store it here for later use
     var captureDevice : AVCaptureDevice?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         // Do any additional setup after loading the view, typically from a nib.
         captureSession.sessionPreset = AVCaptureSessionPresetHigh
@@ -39,6 +50,7 @@ class CameraVC: UIViewController {
                 }
             }
         }
+         createCameraUI()
         
     }
     
@@ -78,6 +90,12 @@ class CameraVC: UIViewController {
         return touchPer
     }
     
+    
+    
+    
+    
+    
+    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         let touchPer = touchPercent( touches.anyObject() as UITouch )
         //focusTo(Float(touchPer.x))
@@ -116,5 +134,44 @@ class CameraVC: UIViewController {
         captureSession.startRunning()
     }
     
+    func createCameraUI() {
+        dealViewInfo.lblCompanyName.text = "The Bruffin Shop"
+        self.view.addSubview(dealViewInfo)
+        self.view.addSubview(timerView)
+        captureButtonCreation()
+
+        
+    }
+
+    
+    func captureButtonCreation() {
+        captureButton.backgroundColor = UIColor.flatMintColor()
+        
+        captureButton.setTitle("Capture Deal", forState: .Normal)
+        captureButton.titleLabel?.font = UIFont(name: "Montserrat", size: 16)
+        captureButton.titleLabel?.textColor = UIColor.whiteColor()
+        captureButton.addTarget(self, action: "takePhoto", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        self.view.addSubview(captureButton)
+        
+    }
+
+    
+    func takePhoto(){
+        
+        println("pressed")
+        self.stillImageOutput?.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
+        if captureSession.canAddOutput(stillImageOutput) {
+            captureSession.addOutput(stillImageOutput)
+        }
+        var videoConnection = stillImageOutput?.connectionWithMediaType(AVMediaTypeVideo)
+        
+        if videoConnection != nil {
+            stillImageOutput?.captureStillImageAsynchronouslyFromConnection(stillImageOutput?.connectionWithMediaType(AVMediaTypeVideo))
+                { (imageDataSampleBuffer, error) -> Void in
+                    self.imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
+            }}
+        
+    }
     
 }

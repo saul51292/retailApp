@@ -16,12 +16,9 @@ class TabBarController: UITabBarController, UITabBarDelegate {
     var progressVC : ProgressVC!    
     let styleManager = StyleManager()
     var tabBarBack = UIImage (named: "empty.png")
-    var dealViewInfo = DealViewInfo(frame:(CGRectMake(0,  UIScreen.mainScreen().bounds.height - 200,  UIScreen.mainScreen().bounds.width, 150)))
-    var captureButton = UIButton(frame:(CGRectMake (0,UIScreen.mainScreen().bounds.height - 50,UIScreen.mainScreen().bounds.width,50)))
-
-    var timerView  = TimerView(frame: CGRectMake(UIScreen.mainScreen().bounds.width - 70, 30, 50, 50))
-    var screenSize =  UIScreen.mainScreen().bounds
-
+    var closeButton  = UIButton(frame: CGRectMake(20, 40, 26, 30))
+    
+    
     var text = "Orders"
     
     override func viewDidLoad() {
@@ -89,7 +86,7 @@ class TabBarController: UITabBarController, UITabBarDelegate {
             println("Camera")
             self.tabBar.hidden = true
             self.navigationController?.setNavigationBarHidden(true, animated: true)
-            createCameraUI()
+            createCloseButton()
             
         case 3:
             println("3")
@@ -109,27 +106,15 @@ class TabBarController: UITabBarController, UITabBarDelegate {
 
     }
 
-    func createCameraUI() {
-        dealViewInfo.lblCompanyName.text = "The Bruffin Shop"
-        self.view.addSubview(dealViewInfo)
-        self.view.addSubview(timerView)
-        captureButtonCreation()
-      
-    }
-    
-    func captureButtonCreation() {
-        captureButton.backgroundColor = UIColor.flatMintColor()
-        
-        captureButton.setTitle("Capture Deal", forState: .Normal)
-        captureButton.titleLabel?.font = UIFont(name: "Montserrat", size: 16)
-        captureButton.titleLabel?.textColor = UIColor.whiteColor()
-        captureButton.addTarget(self, action: "pressed", forControlEvents: .TouchUpInside)
+    func createCloseButton()
+    {
+        closeButton.setImage(UIImage(named: "close"), forState: .Normal)
+        closeButton.addTarget(self, action: "closeCamera", forControlEvents: UIControlEvents.TouchUpInside)
 
-        self.view.addSubview(captureButton)
-   
+        self.view.addSubview(closeButton)
     }
     
-    func pressed() {
+    func closeCamera() {
         self.selectedIndex = 0
         darkAccentColor = UIColor.flatMagentaColorDark()
         accentColor = UIColor.flatMagentaColor()
@@ -138,10 +123,7 @@ class TabBarController: UITabBarController, UITabBarDelegate {
 
         self.tabBar.hidden = false
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        
-        dealViewInfo.removeFromSuperview()
-        captureButton.removeFromSuperview()
-        timerView.removeFromSuperview()
+        closeButton.removeFromSuperview()
     }
     
     private func reloadAndStyleTable(table: GenericTableView) {
