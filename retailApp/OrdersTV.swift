@@ -70,15 +70,12 @@ class OrdersTV: GenericTableView {
         return true
     }
     
-
-    
     // FIXME: There are too many steps here to move a cell
     func swipeTableCell(cell: OrderCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
         println("Active")
         if direction == MGSwipeDirection.LeftToRight && index == 0 {
             //delete button
             let indexPath = tableView.indexPathForCell(cell)
-            self.ordersItems.removeAtIndex(indexPath!.row)
             cell.completeOrder()
             updateDataSource()
             tableView.reloadData()
@@ -89,34 +86,27 @@ class OrdersTV: GenericTableView {
     
     
     //TODO: Add more subtle badge icon
-    
     func addBadge() {
         var tabArray = tabBarController?.tabBar.items as NSArray!
         var tabItem = tabArray.objectAtIndex(0) as UITabBarItem
-        tabItem.badgeValue = String(self.ordersItems.count)
+        tabItem.badgeValue = String(self.exData.count)
         navigationController?.navigationBar.topItem?.title = "\(tabItem.badgeValue!) Orders"
     }
-    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier(OrderCellIdentifier) as OrderCell
         cell.delegate = self
         cell.setCellColorTheme(darkAccentColor)
-        
-        // Check to see whether the normal table or search results table is being displayed and set the Candy object from the appropriate array
-       
+
         var order : Order
+        
         // Check to see whether the normal table or search results table is being displayed and set the Candy object from the appropriate array
         if tableView == self.searchDisplayController!.searchResultsTableView {
             order = filteredData[indexPath.row]
         } else {
             order = exData[indexPath.row]
         }
-        
         cell.setOrder(order)
-        
-
-        
         
         return cell
     }

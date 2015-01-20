@@ -24,7 +24,6 @@ class OrderCell: MGSwipeTableCell, MGSwipeTableCellDelegate {
         let tapGesture = UITapGestureRecognizer(target: self, action: "tappedCell")
         self.addGestureRecognizer(tapGesture)
         
-        
         styleCell()
         // Initialization code
     }
@@ -63,15 +62,13 @@ class OrderCell: MGSwipeTableCell, MGSwipeTableCellDelegate {
     }
     
     func tappedCell() {
-        
         let imageName = UIImage(named: order.name)
         showUser.userPicture.image = imageName
         showUser.userName.text = order.name
         showUser.center = self.center
         println(showUser.userName.text)
-        
-        superview?.addSubview(showUser)
 
+        superview?.addSubview(showUser)
     }
     
     func createRightButtons()->[AnyObject] {

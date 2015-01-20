@@ -12,20 +12,13 @@ class GenericTableView: UITableViewController, MGSwipeTableCellDelegate, UISearc
     
     let OrderCellIdentifier = "OrderCell"
     let styleManager = StyleManager()
-    var ordersItems = ["Bus", "Helicopter", "Truck", "Boat", "Bicycle", "Motorcycle", "Plane", "Train", "Car", "Scooter", "Caravan"]
-    var fufilledItems = ["Bus", "Helicopter", "Truck", "Boat", "Bicycle"]
-    var time = ["1:00","1:15","1:30","1:45","2:00","2:15","2:30","2:45","3:00","3:15","3:15"]
-   
+    
     var accentColor : UIColor!
     var darkAccentColor : UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.delegate = self
-        tableView.dataSource = self
         tableView.reloadData()
-        
         tableView.separatorColor = UIColor.clearColor()
         tableView.backgroundColor = styleManager.backColor
         // Do any additional setup after loading the view, typically from a nib.
@@ -39,20 +32,6 @@ class GenericTableView: UITableViewController, MGSwipeTableCellDelegate, UISearc
     func searchBarSearchButtonClicked( searchBar: UISearchBar!) {
         searchBar.resignFirstResponder()
     }
-    
-    // TODO: clean this up
-    func handleTap(gestureRecognizer: UITapGestureRecognizer) {
-        let number = gestureRecognizer.view?.tag
-        let imageName = UIImage(named: ordersItems[number!])
-        
-        
-    }
-    
-    
-    
-    
-    
-    
     
     override func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as OrderCell

@@ -30,7 +30,7 @@ class TabBarController: UITabBarController, UITabBarDelegate {
         fufilledTV = self.childViewControllers[1] as FufilledTV
         progressVC = self.childViewControllers[3] as ProgressVC
         
-        text = "\(ordersTV.ordersItems.count) Orders"
+        text = "\(ordersTV.exData.count) Orders"
         navigationController?.navigationBar.topItem?.title = self.text
         reloadAndStyleTable(ordersTV)
 
@@ -69,19 +69,17 @@ class TabBarController: UITabBarController, UITabBarDelegate {
     
     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
 
-        switch (item.tag)
-        {
-            
+        switch (item.tag){
         case 0:
             println("0")
-            text = "\(ordersTV.ordersItems.count) Orders"
+            text = "\(ordersTV.exData.count) Orders"
             darkAccentColor = UIColor.flatMagentaColorDark()
             accentColor = UIColor.flatMagentaColor()
             reloadAndStyleTable(ordersTV)
 
         case 1:
             println("1")
-            text = "\(fufilledTV.fufilledItems.count) Fufilled"
+            text = "\(fufilledTV.exData.count) Fufilled"
             darkAccentColor = UIColor.flatSkyBlueColorDark()
             accentColor = UIColor.flatSkyBlueColor()
             reloadAndStyleTable(fufilledTV)
@@ -95,7 +93,7 @@ class TabBarController: UITabBarController, UITabBarDelegate {
             
         case 3:
             println("3")
-            text = "\(ordersTV.ordersItems.count + fufilledTV.fufilledItems.count) Sales"
+            text = "\(ordersTV.exData.count + fufilledTV.exData.count) Sales"
             darkAccentColor = UIColor.flatMintColorDark()
             accentColor = UIColor.flatMintColor()
         
@@ -111,8 +109,7 @@ class TabBarController: UITabBarController, UITabBarDelegate {
 
     }
 
-    func createCameraUI()
-    {
+    func createCameraUI() {
         dealViewInfo.lblCompanyName.text = "Test Company"
         dealViewInfo.lblDealName.text = "Test Deal"
         dealViewInfo.lblPrice.text = "$23"
@@ -123,8 +120,7 @@ class TabBarController: UITabBarController, UITabBarDelegate {
       
     }
     
-    func captureButtonCreation()
-    {
+    func captureButtonCreation() {
         captureButton.backgroundColor = UIColor.flatMintColor()
         
         captureButton.setTitle("Capture Deal", forState: .Normal)
@@ -136,10 +132,8 @@ class TabBarController: UITabBarController, UITabBarDelegate {
    
     }
     
-    func pressed()
-    {
+    func pressed() {
         self.selectedIndex = 0
-        text = "\(ordersTV.ordersItems.count) Orders"
         darkAccentColor = UIColor.flatMagentaColorDark()
         accentColor = UIColor.flatMagentaColor()
         reloadAndStyleTable(ordersTV)
@@ -151,8 +145,6 @@ class TabBarController: UITabBarController, UITabBarDelegate {
         dealViewInfo.removeFromSuperview()
         captureButton.removeFromSuperview()
         timerView.removeFromSuperview()
-        
-
     }
     
     private func reloadAndStyleTable(table: GenericTableView) {
