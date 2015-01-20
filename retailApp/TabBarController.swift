@@ -16,6 +16,11 @@ class TabBarController: UITabBarController, UITabBarDelegate {
     var progressVC : ProgressVC!    
     let styleManager = StyleManager()
     var tabBarBack = UIImage (named: "empty.png")
+    var dealViewInfo = DealViewInfo(frame:(CGRectMake(0,  UIScreen.mainScreen().bounds.height - 150,  UIScreen.mainScreen().bounds.width, 100)))
+    var captureButton = UIButton(frame:(CGRectMake (0,UIScreen.mainScreen().bounds.height - 50,UIScreen.mainScreen().bounds.width,50)))
+
+    var timerView  = TimerView(frame: CGRectMake(UIScreen.mainScreen().bounds.width - 70, 30, 50, 50))
+    var screenSize =  UIScreen.mainScreen().bounds
 
     var text = "Orders"
     
@@ -41,6 +46,7 @@ class TabBarController: UITabBarController, UITabBarDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+       
         navigationController?.navigationBar.topItem?.title = text
         styleManager.navBarStyling(self, darkColor:darkAccentColor, emptyImage:tabBarBack!)
         styleManager.tabBarStyling(self, emptyImage:tabBarBack!,lightColor:accentColor)
@@ -85,6 +91,9 @@ class TabBarController: UITabBarController, UITabBarDelegate {
         case 2:
             println("2")
             println("Camera")
+            self.tabBar.hidden = true
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+            createCameraUI()
             
         case 3:
             println("3")
@@ -104,6 +113,50 @@ class TabBarController: UITabBarController, UITabBarDelegate {
 
     }
 
+    func createCameraUI()
+    {
+        dealViewInfo.lblCompanyName.text = "Test Company"
+        dealViewInfo.lblDealName.text = "Test Deal"
+        dealViewInfo.lblPrice.text = "$23"
+        self.view.addSubview(dealViewInfo)
+        timerView.lblTime.text = "30"
+        self.view.addSubview(timerView)
+        captureButtonCreation()
+      
+    }
+    
+    func captureButtonCreation()
+    {
+        captureButton.backgroundColor = UIColor.flatMintColor()
+        
+        captureButton.setTitle("Capture Deal", forState: .Normal)
+        captureButton.titleLabel?.font = UIFont(name: "Montserrat", size: 16)
+        captureButton.titleLabel?.textColor = UIColor.whiteColor()
+        captureButton.addTarget(self, action: "pressed", forControlEvents: .TouchUpInside)
+
+        self.view.addSubview(captureButton)
+   
+    }
+    
+    func pressed()
+    {
+        self.selectedIndex = 0
+        text = "\(ordersTV.ordersItems.count) Orders"
+        darkAccentColor = UIColor.flatMagentaColorDark()
+        accentColor = UIColor.flatMagentaColor()
+        reloadAndStyleTable(ordersTV)
+        self.viewWillAppear(true)
+
+        self.tabBar.hidden = false
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        dealViewInfo.removeFromSuperview()
+        captureButton.removeFromSuperview()
+        timerView.removeFromSuperview()
+        
+
+    }
+    
     private func reloadAndStyleTable(table: GenericTableView) {
         table.viewDidLoad()
         table.tableView.reloadData()
