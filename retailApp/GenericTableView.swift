@@ -12,7 +12,6 @@ class GenericTableView: UITableViewController, MGSwipeTableCellDelegate, UISearc
     
     let OrderCellIdentifier = "OrderCell"
     let styleManager = StyleManager()
-    let showUser = UserOverview(frame: CGRectMake(0, 40, 250, 417))
     var ordersItems = ["Bus", "Helicopter", "Truck", "Boat", "Bicycle", "Motorcycle", "Plane", "Train", "Car", "Scooter", "Caravan"]
     var fufilledItems = ["Bus", "Helicopter", "Truck", "Boat", "Bicycle"]
     var time = ["1:00","1:15","1:30","1:45","2:00","2:15","2:30","2:45","3:00","3:15","3:15"]
@@ -36,8 +35,6 @@ class GenericTableView: UITableViewController, MGSwipeTableCellDelegate, UISearc
         searchView.addSubview(searchBar)
         self.tableView.tableHeaderView = searchView
         tableView.setContentOffset(CGPointMake(0, 50), animated: false)
-        showUser.frame = self.view.frame
-        showUser.bounds = self.view.bounds
         
         tableView.separatorColor = UIColor.clearColor()
         tableView.backgroundColor = styleManager.backColor
@@ -59,11 +56,6 @@ class GenericTableView: UITableViewController, MGSwipeTableCellDelegate, UISearc
         let number = gestureRecognizer.view?.tag
         let imageName = UIImage(named: ordersItems[number!])
         
-        showUser.userPicture.image = imageName
-        showUser.userName.text = ordersItems[number!]
-        println(showUser.userName.text)
-        showUser.colorUserOverview(darkAccentColor)
-        self.view.addSubview(showUser)
         
     }
     

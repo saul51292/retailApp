@@ -187,9 +187,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Stats" width="20" height="24"/>
-        <image name="camera" width="27" height="22"/>
-        <image name="check" width="22" height="22"/>
+        <image name="Stats" width="25" height="24"/>
+        <image name="camera" width="26" height="22"/>
+        <image name="check" width="24" height="24"/>
         <image name="order" width="24" height="24"/>
         <image name="settings" width="24" height="24"/>
     </resources>

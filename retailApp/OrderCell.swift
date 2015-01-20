@@ -14,14 +14,15 @@ class OrderCell: MGSwipeTableCell, MGSwipeTableCellDelegate {
     @IBOutlet weak var purchaseTime: UILabel!
     @IBOutlet weak var statusBttn: UIButton!
     
+    let showUser = UserOverview(frame: CGRectMake(0,40, 263, 318))
+
     private var order: Order!
     private let styleManager = StyleManager()
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        let tapGesture = UITapGestureRecognizer(target: self, action: "tappedUserImage")
-        userImage.userInteractionEnabled = true
-        userImage.addGestureRecognizer(tapGesture)
+        let tapGesture = UITapGestureRecognizer(target: self, action: "tappedCell")
+        self.addGestureRecognizer(tapGesture)
         styleCell()
         // Initialization code
     }
@@ -37,6 +38,9 @@ class OrderCell: MGSwipeTableCell, MGSwipeTableCellDelegate {
         purchaseTime.textColor = color
         userName.textColor = color
         userImage!.layer.borderColor = color.CGColor
+        showUser.colorUserOverview(color)
+        showUser.styleUserPicture(color)
+
     }
     
     func setOrder(order: Order) {
@@ -44,7 +48,6 @@ class OrderCell: MGSwipeTableCell, MGSwipeTableCellDelegate {
         userName.text = order.name
         purchaseTime.text = order.time
         userImage.image = UIImage(named: order.name)
-        
         changeStatusButtonForOrderStatus()
     }
     
@@ -53,8 +56,16 @@ class OrderCell: MGSwipeTableCell, MGSwipeTableCellDelegate {
         println("Stats button tapped")
     }
     
-    func tappedUserImage() {
-        println("Do something")
+    func tappedCell() {
+        
+        let imageName = UIImage(named: order.name)
+        showUser.userPicture.image = imageName
+        showUser.userName.text = order.name
+        showUser.center = self.center
+        println(showUser.userName.text)
+        
+        superview?.addSubview(showUser)
+
     }
     
     func createRightButtons()->[AnyObject] {

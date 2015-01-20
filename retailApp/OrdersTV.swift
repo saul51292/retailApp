@@ -64,6 +64,7 @@ class OrdersTV: GenericTableView {
         cell.setOrder(exData[indexPath.row])
         cell.setCellColorTheme(darkAccentColor)
         
+        
         return cell
     }
     

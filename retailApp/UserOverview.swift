@@ -16,7 +16,6 @@ class UserOverview: UIView {
     @IBOutlet var userView: UIView!
     //Static
     
-    @IBOutlet var lblStatus: UILabel!
     @IBOutlet var bottomView: UIView!
     @IBOutlet var lblFufilled: UILabel!
     @IBOutlet var lblPaidWith: UILabel!
@@ -29,7 +28,6 @@ class UserOverview: UIView {
     @IBOutlet var dealPrice: UILabel!
     @IBOutlet var variableActionButton: UIButton!
     @IBOutlet var productName: UILabel!
-    @IBOutlet var variableStatus: UILabel!
     
     let tapRec = UITapGestureRecognizer()
     
@@ -59,7 +57,7 @@ class UserOverview: UIView {
         contentView.frame = bounds
         setScrollContentSize()
         addTapRecognizer()
-        
+        contentView.layer.cornerRadius = 6
         addSubview(contentView)
     }
     
@@ -73,7 +71,6 @@ class UserOverview: UIView {
         styleUserPicture(color)
         lblFufilled.textColor = color
         lblPaidWith.textColor = color
-        variableStatus.textColor = color
         dealPaymentForm.textColor = color
         dealPrice.textColor = color
         fufilledTime.textColor = color
@@ -85,7 +82,7 @@ class UserOverview: UIView {
     func styleUserPicture(color:UIColor) {
         userPicture.layer.cornerRadius = 40
         userPicture.layer.borderColor = color.CGColor
-        userPicture.layer.borderWidth = 2
+        userPicture.layer.borderWidth = 3
         userPicture.clipsToBounds = true
     }
     

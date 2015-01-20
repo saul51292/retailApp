@@ -61,8 +61,8 @@
                             <action selector="tappedStatusBttn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="MF2-j6-gx3"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxm-Dw-0Fu">
-                        <rect key="frame" x="80" y="8" width="191" height="33"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxm-Dw-0Fu">
+                        <rect key="frame" x="80" y="19" width="191" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="191" id="4MR-tA-m4x"/>
                         </constraints>
@@ -70,8 +70,8 @@
                         <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kfc-ZL-IqK">
-                        <rect key="frame" x="80" y="37" width="36" height="25"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kfc-ZL-IqK">
+                        <rect key="frame" x="80" y="37" width="36" height="18"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="36" id="1wr-A0-th3"/>
                             <constraint firstAttribute="width" constant="182" id="6Ie-kr-yDZ"/>
@@ -118,6 +118,7 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="contentView" destination="H2p-sc-9uM" id="GOR-TP-8f3"/>
                 <outlet property="purchaseTime" destination="Kfc-ZL-IqK" id="0Bi-DF-VKE"/>
                 <outlet property="statusBttn" destination="wxd-iQ-qvW" id="lgp-M3-xPg"/>
                 <outlet property="userImage" destination="TDC-YB-CMD" id="VGd-U1-eAh"/>
