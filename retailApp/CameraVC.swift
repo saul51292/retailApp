@@ -8,14 +8,15 @@
 
 import UIKit
 import AVFoundation
-import MobileCoreServices
+import AssetsLibrary
+
 
 class CameraVC: UIViewController {
     
     let captureSession = AVCaptureSession()
     var previewLayer : AVCaptureVideoPreviewLayer?
-    let stillImageOutput:AVCaptureStillImageOutput?
-    var imageData: NSData!
+    let stillImageOutput = AVCaptureStillImageOutput()
+
     var dealViewInfo = DealViewInfo(frame:(CGRectMake(0,  UIScreen.mainScreen().bounds.height - 200,  UIScreen.mainScreen().bounds.width, 150)))
     var timerView  = TimerView(frame: CGRectMake(UIScreen.mainScreen().bounds.width - 70, 30, 50, 50))
     var screenSize =  UIScreen.mainScreen().bounds
@@ -131,7 +132,14 @@ class CameraVC: UIViewController {
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         self.view.layer.addSublayer(previewLayer)
         previewLayer?.frame = self.view.layer.frame
+        
+        var outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
+
+        stillImageOutput.outputSettings = outputSettings
+        captureSession.addOutput(stillImageOutput)
         captureSession.startRunning()
+
+        
     }
     
     func createCameraUI() {
@@ -159,19 +167,18 @@ class CameraVC: UIViewController {
     
     func takePhoto(){
         
+        
         println("pressed")
-        self.stillImageOutput?.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
-        if captureSession.canAddOutput(stillImageOutput) {
-            captureSession.addOutput(stillImageOutput)
+        if let videoConnection = self.stillImageOutput.connectionWithMediaType(AVMediaTypeVideo){//take a photo here}
+            self.stillImageOutput.captureStillImageAsynchronouslyFromConnection(self.stillImageOutput.connectionWithMediaType(AVMediaTypeVideo), completionHandler: { (imageDataSampleBuffer, error) -> Void in
+                if ((imageDataSampleBuffer) != nil) {
+                    var imageData : NSData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
+                    var image : UIImage = UIImage(data: imageData)!
+                    println("Save me")
+                    ALAssetsLibrary().writeImageToSavedPhotosAlbum(image.CGImage, orientation: ALAssetOrientation(rawValue: image.imageOrientation.rawValue)!, completionBlock: nil)
+                }
+                
+            })
         }
-        var videoConnection = stillImageOutput?.connectionWithMediaType(AVMediaTypeVideo)
-        
-        if videoConnection != nil {
-            stillImageOutput?.captureStillImageAsynchronouslyFromConnection(stillImageOutput?.connectionWithMediaType(AVMediaTypeVideo))
-                { (imageDataSampleBuffer, error) -> Void in
-                    self.imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
-            }}
-        
     }
-    
 }
