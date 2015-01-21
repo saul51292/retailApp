@@ -37,5 +37,25 @@ class StyleManager: NSObject {
         tabBar.tabBar.backgroundColor = UIColor.flatBlackColor()
         tabBar.tabBar.tintColor = lightColor
     }
+    
+    func styleTagText(textField:UITextField)
+    {
+        textField.layer.cornerRadius = 4
+        textField.backgroundColor = UIColor.flatGrayColorDark().colorWithAlphaComponent(0.8)
+        textField.textAlignment = .Center
+        textField.textColor = UIColor.whiteColor()
+        textField.font = UIFont(name: "Montserrat", size: 16)
+        
+    }
+    
+    func styleTagButton(button:UIButton,text:String)
+    {
+        button.backgroundColor = UIColor.flatSkyBlueColor()
+        button.setTitle(text, forState: .Normal)
+        button.titleLabel?.textColor = UIColor.whiteColor()
+        button.titleLabel?.font = UIFont(name: "Montserrat", size: 14)
+        
+    }
+    
 
 }
