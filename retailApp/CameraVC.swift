@@ -8,7 +8,6 @@
 
 import UIKit
 import AVFoundation
-import AssetsLibrary
 
 
 class CameraVC: UIViewController {
@@ -21,6 +20,8 @@ class CameraVC: UIViewController {
     var timerView  = TimerView(frame: CGRectMake(UIScreen.mainScreen().bounds.width - 70, 30, 50, 50))
     var screenSize =  UIScreen.mainScreen().bounds
     var captureButton = UIButton(frame:(CGRectMake (0,UIScreen.mainScreen().bounds.height - 50,UIScreen.mainScreen().bounds.width,50)))
+    
+    var imageTaken : UIImage!
 
 
 
@@ -53,6 +54,11 @@ class CameraVC: UIViewController {
         }
          createCameraUI()
         
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+         createCameraUI()
     }
     
     func updateDeviceSettings(focusValue : Float, isoValue : Float) {
@@ -163,8 +169,18 @@ class CameraVC: UIViewController {
         self.view.addSubview(captureButton)
         
     }
-
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if(segue.identifier == "imageTaken") {
+            
+            var vc = (segue.destinationViewController as ImageTakenVC)
+            vc.image = self.imageTaken
+            vc.dealViewInfo = dealViewInfo
+            vc.timerView = timerView
+    
+        }
+    }
     func takePhoto(){
         
         
@@ -175,7 +191,8 @@ class CameraVC: UIViewController {
                     var imageData : NSData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
                     var image : UIImage = UIImage(data: imageData)!
                     println("Save me")
-                    ALAssetsLibrary().writeImageToSavedPhotosAlbum(image.CGImage, orientation: ALAssetOrientation(rawValue: image.imageOrientation.rawValue)!, completionBlock: nil)
+                    self.imageTaken = image
+                    self.performSegueWithIdentifier("imageTaken", sender: self)
                 }
                 
             })

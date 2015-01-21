@@ -42,10 +42,45 @@
                     <tabBarItem key="tabBarItem" tag="2" title="" image="camera" id="2Kb-42-O6u">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
+                    <connections>
+                        <segue destination="fKq-bs-Jxa" kind="presentation" identifier="imageTaken" id="Wmw-0F-9uc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HmR-SC-8E3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1408" y="385"/>
+        </scene>
+        <!--Image TakenVC-->
+        <scene sceneID="b4l-cb-hEy">
+            <objects>
+                <viewController id="fKq-bs-Jxa" customClass="ImageTakenVC" customModule="retailApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SWP-CT-vzF"/>
+                        <viewControllerLayoutGuide type="bottom" id="knL-je-9NO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="12g-Mk-JWB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FpL-fs-hD6">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FpL-fs-hD6" firstAttribute="bottom" secondItem="knL-je-9NO" secondAttribute="top" id="2gH-Zg-i8P"/>
+                            <constraint firstItem="FpL-fs-hD6" firstAttribute="leading" secondItem="12g-Mk-JWB" secondAttribute="leading" id="6SH-CZ-Zzh"/>
+                            <constraint firstAttribute="trailing" secondItem="FpL-fs-hD6" secondAttribute="trailing" id="k7S-kb-El6"/>
+                            <constraint firstItem="FpL-fs-hD6" firstAttribute="top" secondItem="12g-Mk-JWB" secondAttribute="top" id="lg4-2G-UHk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="FpL-fs-hD6" id="m20-KW-bDW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O1u-53-BwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1408" y="1127"/>
         </scene>
         <!--FufilledTV-->
         <scene sceneID="JNo-1z-TG4">

@@ -33,6 +33,7 @@
 		C71DE89F1A663DBF00CE2E75 /* UserOverview.xib in Resources */ = {isa = PBXBuildFile; fileRef = C71DE89E1A663DBF00CE2E75 /* UserOverview.xib */; };
 		C736B88A1A64842200CBC1C9 /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C736B8891A64842200CBC1C9 /* StyleManager.swift */; };
 		C761D9961A6F1F0A00696653 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C761D9951A6F1F0A00696653 /* Images.xcassets */; };
+		C761D9981A6F337E00696653 /* ImageTakenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C761D9971A6F337E00696653 /* ImageTakenVC.swift */; };
 		C7B97D071A672427000F7BA3 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7B97D061A672427000F7BA3 /* ProgressView.xib */; };
 		C7B97D091A67253C000F7BA3 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B97D081A67253C000F7BA3 /* ProgressBar.swift */; };
 		C7D9F95C1A6B206D00DD8EAF /* ProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D9F95B1A6B206D00DD8EAF /* ProgressVC.swift */; };
@@ -95,6 +96,7 @@
 		C736B8891A64842200CBC1C9 /* StyleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
 		C74E512B65E644F3E84DE0CE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C761D9951A6F1F0A00696653 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C761D9971A6F337E00696653 /* ImageTakenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTakenVC.swift; sourceTree = "<group>"; };
 		C7B97D061A672427000F7BA3 /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
 		C7B97D081A67253C000F7BA3 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		C7D9F95B1A6B206D00DD8EAF /* ProgressVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressVC.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				C706D0061A63A08400E06116 /* Supporting Files */,
 				C706D02C1A63AFDB00E06116 /* retailApp-Bridging-Header.h */,
 				CEFC72261A68F6BA0052AF06 /* UIView+Extension.swift */,
+				C761D9971A6F337E00696653 /* ImageTakenVC.swift */,
 			);
 			path = retailApp;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				C701284B1A65DEE900101467 /* TabBarController.swift in Sources */,
 				C71DE89D1A663DB200CE2E75 /* UserOverview.swift in Sources */,
 				CECD37C01A6C4C3100895E32 /* OrderCell.swift in Sources */,
+				C761D9981A6F337E00696653 /* ImageTakenVC.swift in Sources */,
 				C7118B5A1A64DEA00079F42E /* GenericTableView.swift in Sources */,
 				C70128461A65CF9B00101467 /* FufilledTV.swift in Sources */,
 				C706D0091A63A08400E06116 /* AppDelegate.swift in Sources */,

@@ -16,7 +16,7 @@ class TabBarController: UITabBarController, UITabBarDelegate {
     var progressVC : ProgressVC!    
     let styleManager = StyleManager()
     var tabBarBack = UIImage (named: "empty.png")
-    var closeButton  = UIButton(frame: CGRectMake(20, 40, 26, 30))
+    var closeButton  = UIButton(frame: CGRectMake(20, 37, 30, 30))
     
     
     var text = "Orders"
