@@ -20,6 +20,8 @@ class CameraVC: UIViewController {
     var timerView  = TimerView(frame: CGRectMake(UIScreen.mainScreen().bounds.width - 70, 30, 50, 50))
     var screenSize =  UIScreen.mainScreen().bounds
     var captureButton = UIButton(frame:(CGRectMake (0,UIScreen.mainScreen().bounds.height - 50,UIScreen.mainScreen().bounds.width,50)))
+       
+
     
     var imageTaken : UIImage!
 
@@ -99,10 +101,6 @@ class CameraVC: UIViewController {
     
     
     
-    
-    
-    
-    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         let touchPer = touchPercent( touches.anyObject() as UITouch )
         //focusTo(Float(touchPer.x))
@@ -148,19 +146,20 @@ class CameraVC: UIViewController {
         
     }
     
+
     func createCameraUI() {
         dealViewInfo.lblCompanyName.text = "The Bruffin Shop"
         self.view.addSubview(dealViewInfo)
         self.view.addSubview(timerView)
         captureButtonCreation()
-
+        
         
     }
+    
 
     
     func captureButtonCreation() {
         captureButton.backgroundColor = UIColor.flatMintColor()
-        
         captureButton.setTitle("Capture Deal", forState: .Normal)
         captureButton.titleLabel?.font = UIFont(name: "Montserrat", size: 16)
         captureButton.titleLabel?.textColor = UIColor.whiteColor()
