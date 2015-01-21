@@ -21,7 +21,8 @@ class ImageTakenVC: UIViewController,UITextFieldDelegate {
     var tagYCoord = UIScreen.mainScreen().bounds.height - 320
     var addTextField = UITextField(frame:CGRectMake(10,UIScreen.mainScreen().bounds.height - 280, UIScreen.mainScreen().bounds.width-20, 40))
     var addTagButton = UIButton(frame:(CGRectMake(UIScreen.mainScreen().bounds.width - 80, UIScreen.mainScreen().bounds.height - 185, 50, 50)))
-    
+    var closeButton  = UIButton(frame: CGRectMake(20, 37, 30, 30))
+
     var totalTagFrameWidth = CGFloat(0)
     var arrayOfTags = [UIButton]()
     
@@ -47,6 +48,7 @@ class ImageTakenVC: UIViewController,UITextFieldDelegate {
         self.view.addSubview(timerView)
         captureButtonCreation()
         createTagButton()
+        createCloseButton()
 
         
     }
@@ -55,7 +57,10 @@ class ImageTakenVC: UIViewController,UITextFieldDelegate {
     {
         
         addTagButton.layer.cornerRadius = 25
-        styleManager.styleTagButton(addTagButton,text: "+")
+        addTagButton.layer.borderWidth = 1.5
+        addTagButton.layer.borderColor = UIColor.whiteColor().CGColor
+        styleManager.styleTagButton(addTagButton,text: "")
+        addTagButton.setImage(UIImage(named: "plus"), forState: .Normal)
         addTagButton.titleLabel?.font = UIFont(name: "Montserrat", size: 25)
         addTagButton.addTarget(self, action: "createTagTextField", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(addTagButton)
@@ -87,6 +92,7 @@ class ImageTakenVC: UIViewController,UITextFieldDelegate {
             arrayOfTags.removeAtIndex(toRemove)
             totalTagFrameWidth -= sender.frame.width
             tagXCoord -= (sender.frame.width + 10)
+            createTagTextField()
         }
         else{
             println("Not last. Remove last first")
@@ -158,17 +164,23 @@ class ImageTakenVC: UIViewController,UITextFieldDelegate {
         
         
     }
+    
+    func createCloseButton() {
+        closeButton.setImage(UIImage(named: "close"), forState: .Normal)
+        closeButton.addTarget(self, action: "dismissVC", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(closeButton)
+    }
+
   
     
     func textFieldDidEndEditing(textField: UITextField) {
-        if(arrayOfTags.count < 4)
+        if(arrayOfTags.count < 5)
         {
             addTagButton.hidden = false
         }
         else {
             addTagButton.hidden = true
         }
-        
         
         for item in arrayOfTags {
             

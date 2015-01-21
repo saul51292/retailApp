@@ -50,8 +50,11 @@ class DealViewInfo: UIView,UITextFieldDelegate {
         contentView.frame = bounds
         setUpPlaceholder(priceField,size:15,string:"Set Price",color:UIColor.lightGrayColor())
         setUpPlaceholder(dealField,size:23,string:"Enter Deal Name",color:UIColor.darkGrayColor())
+        priceField.layer.borderColor = UIColor.whiteColor().CGColor
+        priceField.layer.borderWidth = 2
+        priceField.layer.cornerRadius = 39
         priceField.delegate = self
         addSubview(contentView)
-    }
+            }
 
 }
