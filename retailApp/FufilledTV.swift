@@ -37,7 +37,6 @@ class FufilledTV: GenericTableView {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(OrderCellIdentifier, forIndexPath: indexPath) as OrderCell
-
         cell.delegate = self
         cell.setOrder(exData[indexPath.row])
         cell.setCellColorTheme(darkAccentColor)

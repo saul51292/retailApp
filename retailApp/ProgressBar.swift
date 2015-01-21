@@ -62,14 +62,10 @@ class ProgressBar: UIView {
         return label
     }
     
-    func setScrollContentSize()
-    {
+    func setScrollContentSize() {
         var progressSize = CGSize(width: contentView.frame.width, height: contentView.frame.height)
         scrollView.contentSize = progressSize
-        
     }
-
-    
     
     func styleStatView(view:UIView, darkColor:UIColor, topTitle:String, bottomTitle:String) {
         let topLabel = viewLabel(topTitle,size:20,darkColor:darkColor)

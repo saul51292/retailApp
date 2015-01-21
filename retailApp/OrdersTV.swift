@@ -8,24 +8,25 @@
 
 import UIKit
 
-class OrdersTV: GenericTableView {
+class OrdersTV: GenericTableView, UISearchBarDelegate {
+    
+    @IBOutlet weak var orderSearchBar: UISearchBar!
+    
     var exData = dataArr.filter() { (order) in
         order.orderStatus != OrderStatus.Fufilled
     }
-    
-    var filteredData = dataArr
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         var nib = UINib(nibName: OrderCellIdentifier, bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: OrderCellIdentifier)
+        orderSearchBar.delegate = self
+    }
+    
+    override func styleTableView() {
+        super.styleTableView()
         self.searchDisplayController?.searchResultsTableView.separatorColor = UIColor.clearColor()
         self.searchDisplayController?.searchResultsTableView.backgroundColor = UIColor.flatWhiteColor()
-
-        
-        updateDataSource()
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,11 +35,31 @@ class OrdersTV: GenericTableView {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == self.searchDisplayController?.searchResultsTableView {
-            return filteredData.count
-        } else {
-            return exData.count
+        return exData.count
+    }
+    
+    private func resetSearch() {
+        exData = dataArr.filter() { (order) in
+            order.orderStatus != OrderStatus.Fufilled
         }
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            resetSearch()
+        } else {
+            self.exData = dataArr.filter({( order : Order) -> Bool in
+                var categoryMatch = (order.orderStatus != OrderStatus.Fufilled)
+                var stringMatch = order.name.rangeOfString(searchText, options: .CaseInsensitiveSearch)
+                return categoryMatch && (stringMatch != nil)
+            })
+        }
+        tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        resetSearch()
+        tableView.reloadData()
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -46,49 +67,23 @@ class OrdersTV: GenericTableView {
         cell.statusBttn.backgroundColor = darkAccentColor
     }
     
-    private func updateDataSource() {
-        exData = dataArr.filter() { (order) in
-            order.orderStatus != OrderStatus.Fufilled
-        }
-    }
-    
-    func filterContentForSearchText(searchText: String) {
-        self.filteredData = self.exData.filter({( order : Order) -> Bool in
-            var categoryMatch = (order.orderStatus != OrderStatus.Fufilled)
-            var stringMatch = order.name.rangeOfString(searchText,options:.CaseInsensitiveSearch)
-            return categoryMatch && (stringMatch != nil)
-        })
-    }
-    
-    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
-        self.filterContentForSearchText(searchString)
-        return true
-    }
-    
-    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
-        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
-        return true
-    }
-    
     // FIXME: There are too many steps here to move a cell
     func swipeTableCell(cell: OrderCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
-        println("Active")
         if direction == MGSwipeDirection.LeftToRight && index == 0 {
             //delete button
             let indexPath = tableView.indexPathForCell(cell)
             cell.completeOrder()
-            updateDataSource()
             tableView.reloadData()
         }
         
         return true
     }
     
-    
-    //TODO: Add more subtle badge icon
+    //TODO: Add more subtle badge icon. 
+    // NOTE: This seems like it should be done in the tabBarController
     func addBadge() {
-        var tabArray = tabBarController?.tabBar.items as NSArray!
-        var tabItem = tabArray.objectAtIndex(0) as UITabBarItem
+        let tabArray = tabBarController?.tabBar.items as NSArray!
+        let tabItem = tabArray.objectAtIndex(0) as UITabBarItem
         tabItem.badgeValue = String(self.exData.count)
         navigationController?.navigationBar.topItem?.title = "\(tabItem.badgeValue!) Orders"
     }
@@ -97,16 +92,7 @@ class OrdersTV: GenericTableView {
         let cell = self.tableView.dequeueReusableCellWithIdentifier(OrderCellIdentifier) as OrderCell
         cell.delegate = self
         cell.setCellColorTheme(darkAccentColor)
-
-        var order : Order
-        
-        // Check to see whether the normal table or search results table is being displayed and set the Candy object from the appropriate array
-        if tableView == self.searchDisplayController!.searchResultsTableView {
-            order = filteredData[indexPath.row]
-        } else {
-            order = exData[indexPath.row]
-        }
-        cell.setOrder(order)
+        cell.setOrder(exData[indexPath.row])
         
         return cell
     }

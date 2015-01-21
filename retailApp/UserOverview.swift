@@ -42,8 +42,7 @@ class UserOverview: UIView {
     }
     
     func tappedView() {
-        self.removeFromSuperview()
-        
+        self.removeFromSuperview()        
     }
     
     

@@ -15,29 +15,20 @@ class CameraVC: UIViewController {
     let captureSession = AVCaptureSession()
     var previewLayer : AVCaptureVideoPreviewLayer?
     let stillImageOutput = AVCaptureStillImageOutput()
-
-    var dealViewInfo = DealViewInfo(frame:(CGRectMake(0,  UIScreen.mainScreen().bounds.height - 200,  UIScreen.mainScreen().bounds.width, 150)))
-    var timerView  = TimerView(frame: CGRectMake(UIScreen.mainScreen().bounds.width - 70, 30, 50, 50))
-    var screenSize =  UIScreen.mainScreen().bounds
-    var captureButton = UIButton(frame:(CGRectMake (0,UIScreen.mainScreen().bounds.height - 50,UIScreen.mainScreen().bounds.width,50)))
-       
-
     
+    let dealViewInfo = DealViewInfo(frame:(CGRectMake(0,  UIScreen.mainScreen().bounds.height - 200,  UIScreen.mainScreen().bounds.width, 150)))
+    let timerView  = TimerView(frame: CGRectMake(UIScreen.mainScreen().bounds.width - 70, 30, 50, 50))
+    let screenSize =  UIScreen.mainScreen().bounds
+    let captureButton = UIButton(frame:(CGRectMake (0,UIScreen.mainScreen().bounds.height - 50,UIScreen.mainScreen().bounds.width,50)))
     var imageTaken : UIImage!
-
-
-
     
     // If we find a device we'll store it here for later use
     var captureDevice : AVCaptureDevice?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         // Do any additional setup after loading the view, typically from a nib.
         captureSession.sessionPreset = AVCaptureSessionPresetHigh
-        
         let devices = AVCaptureDevice.devices()
         
         // Loop through all the capture devices on this phone
@@ -54,13 +45,12 @@ class CameraVC: UIViewController {
                 }
             }
         }
-         createCameraUI()
-        
+        createCameraUI()
     }
     
     
     override func viewWillAppear(animated: Bool) {
-         createCameraUI()
+        createCameraUI()
     }
     
     func updateDeviceSettings(focusValue : Float, isoValue : Float) {
@@ -99,8 +89,6 @@ class CameraVC: UIViewController {
         return touchPer
     }
     
-    
-    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         let touchPer = touchPercent( touches.anyObject() as UITouch )
         //focusTo(Float(touchPer.x))
@@ -119,14 +107,13 @@ class CameraVC: UIViewController {
             device.focusMode = .Locked
             device.unlockForConfiguration()
         }
-        
     }
     
     func beginSession() {
+        let outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
+        var err : NSError? = nil
         
         configureDevice()
-        
-        var err : NSError? = nil
         captureSession.addInput(AVCaptureDeviceInput(device: captureDevice, error: &err))
         
         if err != nil {
@@ -137,26 +124,17 @@ class CameraVC: UIViewController {
         self.view.layer.addSublayer(previewLayer)
         previewLayer?.frame = self.view.layer.frame
         
-        var outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
-
         stillImageOutput.outputSettings = outputSettings
         captureSession.addOutput(stillImageOutput)
         captureSession.startRunning()
-
-        
     }
     
-
     func createCameraUI() {
         dealViewInfo.lblCompanyName.text = "The Bruffin Shop"
         self.view.addSubview(dealViewInfo)
         self.view.addSubview(timerView)
         captureButtonCreation()
-        
-        
     }
-    
-
     
     func captureButtonCreation() {
         captureButton.backgroundColor = UIColor.flatMintColor()
@@ -166,34 +144,28 @@ class CameraVC: UIViewController {
         captureButton.addTarget(self, action: "takePhoto", forControlEvents: UIControlEvents.TouchUpInside)
         
         self.view.addSubview(captureButton)
-        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if(segue.identifier == "imageTaken") {
-            
-            var vc = (segue.destinationViewController as ImageTakenVC)
+        if segue.identifier == "imageTaken" {
+            let vc = (segue.destinationViewController as ImageTakenVC)
             vc.image = self.imageTaken
             vc.dealViewInfo = dealViewInfo
             vc.timerView = timerView
-    
         }
     }
+    
     func takePhoto(){
-        
-        
         println("pressed")
         if let videoConnection = self.stillImageOutput.connectionWithMediaType(AVMediaTypeVideo){//take a photo here}
             self.stillImageOutput.captureStillImageAsynchronouslyFromConnection(self.stillImageOutput.connectionWithMediaType(AVMediaTypeVideo), completionHandler: { (imageDataSampleBuffer, error) -> Void in
                 if ((imageDataSampleBuffer) != nil) {
-                    var imageData : NSData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
-                    var image : UIImage = UIImage(data: imageData)!
+                    let imageData : NSData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
+                    let image : UIImage = UIImage(data: imageData)!
                     println("Save me")
                     self.imageTaken = image
                     self.performSegueWithIdentifier("imageTaken", sender: self)
                 }
-                
             })
         }
     }

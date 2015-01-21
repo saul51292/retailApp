@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GenericTableView: UITableViewController, MGSwipeTableCellDelegate, UISearchBarDelegate,UISearchDisplayDelegate {
+class GenericTableView: UITableViewController, MGSwipeTableCellDelegate {
     
     let OrderCellIdentifier = "OrderCell"
     let styleManager = StyleManager()
@@ -19,9 +19,12 @@ class GenericTableView: UITableViewController, MGSwipeTableCellDelegate, UISearc
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func styleTableView() {
         tableView.separatorColor = UIColor.clearColor()
         tableView.backgroundColor = styleManager.backColor
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
