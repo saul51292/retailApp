@@ -19,6 +19,7 @@ class GenericTableView: UITableViewController, MGSwipeTableCellDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
+        styleTableView()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
