@@ -25,9 +25,6 @@ class ImageTakenVC: UIViewController,UITextFieldDelegate {
 
     var totalTagFrameWidth = CGFloat(0)
     var arrayOfTags = [UIButton]()
-    
-    
-    
 
     
     override func viewDidLoad() {
@@ -44,18 +41,18 @@ class ImageTakenVC: UIViewController,UITextFieldDelegate {
     
     
     func createCameraUI() {
+        
         self.view.addSubview(dealViewInfo)
         self.view.addSubview(timerView)
         captureButtonCreation()
         createTagButton()
         createCloseButton()
-
         
     }
     
+    
     func createTagButton()
     {
-        
         addTagButton.layer.cornerRadius = 25
         addTagButton.layer.borderWidth = 1.5
         addTagButton.layer.borderColor = UIColor.whiteColor().CGColor

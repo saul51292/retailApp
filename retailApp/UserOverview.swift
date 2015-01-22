@@ -29,7 +29,6 @@ class UserOverview: UIView {
     @IBOutlet var variableActionButton: UIButton!
     @IBOutlet var productName: UILabel!
     
-    let tapRec = UITapGestureRecognizer()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,23 +40,13 @@ class UserOverview: UIView {
         xibSetup()
     }
     
-    func tappedView() {
-        self.removeFromSuperview()        
-    }
-    
-    
-    func addTapRecognizer() {
-        tapRec.addTarget(self, action: "tappedView")
-        userView.addGestureRecognizer(tapRec)
-    }
 
     func xibSetup() {
         contentView = loadViewFromNib("UserOverview")
         contentView.frame = bounds
         setScrollContentSize()
-        addTapRecognizer()
         contentView.layer.cornerRadius = 6
-        addSubview(contentView)
+              addSubview(contentView)
     }
     
     func setScrollContentSize() {

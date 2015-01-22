@@ -66,7 +66,9 @@ class TabBarController: UITabBarController, UITabBarDelegate {
             text = "\(ordersTV.exData.count) Orders"
             darkAccentColor = UIColor.flatMagentaColorDark()
             accentColor = UIColor.flatMagentaColor()
+
             reloadAndStyleTable(ordersTV)
+            
 
         case 1:
             text = "\(fufilledTV.exData.count) Fufilled"
@@ -90,6 +92,7 @@ class TabBarController: UITabBarController, UITabBarDelegate {
         default:
             println("error")
         }
+
         self.viewWillAppear(true)
     }
 

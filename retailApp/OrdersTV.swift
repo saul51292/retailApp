@@ -11,6 +11,10 @@ import UIKit
 class OrdersTV: GenericTableView, UISearchBarDelegate {
     
     @IBOutlet weak var orderSearchBar: UISearchBar!
+    var showUserVC = UIViewController()
+    let tapRec = UITapGestureRecognizer()
+    var showUser = UserOverview(frame: CGRectMake(UIScreen.mainScreen().bounds.width/13,UIScreen.mainScreen().bounds.height/4, 263, 318))
+
     
     var exData = dataArr.filter() { (order) in
         order.orderStatus != OrderStatus.Fufilled
@@ -18,6 +22,10 @@ class OrdersTV: GenericTableView, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        showUser.center = showUserVC.view.center
+       
+        
         var nib = UINib(nibName: OrderCellIdentifier, bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: OrderCellIdentifier)
         orderSearchBar.delegate = self
@@ -33,6 +41,8 @@ class OrdersTV: GenericTableView, UISearchBarDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return exData.count
@@ -62,9 +72,43 @@ class OrdersTV: GenericTableView, UISearchBarDelegate {
         tableView.reloadData()
     }
     
+    func tappedView() {
+        showUserVC.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    func addTapRecognizer() {
+        tapRec.addTarget(self, action: "tappedView")
+        showUserVC.view.addGestureRecognizer(tapRec)
+    }
+
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
         let cell = tableView.cellForRowAtIndexPath(indexPath) as OrderCell
         cell.statusBttn.backgroundColor = darkAccentColor
+        showUser.colorUserOverview(darkAccentColor)
+        showUser.styleUserPicture(darkAccentColor)
+
+        
+        let imageName = UIImage(named: exData[indexPath.row].name)
+        showUser.userPicture.image = imageName
+        showUser.userName.text = exData[indexPath.row].name
+        setUpUserOverviewVC()
+       
+        
+    }
+    
+    
+    func setUpUserOverviewVC()
+    {
+       
+        addTapRecognizer()
+        showUserVC.modalPresentationStyle = .OverFullScreen
+        showUserVC.view.backgroundColor = UIColor.lightGrayColor().colorWithAlphaComponent(0.3)
+        showUserVC.view.addSubview(showUser)
+        self.presentViewController(showUserVC, animated: true, completion: nil)
+
     }
     
     // FIXME: There are too many steps here to move a cell

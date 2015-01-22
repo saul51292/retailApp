@@ -13,8 +13,10 @@ class GenericTableView: UITableViewController, MGSwipeTableCellDelegate {
     let OrderCellIdentifier = "OrderCell"
     let styleManager = StyleManager()
     
+    
     var accentColor : UIColor!
     var darkAccentColor : UIColor!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +38,13 @@ class GenericTableView: UITableViewController, MGSwipeTableCellDelegate {
     func searchBarSearchButtonClicked( searchBar: UISearchBar!) {
         searchBar.resignFirstResponder()
     }
+   
     
-    override func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+   
+    
+    
+    override func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath)
+    {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as OrderCell
         cell.statusBttn.backgroundColor = darkAccentColor
     }
@@ -53,6 +60,8 @@ class GenericTableView: UITableViewController, MGSwipeTableCellDelegate {
             return cell.createRightButtons()
         }
     }
+    
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(OrderCellIdentifier) as OrderCell
