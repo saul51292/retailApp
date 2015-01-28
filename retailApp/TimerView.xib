@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimerView" customModule="retailApp" customModuleProvider="target">
             <connections>
+                <outlet property="bttnTimer" destination="3oL-WK-Vk8" id="Hud-gM-YvY"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="cPQ-hd-Gf7"/>
                 <outlet property="lblTime" destination="q2N-83-cOp" id="W2w-Lg-7wV"/>
             </connections>
@@ -27,11 +28,24 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oL-WK-Vk8">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="bttnTimerClicked:" destination="-1" eventType="touchUpInside" id="UmT-6F-9II"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
+                <constraint firstItem="3oL-WK-Vk8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LKV-SA-OmT"/>
+                <constraint firstAttribute="trailing" secondItem="3oL-WK-Vk8" secondAttribute="trailing" id="MAn-3l-c7f"/>
                 <constraint firstAttribute="bottom" secondItem="q2N-83-cOp" secondAttribute="bottom" id="N01-vZ-sPY"/>
                 <constraint firstItem="q2N-83-cOp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="N89-RZ-Thq"/>
                 <constraint firstItem="q2N-83-cOp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="SWM-HO-EUk"/>
+                <constraint firstItem="3oL-WK-Vk8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="aUi-aV-1p6"/>
+                <constraint firstAttribute="bottom" secondItem="3oL-WK-Vk8" secondAttribute="bottom" id="igf-xS-pkf"/>
                 <constraint firstAttribute="trailing" secondItem="q2N-83-cOp" secondAttribute="trailing" id="ysJ-nx-hPY"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

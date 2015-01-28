@@ -10,9 +10,9 @@ import UIKit
 
 class TimerView: UIView {
     
+    @IBOutlet var bttnTimer: UIButton!
     @IBOutlet var contentView: UIView!
     @IBOutlet var lblTime: UILabel!
-    let tapRec = UITapGestureRecognizer()
     
     var count = 30
     required init(coder aDecoder: NSCoder) {
@@ -25,29 +25,27 @@ class TimerView: UIView {
         xibSetup()
     }
 
-    
-    func xibSetup() {
-        contentView = loadViewFromNib("TimerView")
-        lblTime.text = String(count)
-        tapRec.addTarget(self, action: "tappedView")
-        contentView.addGestureRecognizer(tapRec)
-
-        addSubview(contentView)
-    }
-
-    
-    func tappedView(){
+    @IBAction func bttnTimerClicked(sender: AnyObject) {
         count += 15
         lblTime.text = String(count)
         if(count > 60){
             count = 30
             lblTime.text = String(count)
         }
+
+    }
+    
+    func xibSetup() {
+        contentView = loadViewFromNib("TimerView")
+        lblTime.text = String(count)
+        addSubview(contentView)
     }
     
     override func layoutSubviews() {
         lblTime.layer.masksToBounds = true
         lblTime.layer.cornerRadius = 25
+        bttnTimer.layer.masksToBounds = true
+        bttnTimer.layer.cornerRadius = 25
         contentView.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.45)
         contentView.layer.borderColor = UIColor.whiteColor().CGColor
         contentView.layer.borderWidth = 2
