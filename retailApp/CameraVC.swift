@@ -21,6 +21,13 @@ class CameraVC: UIViewController {
     let screenSize =  UIScreen.mainScreen().bounds
     let captureButton = UIButton(frame:(CGRectMake (0,UIScreen.mainScreen().bounds.height - 50,UIScreen.mainScreen().bounds.width,50)))
     var imageTaken : UIImage!
+    var devicePoint : CGPoint = CGPoint(x: 0.5, y: 0.5)
+
+    let autofocusCircle = UIButton(frame:(CGRectMake (0,0,70,70)))
+    let autofocusCircleInner = UIButton(frame:(CGRectMake (0,0,50,50)))
+    let autofocusCircleInnerMost = UIButton(frame:(CGRectMake (0,0,30,30)))
+    let autofocusBullseye = UIButton(frame:(CGRectMake (0,0,10,10)))
+
     
     // If we find a device we'll store it here for later use
     var captureDevice : AVCaptureDevice?
@@ -53,6 +60,29 @@ class CameraVC: UIViewController {
         createCameraUI()
     }
     
+    
+    func focus(focusMode: AVCaptureFocusMode, exposureMode: AVCaptureExposureMode, point: CGPoint, monitorSubjectAreaChange: Bool) {
+        
+        if let device = captureDevice {
+        var error : NSError?
+        if device.lockForConfiguration(&error) {
+            if device.focusPointOfInterestSupported && device.isFocusModeSupported(focusMode) {
+                device.focusMode = focusMode
+                device.focusPointOfInterest = point
+            }
+            if device.exposurePointOfInterestSupported && device.isExposureModeSupported(exposureMode) {
+                device.exposureMode = exposureMode
+                device.exposurePointOfInterest = point
+            }
+            device.subjectAreaChangeMonitoringEnabled = monitorSubjectAreaChange
+            device.unlockForConfiguration()
+        } else {
+            println("Error setting focus")
+            }
+        }
+    }
+
+    
     func updateDeviceSettings(focusValue : Float, isoValue : Float) {
         if let device = captureDevice {
             if(device.lockForConfiguration(nil)) {
@@ -73,6 +103,7 @@ class CameraVC: UIViewController {
             }
         }
     }
+  
     
     func touchPercent(touch : UITouch) -> CGPoint {
         // Get the dimensions of the screen in points
@@ -90,21 +121,52 @@ class CameraVC: UIViewController {
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        let touchPer = touchPercent( touches.anyObject() as UITouch )
-        //focusTo(Float(touchPer.x))
-        updateDeviceSettings(Float(touchPer.x), isoValue: Float(touchPer.y))
+        let touchEvent = touches.anyObject() as UITouch
+        let touchView = touchEvent.locationInView(self.view)
+        let touchPer = touchPercent(touchEvent)
+        createAutofocusCircle(autofocusCircle,point:touchView,widthAndHeight:70,time:0.8)
+        createAutofocusCircle(autofocusCircleInner,point:touchView,widthAndHeight:50,time:0.7)
+        createAutofocusCircle(autofocusCircleInnerMost,point:touchView,widthAndHeight:30,time:0.6)
+        createAutofocusCircle(autofocusBullseye,point:touchView,widthAndHeight:10,time:0.3)
+
+        self.focus(AVCaptureFocusMode.AutoFocus, exposureMode: AVCaptureExposureMode.AutoExpose, point: devicePoint, monitorSubjectAreaChange: false)
+        
     }
     
-    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
-        let touchPer = touchPercent( touches.anyObject() as UITouch )
-        //focusTo(Float(touchPer.x))
-        updateDeviceSettings(Float(touchPer.x), isoValue: Float(touchPer.y))
+    func createAutofocusCircle(button:UIButton,point:CGPoint,widthAndHeight:CGFloat,time:CFTimeInterval )
+    {
+        button.layer.borderColor = UIColor.whiteColor().CGColor
+        button.layer.borderWidth = 2
+        button.layer.cornerRadius = widthAndHeight/2
+        button.frame = CGRectMake(CGFloat(point.x) - widthAndHeight/2, CGFloat(point.y) - widthAndHeight/2 , widthAndHeight, widthAndHeight)
+        self.view.addSubview(button)
+        createAnimation(button,time:time)
+    }
+    
+    func createAnimation(button:UIButton,time:CFTimeInterval)
+    {
+        var selectionAnimation = CABasicAnimation(keyPath: "borderColor")
+        selectionAnimation.fromValue = UIColor.whiteColor().CGColor
+        selectionAnimation.toValue = UIColor.grayColor().CGColor
+        selectionAnimation.timeOffset = time
+        selectionAnimation.repeatCount = 3
+        selectionAnimation.duration = time
+        selectionAnimation.delegate = self
+        button.layer.addAnimation(selectionAnimation, forKey: "selectionAnimation")
+    }
+    
+    override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
+        autofocusCircle.removeFromSuperview()
+        autofocusCircleInner.removeFromSuperview()
+        autofocusCircleInnerMost.removeFromSuperview()
+        autofocusBullseye.removeFromSuperview()
+
     }
     
     func configureDevice() {
         if let device = captureDevice {
             device.lockForConfiguration(nil)
-            device.focusMode = .Locked
+            self.focus(AVCaptureFocusMode.ContinuousAutoFocus, exposureMode: AVCaptureExposureMode.ContinuousAutoExposure, point: devicePoint, monitorSubjectAreaChange: false)
             device.unlockForConfiguration()
         }
     }
