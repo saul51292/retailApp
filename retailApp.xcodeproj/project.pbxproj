@@ -34,6 +34,8 @@
 		C736B88A1A64842200CBC1C9 /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C736B8891A64842200CBC1C9 /* StyleManager.swift */; };
 		C761D9961A6F1F0A00696653 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C761D9951A6F1F0A00696653 /* Images.xcassets */; };
 		C761D9981A6F337E00696653 /* ImageTakenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C761D9971A6F337E00696653 /* ImageTakenVC.swift */; };
+		C773D2A31A798CF7003B7C40 /* UserOverviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C773D2A11A798CF7003B7C40 /* UserOverviewVC.swift */; };
+		C773D2A41A798CF7003B7C40 /* UserOverviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C773D2A21A798CF7003B7C40 /* UserOverviewVC.xib */; };
 		C7B97D071A672427000F7BA3 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7B97D061A672427000F7BA3 /* ProgressView.xib */; };
 		C7B97D091A67253C000F7BA3 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B97D081A67253C000F7BA3 /* ProgressBar.swift */; };
 		C7D9F95C1A6B206D00DD8EAF /* ProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D9F95B1A6B206D00DD8EAF /* ProgressVC.swift */; };
@@ -96,6 +98,8 @@
 		C74E512B65E644F3E84DE0CE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C761D9951A6F1F0A00696653 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C761D9971A6F337E00696653 /* ImageTakenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTakenVC.swift; sourceTree = "<group>"; };
+		C773D2A11A798CF7003B7C40 /* UserOverviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserOverviewVC.swift; sourceTree = "<group>"; };
+		C773D2A21A798CF7003B7C40 /* UserOverviewVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserOverviewVC.xib; sourceTree = "<group>"; };
 		C7B97D061A672427000F7BA3 /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
 		C7B97D081A67253C000F7BA3 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		C7D9F95B1A6B206D00DD8EAF /* ProgressVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressVC.swift; sourceTree = "<group>"; };
@@ -284,6 +288,8 @@
 			children = (
 				C71DE89C1A663DB200CE2E75 /* UserOverview.swift */,
 				C71DE89E1A663DBF00CE2E75 /* UserOverview.xib */,
+				C773D2A11A798CF7003B7C40 /* UserOverviewVC.swift */,
+				C773D2A21A798CF7003B7C40 /* UserOverviewVC.xib */,
 			);
 			name = UserOverview;
 			sourceTree = "<group>";
@@ -408,6 +414,7 @@
 				C7118B721A64E46D0079F42E /* Caravan.png in Resources */,
 				CECD37C11A6C4C3100895E32 /* OrderCell.xib in Resources */,
 				C706D0151A63A08400E06116 /* LaunchScreen.xib in Resources */,
+				C773D2A41A798CF7003B7C40 /* UserOverviewVC.xib in Resources */,
 				C7118B6A1A64E46D0079F42E /* Truck.png in Resources */,
 				C7118B711A64E46D0079F42E /* Scooter.png in Resources */,
 				C706D02B1A63A89500E06116 /* empty.png in Resources */,
@@ -493,6 +500,7 @@
 			files = (
 				C7E432041A6DC83500B97945 /* TimerView.swift in Sources */,
 				C7E431FC1A6DB2BA00B97945 /* SettingsVC.swift in Sources */,
+				C773D2A31A798CF7003B7C40 /* UserOverviewVC.swift in Sources */,
 				CECD37BD1A6C466400895E32 /* ExampleData.swift in Sources */,
 				CEFC72271A68F6BA0052AF06 /* UIView+Extension.swift in Sources */,
 				C7D9F95C1A6B206D00DD8EAF /* ProgressVC.swift in Sources */,

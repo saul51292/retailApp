@@ -42,7 +42,7 @@ class UserOverview: UIView {
     
 
     func xibSetup() {
-        contentView = loadViewFromNib("UserOverview")
+        contentView = loadViewFromNib("UserOverview") as UIView
         contentView.frame = bounds
         setScrollContentSize()
         contentView.layer.cornerRadius = 6
