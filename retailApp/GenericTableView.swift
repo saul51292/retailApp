@@ -39,7 +39,6 @@ class GenericTableView: UITableViewController, MGSwipeTableCellDelegate {
         searchBar.resignFirstResponder()
     }
    
-    
    
     
     

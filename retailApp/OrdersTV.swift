@@ -11,7 +11,7 @@ import UIKit
 class OrdersTV: GenericTableView, UISearchBarDelegate {
     
     @IBOutlet weak var orderSearchBar: UISearchBar!
-    var showUserVC = UserOverviewVC()
+    var showUserVC = OverviewVC()
 
     
     var exData = dataArr.filter() { (order) in
@@ -79,8 +79,11 @@ class OrdersTV: GenericTableView, UISearchBarDelegate {
         let imageName = UIImage(named: exData[indexPath.row].name)
         showUserVC.showUser.userPicture.image = imageName
         showUserVC.showUser.userName.text = exData[indexPath.row].name
-        showUserVC.setUpUserOverviewVC()
+        showUserVC.userView = showUserVC.showUser
+        showUserVC.setUpOverviewVC()
+        
         self.presentViewController(showUserVC, animated: true, completion: nil)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
        
         

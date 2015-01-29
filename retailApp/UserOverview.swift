@@ -46,7 +46,7 @@ class UserOverview: UIView {
         contentView.frame = bounds
         setScrollContentSize()
         contentView.layer.cornerRadius = 6
-              addSubview(contentView)
+        addSubview(contentView)
     }
     
     func setScrollContentSize() {

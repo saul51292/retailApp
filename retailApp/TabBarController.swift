@@ -17,6 +17,7 @@ class TabBarController: UITabBarController, UITabBarDelegate {
     let styleManager = StyleManager()
     var tabBarBack = UIImage (named: "empty.png")
     var closeButton  = UIButton(frame: CGRectMake(20, 37, 30, 30))
+    var cashOutUser = OverviewVC()
     
     var text = "Orders"
     
@@ -26,6 +27,10 @@ class TabBarController: UITabBarController, UITabBarDelegate {
         fufilledTV = self.childViewControllers[1] as FufilledTV
         progressVC = self.childViewControllers[3] as ProgressVC
         
+        var moneyBarItem = UIBarButtonItem(title: "$123", style: UIBarButtonItemStyle.Plain, target: self, action: "buttonMethod")
+        var logOutItem = UIBarButtonItem(title: "Log Out", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+        
+        styleManager.navBarStyling(self, emptyImage:tabBarBack!,leftItem:moneyBarItem, rightItem:logOutItem)
         text = "\(ordersTV.exData.count) Orders"
         navigationController?.navigationBar.topItem?.title = self.text
         reloadAndStyleTable(ordersTV)
@@ -38,10 +43,17 @@ class TabBarController: UITabBarController, UITabBarDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func buttonMethod() {
+        cashOutUser.userView = cashOutUser.cashOut
+        cashOutUser.setUpOverviewVC()
+        
+        self.presentViewController(cashOutUser, animated: true, completion: nil)
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.topItem?.title = text
-        styleManager.navBarStyling(self, darkColor:darkAccentColor, emptyImage:tabBarBack!)
+        navigationController?.navigationBar.barTintColor = darkAccentColor
         styleManager.tabBarStyling(self, emptyImage:tabBarBack!,lightColor:accentColor)
     }
     
@@ -85,10 +97,6 @@ class TabBarController: UITabBarController, UITabBarDelegate {
             text = "\(ordersTV.exData.count + fufilledTV.exData.count) Sales"
             darkAccentColor = UIColor.flatMintColorDark()
             accentColor = UIColor.flatMintColor()
-        
-        case 4:
-            println("4")
-            println("Settings")
         default:
             println("error")
         }

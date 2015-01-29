@@ -8,43 +8,46 @@
 
 import UIKit
 
-class UserOverviewVC: UIViewController {
+class OverviewVC: UIViewController {
   
-     var showUser = UserOverview(frame: CGRectMake(0,0, 263, 318))
+    var showUser = UserOverview(frame: CGRectMake(0,0, 263, 318))
+    var cashOut = cashOutView(frame: CGRectMake(0,0, 263, 318))
     let tapRec = UITapGestureRecognizer()
+    var userView = UIView()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        showUser.center.x = self.view.center.x
-        self.view.addSubview(showUser)
+        userView.backgroundColor = UIColor.clearColor()
+        userView.center.x = self.view.center.x
 
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
-         animateViewSpringingUp(showUser)
+        self.view.addSubview(userView)
+         animateViewSpringingUp()
     }
     
-    func animateViewSpringingUp(view:UIView){
+    func animateViewSpringingUp(){
         UIView.animateWithDuration(0.6, delay: 0.0,
                 usingSpringWithDamping: 0.7,
                 initialSpringVelocity: 0.8,
                 options: .CurveEaseInOut,
                 animations:  {
                     
-                    view.transform = CGAffineTransformMakeTranslation(0,UIScreen.mainScreen().bounds.height/4)
+                    self.userView.transform = CGAffineTransformMakeTranslation(0,UIScreen.mainScreen().bounds.height/4)
                 }, nil)
         
         }
     
-    func bringViewsBackDown(view:UIView){
+    func bringViewsBackDown(){
         UIView.animateWithDuration(0.6, delay: 0.0,
             usingSpringWithDamping: 0.7,
             initialSpringVelocity: 0.8,
             options: .CurveEaseInOut,
             animations:  {
-                view.transform = CGAffineTransformIdentity
+                self.userView.transform = CGAffineTransformIdentity
 
             }, nil)
 
@@ -53,7 +56,7 @@ class UserOverviewVC: UIViewController {
 
     func tappedView() {
         self.dismissViewControllerAnimated(true, completion: nil)
-        bringViewsBackDown(showUser)
+        bringViewsBackDown()
         
     }
     
@@ -64,7 +67,7 @@ class UserOverviewVC: UIViewController {
     }
 
     
-    func setUpUserOverviewVC()
+    func setUpOverviewVC()
     {
         addTapRecognizer()
         self.modalPresentationStyle = .OverFullScreen

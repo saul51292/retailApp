@@ -14,18 +14,15 @@ class StyleManager: NSObject {
     let backColor = UIColor.flatWhiteColor()
     let darkAccentColor = UIColor.flatMintColorDark()
     
-    func navBarStyling(vc:UIViewController, darkColor:UIColor, emptyImage:UIImage) {
+    func navBarStyling(vc:UIViewController, emptyImage:UIImage,leftItem:UIBarButtonItem,rightItem:UIBarButtonItem) {
         var nav = vc.navigationController?.navigationBar
-        nav?.barTintColor = darkColor
         nav?.shadowImage = emptyImage
         nav?.translucent = false
         nav?.setBackgroundImage(emptyImage, forBarMetrics: UIBarMetrics.Default)
         nav?.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Montserrat", size: 18)!]
         nav?.tintColor = UIColor.whiteColor()
-        var moneyBarItem = UIBarButtonItem(title: "$123", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
-        vc.navigationItem.leftBarButtonItem = moneyBarItem
-        var logOutItem = UIBarButtonItem(title: "Log Out", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
-        vc.navigationItem.rightBarButtonItem = logOutItem
+               vc.navigationItem.leftBarButtonItem = leftItem
+        vc.navigationItem.rightBarButtonItem = rightItem
         vc.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Montserrat", size: 16)!], forState: UIControlState.Normal)
         vc.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Montserrat", size: 16)!], forState: UIControlState.Normal)
     }

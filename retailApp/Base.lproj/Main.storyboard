@@ -5,27 +5,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--SettingsVC-->
-        <scene sceneID="VKq-IH-FIB">
-            <objects>
-                <viewController id="xG3-oJ-7AG" customClass="SettingsVC" customModule="retailApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0kG-Xh-CzK"/>
-                        <viewControllerLayoutGuide type="bottom" id="cGq-Lq-yM9"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Qbq-GA-So2">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" tag="4" title="" image="settings" id="wTh-Ck-w1V">
-                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yaz-I1-M2W" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2725" y="385"/>
-        </scene>
         <!--CameraVC-->
         <scene sceneID="iYK-BX-w5W">
             <objects>
@@ -234,7 +213,6 @@
                         <segue destination="FVB-bI-ydm" kind="relationship" relationship="viewControllers" id="zRS-Fp-CUn"/>
                         <segue destination="SLj-6Z-YEa" kind="relationship" relationship="viewControllers" id="SiK-bN-J9Q"/>
                         <segue destination="VwG-KG-6qY" kind="relationship" relationship="viewControllers" id="9Au-40-QfQ"/>
-                        <segue destination="xG3-oJ-7AG" kind="relationship" relationship="viewControllers" id="6q4-hl-94v"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rnx-1U-TaP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -247,6 +225,5 @@
         <image name="camera" width="26" height="22"/>
         <image name="check" width="24" height="24"/>
         <image name="order" width="24" height="24"/>
-        <image name="settings" width="24" height="24"/>
     </resources>
 </document>
