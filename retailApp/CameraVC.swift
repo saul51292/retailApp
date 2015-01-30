@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 
-class CameraVC: UIViewController {
+class CameraVC: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     let captureSession = AVCaptureSession()
     var previewLayer : AVCaptureVideoPreviewLayer?
@@ -20,8 +20,10 @@ class CameraVC: UIViewController {
     let timerView  = TimerView(frame: CGRectMake(UIScreen.mainScreen().bounds.width - 70, 30, 50, 50))
     let screenSize =  UIScreen.mainScreen().bounds
     let captureButton = UIButton(frame:(CGRectMake (0,UIScreen.mainScreen().bounds.height - 50,UIScreen.mainScreen().bounds.width,50)))
+    let galleryButton = UIButton(frame:(CGRectMake (-25,UIScreen.mainScreen().bounds.height - 50,90,50)))
     var imageTaken : UIImage!
     var devicePoint : CGPoint = CGPoint(x: 0.5, y: 0.5)
+    let picker = UIImagePickerController()
 
     let autofocusCircle = UIButton(frame:(CGRectMake (0,0,70,70)))
     let autofocusCircleInner = UIButton(frame:(CGRectMake (0,0,50,50)))
@@ -37,6 +39,7 @@ class CameraVC: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         captureSession.sessionPreset = AVCaptureSessionPresetHigh
         let devices = AVCaptureDevice.devices()
+        picker.delegate = self
         
         // Loop through all the capture devices on this phone
         for device in devices {
@@ -59,7 +62,6 @@ class CameraVC: UIViewController {
     override func viewWillAppear(animated: Bool) {
         createCameraUI()
     }
-    
     
     func focus(focusMode: AVCaptureFocusMode, exposureMode: AVCaptureExposureMode, point: CGPoint, monitorSubjectAreaChange: Bool) {
         
@@ -163,6 +165,7 @@ class CameraVC: UIViewController {
 
     }
     
+    
     func configureDevice() {
         if let device = captureDevice {
             device.lockForConfiguration(nil)
@@ -196,6 +199,7 @@ class CameraVC: UIViewController {
         self.view.addSubview(dealViewInfo)
         self.view.addSubview(timerView)
         captureButtonCreation()
+        galleryButtonCreation()
     }
     
     func captureButtonCreation() {
@@ -207,6 +211,27 @@ class CameraVC: UIViewController {
         
         self.view.addSubview(captureButton)
     }
+    
+    func galleryButtonCreation()
+    {
+        galleryButton.backgroundColor = UIColor.whiteColor()
+        galleryButton.layer.cornerRadius = 25
+        galleryButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0)
+        galleryButton.setImage(UIImage(named: "photos"), forState: .Normal)
+        galleryButton.addTarget(self, action: "photoFromLibrary", forControlEvents: UIControlEvents.TouchUpInside)
+
+        self.view.addSubview(galleryButton)
+    }
+    
+    
+    func photoFromLibrary() {
+        picker.allowsEditing = false //2
+        picker.sourceType = .PhotoLibrary //3
+        picker.modalPresentationStyle = .Popover
+        presentViewController(picker, animated: true, completion: nil)//4
+    }
+    
+
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "imageTaken" {
@@ -230,5 +255,14 @@ class CameraVC: UIViewController {
                 }
             })
         }
+    }
+    
+    //MARK: - Delegates
+    //What to do when the picker returns with a photo
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        var chosenImage = info[UIImagePickerControllerOriginalImage] as UIImage //2
+        self.imageTaken = chosenImage
+        dismissViewControllerAnimated(true, completion: nil) //5
+        self.performSegueWithIdentifier("imageTaken", sender: self)
     }
 }

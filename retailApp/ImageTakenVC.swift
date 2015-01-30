@@ -30,6 +30,7 @@ class ImageTakenVC: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = image
+        imageView.contentMode = .ScaleAspectFill
         createCameraUI()
         // Do any additional setup after loading the view.
     }

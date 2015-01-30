@@ -17,6 +17,7 @@ class DealViewInfo: UIView,UITextFieldDelegate {
     @IBOutlet var priceView: UIView!
     
     @IBOutlet var dealField: UITextField!
+    
     // Responsible for anarchiving the view (nib file) -> associate this class with the nib
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -29,7 +30,7 @@ class DealViewInfo: UIView,UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(textField: UITextField!) {    //delegate method
-        priceField.attributedPlaceholder =  NSAttributedString(string:"", attributes:nil)
+        
         priceField.font = UIFont(name: "Montserrat", size: 30.0)
         if priceField.text.rangeOfString("$") == nil{
              priceField.text = "$".stringByAppendingString(priceField.text)
@@ -44,8 +45,8 @@ class DealViewInfo: UIView,UITextFieldDelegate {
         let attriString = NSAttributedString(string:string, attributes:
             [NSForegroundColorAttributeName: color,
                 NSFontAttributeName: UIFont(name: "Montserrat", size: size)!])
-        
         textField.attributedPlaceholder = attriString
+        
     }
     
     private func xibSetup() {
