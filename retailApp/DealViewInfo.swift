@@ -31,7 +31,10 @@ class DealViewInfo: UIView,UITextFieldDelegate {
     func textFieldDidBeginEditing(textField: UITextField!) {    //delegate method
         priceField.attributedPlaceholder =  NSAttributedString(string:"", attributes:nil)
         priceField.font = UIFont(name: "Montserrat", size: 30.0)
-        priceField.text = "$".stringByAppendingString(priceField.text)
+        if priceField.text.rangeOfString("$") == nil{
+             priceField.text = "$".stringByAppendingString(priceField.text)
+        }
+       
 
 
     }
