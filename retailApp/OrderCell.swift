@@ -31,8 +31,8 @@ class OrderCell: MGSwipeTableCell, MGSwipeTableCellDelegate {
         // Configure the view for the selected state
     }
     
-    func setCellColorTheme(color: UIColor!) {
-        backgroundColor = UIColor.flatWhiteColor()
+    func setCellColorTheme(color: UIColor!, backColor:UIColor!) {
+        backgroundColor = backColor
         purchaseTime.textColor = color
         userName.textColor = color
         userImage!.layer.borderColor = color.CGColor

@@ -31,15 +31,24 @@ class FufilledTV: GenericTableView {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as OrderCell
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! OrderCell
         cell.statusBttn.backgroundColor = darkAccentColor
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(OrderCellIdentifier, forIndexPath: indexPath) as OrderCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(OrderCellIdentifier, forIndexPath: indexPath) as! OrderCell
         cell.delegate = self
         cell.setOrder(exData[indexPath.row])
-        cell.setCellColorTheme(darkAccentColor)
+        if(indexPath.row % 2 == 0)
+        {
+            cell.setCellColorTheme(darkAccentColor, backColor:UIColor.lightTextColor())
+            
+        }
+        else{
+            cell.setCellColorTheme(darkAccentColor, backColor:UIColor.flatWhiteColor())
+            
+            
+        }
         
         return cell
     }

@@ -35,7 +35,7 @@ class GenericTableView: UITableViewController, MGSwipeTableCellDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func searchBarSearchButtonClicked( searchBar: UISearchBar!) {
+    func searchBarSearchButtonClicked( searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
    
@@ -44,26 +44,27 @@ class GenericTableView: UITableViewController, MGSwipeTableCellDelegate {
     
     override func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath)
     {
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as OrderCell
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! OrderCell
         cell.statusBttn.backgroundColor = darkAccentColor
-    }
+           }
     
-    func swipeTableCell(cell: OrderCell!, swipeButtonsForDirection direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [AnyObject]! {
-        swipeSettings.transition = MGSwipeTransition.TransitionDrag
-        expansionSettings.buttonIndex = 0
-        expansionSettings.fillOnTrigger = true
-        
-        if direction == MGSwipeDirection.LeftToRight {
-            return cell.createLeftButtons()
-        } else {
-            return cell.createRightButtons()
-        }
-    }
+//    func swipeTableCell(cell: OrderCell!, swipeButtonsForDirection direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [AnyObject]! {
+//  
+//        swipeSettings.transition = MGSwipeTransition.TransitionDrag
+//        expansionSettings.buttonIndex = 0
+//        expansionSettings.fillOnTrigger = true
+//        
+//        if direction == MGSwipeDirection.LeftToRight {
+//            return cell.createLeftButtons()
+//        } else {
+//            return cell.createRightButtons()
+//        }
+//    }
     
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(OrderCellIdentifier) as OrderCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(OrderCellIdentifier) as! OrderCell
         return cell
     }
     

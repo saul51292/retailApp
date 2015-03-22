@@ -71,7 +71,7 @@ class OrdersTV: GenericTableView, UISearchBarDelegate {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as OrderCell
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! OrderCell
         cell.statusBttn.backgroundColor = darkAccentColor
         showUserVC.showUser.colorUserOverview(darkAccentColor)
         showUserVC.showUser.styleUserPicture(darkAccentColor)
@@ -108,16 +108,26 @@ class OrdersTV: GenericTableView, UISearchBarDelegate {
     // NOTE: This seems like it should be done in the tabBarController
     func addBadge() {
         let tabArray = tabBarController?.tabBar.items as NSArray!
-        let tabItem = tabArray.objectAtIndex(0) as UITabBarItem
+        let tabItem = tabArray.objectAtIndex(0) as! UITabBarItem
         tabItem.badgeValue = String(self.exData.count)
         navigationController?.navigationBar.topItem?.title = "\(tabItem.badgeValue!) Orders"
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier(OrderCellIdentifier) as OrderCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier(OrderCellIdentifier)as! OrderCell
         cell.delegate = self
-        cell.setCellColorTheme(darkAccentColor)
         cell.setOrder(exData[indexPath.row])
+        if(indexPath.row % 2 == 0)
+        {
+            cell.setCellColorTheme(darkAccentColor, backColor:UIColor.lightTextColor())
+
+        }
+        else{
+            cell.setCellColorTheme(darkAccentColor, backColor:UIColor.flatWhiteColor())
+
+            
+        }
+
         
         return cell
     }

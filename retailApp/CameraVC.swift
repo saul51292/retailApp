@@ -122,8 +122,8 @@ class CameraVC: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
         return touchPer
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        let touchEvent = touches.anyObject() as UITouch
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        let touchEvent = touches.first as! UITouch
         let touchView = touchEvent.locationInView(self.view)
         let touchPer = touchPercent(touchEvent)
         createAutofocusCircle(autofocusCircle,point:touchView,widthAndHeight:70,time:0.8)
@@ -235,7 +235,7 @@ class CameraVC: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "imageTaken" {
-            let vc = (segue.destinationViewController as ImageTakenVC)
+            let vc = (segue.destinationViewController as! ImageTakenVC)
             vc.image = self.imageTaken
             vc.dealViewInfo = dealViewInfo
             vc.timerView = timerView
@@ -260,7 +260,7 @@ class CameraVC: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
     //MARK: - Delegates
     //What to do when the picker returns with a photo
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-        var chosenImage = info[UIImagePickerControllerOriginalImage] as UIImage //2
+        var chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
         self.imageTaken = chosenImage
         dismissViewControllerAnimated(true, completion: nil) //5
         self.performSegueWithIdentifier("imageTaken", sender: self)

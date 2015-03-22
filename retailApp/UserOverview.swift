@@ -53,8 +53,7 @@ class UserOverview: UIView {
     func colorUserOverview(color:UIColor) {
         styleUserPicture(color)
         topView.backgroundColor = color
-       
-               dealPrice.textColor = color
+       dealPrice.textColor = color
         fufilledTime.textColor = color
         userName.textColor = color
         variableButtonView.backgroundColor = color

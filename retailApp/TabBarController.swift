@@ -23,9 +23,9 @@ class TabBarController: UITabBarController, UITabBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ordersTV = self.childViewControllers[0] as OrdersTV
-        fufilledTV = self.childViewControllers[1] as FufilledTV
-        progressVC = self.childViewControllers[3] as ProgressVC
+        ordersTV = self.childViewControllers[0] as! OrdersTV
+        fufilledTV = self.childViewControllers[1] as! FufilledTV
+        progressVC = self.childViewControllers[3] as! ProgressVC
         
         var moneyBarItem = UIBarButtonItem(title: "$123", style: UIBarButtonItemStyle.Plain, target: self, action: "buttonMethod")
         var logOutItem = UIBarButtonItem(title: "Log Out", style: UIBarButtonItemStyle.Plain, target: self, action: nil)

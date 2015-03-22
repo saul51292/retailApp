@@ -29,7 +29,7 @@ class DealViewInfo: UIView,UITextFieldDelegate {
         xibSetup()
     }
     
-    func textFieldDidBeginEditing(textField: UITextField!) {    //delegate method
+    func textFieldDidBeginEditing(textField: UITextField) {    //delegate method
         
         priceField.font = UIFont(name: "Montserrat", size: 30.0)
         if priceField.text.rangeOfString("$") == nil{

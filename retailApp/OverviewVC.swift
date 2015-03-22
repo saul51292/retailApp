@@ -37,7 +37,7 @@ class OverviewVC: UIViewController {
                 animations:  {
                     
                     self.userView.transform = CGAffineTransformMakeTranslation(0,UIScreen.mainScreen().bounds.height/4)
-                }, nil)
+                }, completion: nil)
         
         }
     
@@ -49,7 +49,7 @@ class OverviewVC: UIViewController {
             animations:  {
                 self.userView.transform = CGAffineTransformIdentity
 
-            }, nil)
+            }, completion: nil)
 
     }
 
